@@ -1237,6 +1237,7 @@
       }
 
       btn.classList.toggle('overscroll-active', p > 0.02);
+      btn.classList.toggle('overscroll-complete', p >= 0.999);
 
       const fill = btn.querySelector('.nav-overscroll-fill');
       if (fill) {
@@ -1244,7 +1245,7 @@
         // removes the stepped/jittery feel from wheel and touch events.
         const eased = 1 - Math.pow(1 - p, 1.45);
         fill.style.setProperty('--overscroll-progress', eased.toFixed(4));
-        fill.style.opacity = Math.min(0.92, 0.14 + eased * 0.78).toFixed(2);
+        fill.style.opacity = (p >= 0.999 ? 1 : Math.min(0.92, 0.14 + eased * 0.78)).toFixed(2);
       }
 
       const ring = btn.querySelector('.nav-overscroll-ring');
@@ -1265,7 +1266,7 @@
         btn.style.transform = '';
       }
       btn.style.transition = 'transform .3s ease';
-      btn.classList.remove('overscroll-active');
+      btn.classList.remove('overscroll-active', 'overscroll-complete');
       const fill = btn.querySelector('.nav-overscroll-fill');
       if (fill) {
         fill.style.setProperty('--overscroll-progress', '0');
@@ -1310,6 +1311,7 @@
 
         if (!triggered && accum >= THRESHOLD && canNav) {
           triggered = true;
+          applyProgress(findBtn(page, idx, dir), 1);
           setTimeout(() => { navigateTo(target); reset(); }, 130);
         }
       }, { passive: false });
@@ -1336,7 +1338,8 @@
         if (canNav) applyProgress(findBtn(page, idx, dir), accum / THRESHOLD);
         if (!triggered && accum >= THRESHOLD && canNav) {
           triggered = true;
-          navigateTo(target); reset();
+          applyProgress(findBtn(page, idx, dir), 1);
+          setTimeout(() => { navigateTo(target); reset(); }, 130);
         }
       }, { passive: false });
 
@@ -1440,11 +1443,12 @@
       btn.style.transform = `translateY(${offset.toFixed(1)}px) scale(${s.toFixed(3)})`;
       btn.style.transition = 'transform .15s ease, box-shadow .15s ease, border-color .15s ease';
       btn.classList.toggle('overscroll-active', p > 0.02);
+      btn.classList.toggle('overscroll-complete', p >= 0.999);
       const fill = btn.querySelector('.nav-overscroll-fill');
       if (fill) {
         const eased = 1 - Math.pow(1 - p, 1.45);
         fill.style.setProperty('--overscroll-progress', eased.toFixed(4));
-        fill.style.opacity = Math.min(0.92, 0.14 + eased * 0.78).toFixed(2);
+        fill.style.opacity = (p >= 0.999 ? 1 : Math.min(0.92, 0.14 + eased * 0.78)).toFixed(2);
       }
       const ring = btn.querySelector('.nav-overscroll-ring');
       if (ring) {
@@ -1458,7 +1462,7 @@
       if (!btn) return;
       btn.style.transform = '';
       btn.style.transition = 'transform .3s ease';
-      btn.classList.remove('overscroll-active');
+      btn.classList.remove('overscroll-active', 'overscroll-complete');
       const fill = btn.querySelector('.nav-overscroll-fill');
       if (fill) {
         fill.style.setProperty('--overscroll-progress', '0');
@@ -1585,6 +1589,7 @@
 
         if (btn && !triggered && accum >= THRESHOLD) {
           triggered = true;
+          applyProgress(btn, 1, direction);
           setTimeout(() => {
             openPanel(serviceKey, btn.getAttribute('data-service-goto'));
             reset();
@@ -1625,8 +1630,11 @@
         applyPanelNudge(serviceKey, direction, progress);
         if (btn && !triggered && accum >= THRESHOLD) {
           triggered = true;
-          openPanel(serviceKey, btn.getAttribute('data-service-goto'));
-          reset();
+          applyProgress(btn, 1, direction);
+          setTimeout(() => {
+            openPanel(serviceKey, btn.getAttribute('data-service-goto'));
+            reset();
+          }, 180);
         }
       }, { passive: false });
 
