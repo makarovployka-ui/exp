@@ -1558,6 +1558,7 @@
         const compactRange = scrollRange <= 42;
         const isConstructionHero = serviceKey === 'construction' && currentPanel(serviceKey) === 'hero';
         const constructionMobile = isConstructionHero && window.matchMedia('(max-width: 900px)').matches;
+        if (constructionMobile) return;
         const treatHeroAsBoundary = isConstructionHero && !constructionMobile;
         const atBottom = page.scrollTop >= scrollRange - 2;
         const atTop = page.scrollTop <= 2;
@@ -1605,6 +1606,7 @@
         const compactRange = scrollRange <= 42;
         const isConstructionHero = serviceKey === 'construction' && currentPanel(serviceKey) === 'hero';
         const constructionMobile = isConstructionHero && window.matchMedia('(max-width: 900px)').matches;
+        if (constructionMobile) return;
         const treatHeroAsBoundary = isConstructionHero && !constructionMobile;
         const atBottom = page.scrollTop >= scrollRange - 2;
         const atTop = page.scrollTop <= 2;

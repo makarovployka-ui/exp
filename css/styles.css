@@ -16142,6 +16142,37 @@ body.expertise-order-open {
   }
 }
 
+/* Construction mobile: keep the first section fully reachable above browser chrome. */
+@media (max-width: 900px) {
+  body.service-page-open:has(#constructionPage.active) {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+  }
+
+  #constructionPage.active {
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    scroll-padding-bottom: max(32px, env(safe-area-inset-bottom)) !important;
+    overscroll-behavior-y: auto !important;
+  }
+
+  #constructionPage .service-section-panel[data-service-panel="hero"] {
+    padding-bottom: max(24px, env(safe-area-inset-bottom)) !important;
+  }
+
+  #constructionPage .service-section-panel[data-service-panel="hero"] .service-page-section-nav {
+    box-sizing: border-box !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    margin: 10px 0 max(18px, env(safe-area-inset-bottom)) !important;
+    padding: 12px 10px 10px !important;
+  }
+
+  #constructionPage .service-section-panel[data-service-panel="hero"] .service-section-btn {
+    flex: 0 0 auto !important;
+  }
+}
+
 /* ── MOBILE REVIEW PAGE: direct access and compact one-column layout ── */
 .drawer-review-entry,
 .mobile-review-card {
