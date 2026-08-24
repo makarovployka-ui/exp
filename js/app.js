@@ -1557,17 +1557,19 @@
         const scrollRange = Math.max(0, page.scrollHeight - page.clientHeight);
         const compactRange = scrollRange <= 42;
         const isConstructionHero = serviceKey === 'construction' && currentPanel(serviceKey) === 'hero';
+        const constructionMobile = isConstructionHero && window.matchMedia('(max-width: 900px)').matches;
+        const treatHeroAsBoundary = isConstructionHero && !constructionMobile;
         const atBottom = page.scrollTop >= scrollRange - 2;
         const atTop = page.scrollTop <= 2;
         const scrollingDown = event.deltaY > 0;
         const scrollingUp = event.deltaY < 0;
-        const direction = scrollingDown && (atBottom || compactRange || isConstructionHero) ? 'next' : (scrollingUp && (atTop || isConstructionHero) ? 'prev' : null);
+        const direction = scrollingDown && (atBottom || compactRange || treatHeroAsBoundary) ? 'next' : (scrollingUp && (atTop || treatHeroAsBoundary) ? 'prev' : null);
         const btn = direction ? activeButton(serviceKey, direction) : null;
 
         /* The first construction section has no previous panel, but it still needs
            the same tactile movement up and down. In that case we nudge only the
            panel itself, without looking for a non-existent prev button. */
-        if (!btn && !(isConstructionHero && direction === 'prev')) {
+        if (!btn && !(treatHeroAsBoundary && direction === 'prev')) {
           if (accum) reset();
           return;
         }
@@ -1602,12 +1604,14 @@
         const scrollRange = Math.max(0, page.scrollHeight - page.clientHeight);
         const compactRange = scrollRange <= 42;
         const isConstructionHero = serviceKey === 'construction' && currentPanel(serviceKey) === 'hero';
+        const constructionMobile = isConstructionHero && window.matchMedia('(max-width: 900px)').matches;
+        const treatHeroAsBoundary = isConstructionHero && !constructionMobile;
         const atBottom = page.scrollTop >= scrollRange - 2;
         const atTop = page.scrollTop <= 2;
-        const direction = dy > 0 && (atBottom || compactRange || isConstructionHero) ? 'next' : (dy < 0 && (atTop || isConstructionHero) ? 'prev' : null);
+        const direction = dy > 0 && (atBottom || compactRange || treatHeroAsBoundary) ? 'next' : (dy < 0 && (atTop || treatHeroAsBoundary) ? 'prev' : null);
         const btn = direction ? activeButton(serviceKey, direction) : null;
 
-        if (!btn && !(isConstructionHero && direction === 'prev')) {
+        if (!btn && !(treatHeroAsBoundary && direction === 'prev')) {
           if (accum) reset();
           return;
         }
