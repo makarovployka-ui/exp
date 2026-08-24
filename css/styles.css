@@ -16142,6 +16142,22 @@ body.expertise-order-open {
   }
 }
 
+/* Commodity expertise: keep the mobile photo frame as high as its visible collage. */
+@media (max-width: 900px) {
+  #commodityPage > .commodity-linguistic-hero .commodity-visual-wrap {
+    height: auto !important;
+    min-height: 0 !important;
+    align-self: auto !important;
+    padding-bottom: 10px !important;
+  }
+
+  #commodityPage > .commodity-linguistic-hero .commodity-photo-board {
+    height: auto !important;
+    min-height: 0 !important;
+    align-content: start !important;
+  }
+}
+
 /* Construction mobile: keep the first section fully reachable above browser chrome. */
 @media (max-width: 900px) {
   body.service-page-open:has(#constructionPage.active) {
