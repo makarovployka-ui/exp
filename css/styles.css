@@ -16151,3 +16151,400 @@ body.expertise-order-open {
     transform: none !important;
   }
 }
+
+/* ── MOBILE EDITORIAL PASS: readable service stories and distributed photos ── */
+.mobile-service-photo-break {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .single-service-page.active {
+    padding: 12px 10px 22px !important;
+  }
+
+  .single-service-page .service-section-flow,
+  .single-service-page .service-section-panel {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .single-service-page .service-section-panel {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  #computerPage.economic-layout-page .service-section-panel:not([data-service-panel="hero"]),
+  .single-service-page:not(.other-service-page) .service-section-panel:not([data-service-panel="hero"]) {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .single-service-page .service-page-topbar {
+    width: 100% !important;
+    margin: 0 auto 10px !important;
+  }
+
+  #computerPage.economic-layout-page .computer-page-hero,
+  #handwritingPage .auto-page-hero,
+  #linguisticPage .auto-page-hero,
+  #phonovideoPage .phonovideo-page-hero,
+  .single-service-page:not(.other-service-page) .auto-page-hero {
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 12px 0 0 !important;
+    padding: 16px 12px 14px !important;
+    gap: 18px !important;
+    border-radius: 22px !important;
+  }
+
+  .single-service-page:not(.other-service-page) .auto-page-hero::before {
+    inset: 9px !important;
+    border-radius: 16px !important;
+  }
+
+  .single-service-page:not(.other-service-page) .auto-page-hero-copy {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 14px 12px 15px !important;
+    border-left-width: 3px !important;
+    border-radius: 0 16px 16px 0 !important;
+  }
+
+  .single-service-page:not(.other-service-page) .auto-page-kicker {
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin-bottom: 14px !important;
+    padding: 7px 10px !important;
+    font-size: 9px !important;
+    line-height: 1.35 !important;
+    letter-spacing: .11em !important;
+    white-space: normal !important;
+  }
+
+  #computerPage.economic-layout-page .auto-page-hero h1,
+  #phonovideoPage .auto-page-hero h1,
+  #handwritingPage .auto-page-hero h1,
+  #linguisticPage .auto-page-hero h1,
+  .single-service-page:not(.other-service-page) .auto-page-hero h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 14px !important;
+    font-size: clamp(30px, 8.7vw, 38px) !important;
+    line-height: 1.06 !important;
+    letter-spacing: -.025em !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+    hyphens: none !important;
+    text-wrap: pretty !important;
+  }
+
+  .single-service-page:not(.other-service-page) .auto-page-intro,
+  .single-service-page:not(.other-service-page) .auto-page-note {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    hyphens: none !important;
+    text-wrap: pretty !important;
+  }
+
+  .single-service-page:not(.other-service-page) .auto-page-intro {
+    margin-bottom: 14px !important;
+    font-size: 14px !important;
+    line-height: 1.62 !important;
+  }
+
+  .single-service-page:not(.other-service-page) .auto-page-note {
+    padding: 15px 14px !important;
+    font-size: 13px !important;
+    line-height: 1.58 !important;
+    border-radius: 15px !important;
+  }
+
+  .single-service-page:not(.other-service-page) .auto-collage-wrap {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 10px !important;
+    border-radius: 18px !important;
+    transform: none !important;
+  }
+
+  .single-service-page:not(.other-service-page) .auto-collage-head {
+    position: static !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin: 0 auto 9px !important;
+    padding: 6px 10px !important;
+    font-size: 8px !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+  }
+
+  .single-service-page:not(.other-service-page) .auto-collage-board {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: none !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    gap: 8px !important;
+  }
+
+  .single-service-page:not(.other-service-page) .auto-collage-board > .auto-collage-item {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-width: 0 !important;
+    aspect-ratio: 1.12 / 1 !important;
+    margin: 0 !important;
+    border-radius: 14px !important;
+    transform: none !important;
+    overflow: hidden !important;
+  }
+
+  .single-service-page:not(.other-service-page) .auto-collage-board > .auto-collage-item:nth-child(n + 3) {
+    display: none !important;
+  }
+
+  .single-service-page:not(.other-service-page) .auto-collage-item img,
+  .single-service-page:not(.other-service-page) :is(
+    .handwriting-symbol-stage,
+    .economic-symbol-stage,
+    .linguistic-symbol-stage,
+    .construction-card-media
+  ) {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+  }
+
+  .single-service-page:not(.other-service-page) .auto-collage-item img {
+    display: block !important;
+    object-fit: cover !important;
+  }
+
+  .single-service-page:not(.other-service-page) .auto-collage-tag {
+    right: 7px !important;
+    bottom: 7px !important;
+    left: 7px !important;
+    width: auto !important;
+    max-width: none !important;
+    padding: 5px 7px !important;
+    font-size: 7px !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  .single-service-page:not(.other-service-page) .service-section-panel:not([data-service-panel="hero"]).active,
+  #computerPage.economic-layout-page .service-section-panel:not([data-service-panel="hero"]).active,
+  #linguisticPage .linguistic-tab-panel.active {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 14px !important;
+  }
+
+  .single-service-page :is(
+    .construction-content-card,
+    .auto-content-card,
+    .linguistic-service-card,
+    .other-panel,
+    .review-panel
+  ) {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 19px 16px !important;
+    border-radius: 18px !important;
+  }
+
+  .single-service-page:not(.other-service-page) :is(
+    .construction-content-card h2,
+    .auto-content-card h2,
+    .linguistic-service-card h2
+  ) {
+    max-width: 100% !important;
+    margin-bottom: 13px !important;
+    font-size: clamp(24px, 7.2vw, 30px) !important;
+    line-height: 1.12 !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+    hyphens: none !important;
+    text-wrap: pretty !important;
+  }
+
+  .single-service-page:not(.other-service-page) :is(
+    .construction-content-card h3,
+    .construction-service-title h3,
+    .linguistic-service-card h3,
+    .auto-content-card h3
+  ) {
+    max-width: 100% !important;
+    font-size: 19px !important;
+    line-height: 1.22 !important;
+    overflow-wrap: anywhere !important;
+    text-wrap: pretty !important;
+  }
+
+  .single-service-page:not(.other-service-page) :is(
+    .construction-content-card p,
+    .auto-content-card p,
+    .linguistic-service-card p,
+    .construction-content-card li,
+    .auto-content-card li,
+    .linguistic-service-card li,
+    .auto-task-item,
+    .auto-situation-item,
+    .auto-approach-item
+  ) {
+    max-width: 100% !important;
+    font-size: 13.5px !important;
+    line-height: 1.58 !important;
+    overflow-wrap: break-word !important;
+    word-break: normal !important;
+    hyphens: none !important;
+    text-wrap: pretty !important;
+  }
+
+  .single-service-page:not(.other-service-page) :is(
+    .construction-task-list,
+    .construction-benefit-grid,
+    .auto-task-grid,
+    .auto-situation-grid,
+    .auto-approach-list,
+    .construction-service-list,
+    .construction-columns,
+    .construction-process,
+    .linguistic-service-grid,
+    .linguistic-process-list
+  ) {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  #computerPage.economic-layout-page :is(.construction-task-list, .construction-benefit-grid),
+  .single-service-page:not(.other-service-page) :is(.construction-task-list, .construction-benefit-grid) {
+    padding: 16px 14px !important;
+  }
+
+  .mobile-service-photo-break {
+    order: initial;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid rgba(168, 216, 208, .72);
+    border-radius: 18px;
+    background:
+      linear-gradient(145deg, rgba(255,255,255,.92), rgba(238,242,247,.74)),
+      radial-gradient(circle at 100% 0%, rgba(107,191,176,.18), transparent 38%);
+    box-shadow: 0 15px 34px rgba(61,90,128,.10);
+    overflow: hidden;
+  }
+
+  .mobile-service-photo-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin: 1px 2px 9px;
+    color: var(--blue-mid);
+    font-size: 8px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+  }
+
+  .mobile-service-photo-eyebrow::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--mint);
+  }
+
+  .mobile-service-photo-break .mobile-service-photo-card {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    height: auto !important;
+    min-width: 0 !important;
+    aspect-ratio: 16 / 9 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 14px !important;
+    transform: none !important;
+    overflow: hidden !important;
+  }
+
+  .mobile-service-photo-break .mobile-service-photo-card > :first-child,
+  .mobile-service-photo-break .mobile-service-photo-card img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 0 !important;
+  }
+
+  .mobile-service-photo-break .mobile-service-photo-card img {
+    display: block !important;
+    object-fit: cover !important;
+  }
+
+  .mobile-service-photo-break .auto-collage-tag {
+    position: absolute !important;
+    right: 9px !important;
+    bottom: 9px !important;
+    left: 9px !important;
+    width: auto !important;
+    padding: 7px 9px !important;
+    border-radius: 999px !important;
+    font-size: 8px !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+}
+
+@media (max-width: 420px) {
+  #computerPage.economic-layout-page .auto-page-hero h1,
+  #phonovideoPage .auto-page-hero h1,
+  #handwritingPage .auto-page-hero h1,
+  #linguisticPage .auto-page-hero h1,
+  .single-service-page:not(.other-service-page) .auto-page-hero h1 {
+    font-size: clamp(28px, 8.2vw, 34px) !important;
+  }
+
+  .single-service-page:not(.other-service-page) .auto-page-hero {
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+  }
+
+  .single-service-page:not(.other-service-page) .auto-page-hero-copy {
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+  }
+}

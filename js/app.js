@@ -198,6 +198,61 @@
   window.addEventListener('load', initAllLinguisticGlobes);
 })();
 
+/* Mobile editorial story: reuse the page's own photographs between content sections.
+   The generated blocks are hidden above the mobile breakpoint, so desktop stays intact. */
+(function initMobileServicePhotoStory() {
+  var servicePages = document.querySelectorAll('.single-service-page');
+
+  function distributePhotos(hero, targets, storyKey) {
+    if (!hero || !targets.length) return;
+    var sourceCards = Array.prototype.slice.call(
+      hero.querySelectorAll('.auto-collage-board > figure')
+    );
+    if (!sourceCards.length) return;
+
+    targets.forEach(function(target, index) {
+      if (target.querySelector('.mobile-service-photo-break[data-mobile-story="' + storyKey + '"]')) return;
+
+      var photoBreak = document.createElement('aside');
+      var photoCard = sourceCards[index % sourceCards.length].cloneNode(true);
+      var firstArticle = target.querySelector(':scope > article');
+
+      photoBreak.className = 'mobile-service-photo-break';
+      photoBreak.setAttribute('aria-label', 'Визуальный пример по разделу');
+      photoBreak.dataset.mobileStory = storyKey;
+
+      var eyebrow = document.createElement('span');
+      eyebrow.className = 'mobile-service-photo-eyebrow';
+      eyebrow.textContent = 'Пример исследования';
+
+      photoCard.classList.add('mobile-service-photo-card');
+      photoCard.querySelectorAll('img').forEach(function(image) {
+        image.loading = 'lazy';
+      });
+
+      photoBreak.appendChild(eyebrow);
+      photoBreak.appendChild(photoCard);
+
+      if (firstArticle) firstArticle.insertAdjacentElement('afterend', photoBreak);
+      else target.insertBefore(photoBreak, target.firstChild);
+    });
+  }
+
+  servicePages.forEach(function(page) {
+    var panelHero = page.querySelector('.service-section-panel[data-service-panel="hero"] .auto-page-hero');
+    var panelTargets = Array.prototype.slice.call(
+      page.querySelectorAll('.service-section-panel:not([data-service-panel="hero"])')
+    );
+    distributePhotos(panelHero, panelTargets, 'section-flow');
+
+    var standaloneHero = Array.prototype.slice.call(page.querySelectorAll('.auto-page-hero')).find(function(hero) {
+      return !hero.closest('.service-section-panel');
+    });
+    var tabTargets = Array.prototype.slice.call(page.querySelectorAll('.linguistic-tab-panel'));
+    distributePhotos(standaloneHero, tabTargets, 'tab-flow');
+  });
+})();
+
   function prepareAutoEngineImage(img) {
     if (!img || img.dataset.engineTransparentReady === 'true') return;
 
