@@ -8426,11 +8426,11 @@
     }
   }
 
-  body.service-page-open:has(:is(#economicPage, #phonovideoPage).active) {
+  body.service-page-open:has(:is(#economicPage, #phonovideoPage, .new-expertise-page).active) {
     overflow: hidden !important;
   }
 
-  :is(#economicPage, #phonovideoPage).active {
+  :is(#economicPage, #phonovideoPage, .new-expertise-page).active {
     position: fixed !important;
     inset: 0 !important;
     z-index: 40 !important;
@@ -8444,69 +8444,69 @@
     padding-bottom: 16px !important;
   }
 
-  :is(#economicPage, #phonovideoPage) .service-section-flow {
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-flow {
     padding-bottom: 0 !important;
   }
 
-  :is(#economicPage, #phonovideoPage) .service-section-panel {
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel {
     min-height: 0 !important;
     padding-top: 30px !important;
     padding-bottom: 8px !important;
     will-change: transform;
   }
 
-  :is(#economicPage, #phonovideoPage) .service-section-panel:not([data-service-panel="hero"]) {
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel:not([data-service-panel="hero"]) {
     margin: 0 18px 8px !important;
   }
 
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="hero"] {
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="hero"] {
     padding-top: 8px !important;
     padding-bottom: 4px !important;
   }
 
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="hero"].active {
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="hero"].active {
     display: flex !important;
     flex-direction: column;
   }
 
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="hero"] .auto-page-hero {
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="hero"] .auto-page-hero {
     min-height: auto !important;
     padding-top: 24px !important;
     padding-bottom: 0 !important;
     align-items: start;
   }
 
-  :is(#economicPage, #phonovideoPage) .service-page-section-nav {
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-page-section-nav {
     padding-top: 22px !important;
     padding-bottom: 0 !important;
     margin-bottom: 0 !important;
   }
 
-  :is(#economicPage, #phonovideoPage) .service-page-section-nav.top {
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-page-section-nav.top {
     padding-top: 0 !important;
     padding-bottom: 14px !important;
   }
 
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="hero"] .service-page-section-nav {
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="hero"] .service-page-section-nav {
     padding-top: 8px !important;
     padding-bottom: 4px !important;
   }
 
   @media (max-width: 760px) {
-    :is(#economicPage, #phonovideoPage).active {
+    :is(#economicPage, #phonovideoPage, .new-expertise-page).active {
       padding-bottom: 12px !important;
     }
 
-    :is(#economicPage, #phonovideoPage) .service-section-panel {
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel {
       padding-top: 24px !important;
       padding-bottom: 6px !important;
     }
 
-    :is(#economicPage, #phonovideoPage) .service-section-panel:not([data-service-panel="hero"]) {
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel:not([data-service-panel="hero"]) {
       margin: 0 10px 12px !important;
     }
 
-    :is(#economicPage, #phonovideoPage) .service-page-section-nav {
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-page-section-nav {
       padding-top: 16px !important;
       padding-bottom: 0 !important;
     }
@@ -9054,7 +9054,7 @@
       radial-gradient(circle at 82% 18%, rgba(107,191,176,.18), transparent 32%);
   }
 
-  :is(#economicPage, #phonovideoPage) .auto-page-hero {
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .auto-page-hero {
     background:
       linear-gradient(135deg, rgba(255,255,255,.90), rgba(238,242,247,.66)),
       linear-gradient(90deg, rgba(61,90,128,.08) 1px, transparent 1px),
@@ -9083,7 +9083,7 @@
   }
 
   #handwritingPage .auto-collage-wrap { transform: rotate(-1.4deg); }
-  :is(#economicPage, #phonovideoPage) .auto-collage-wrap { transform: rotate(.6deg); }
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .auto-collage-wrap { transform: rotate(.6deg); }
   #constructionPage .auto-collage-wrap { transform: rotate(-.8deg); }
 
   .single-service-page:not(.other-service-page) .auto-collage-item,
@@ -9293,7 +9293,7 @@
   .single-service-page:not(.other-service-page) .auto-collage-wrap,
   .single-service-page:not(.other-service-page) .linguistic-page-visual,
   #handwritingPage .auto-collage-wrap,
-  :is(#economicPage, #phonovideoPage) .auto-collage-wrap,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .auto-collage-wrap,
   #constructionPage .auto-collage-wrap {
     transform: none;
   }
@@ -9480,7 +9480,7 @@
   /* ── Service structural pass: remove squeezed text and empty lanes ── */
   #autoTechPage .service-section-panel:not([data-service-panel="hero"]),
   #handwritingPage .service-section-panel:not([data-service-panel="hero"]),
-  :is(#economicPage, #phonovideoPage) .service-section-panel:not([data-service-panel="hero"]),
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel:not([data-service-panel="hero"]),
   #constructionPage .service-section-panel:not([data-service-panel="hero"]),
   #linguisticPage .construction-content,
   #linguisticPage .linguistic-tabbed-content {
@@ -9492,7 +9492,7 @@
 
   #autoTechPage .service-section-panel:not([data-service-panel="hero"]).active,
   #handwritingPage .service-section-panel:not([data-service-panel="hero"]).active,
-  :is(#economicPage, #phonovideoPage) .service-section-panel:not([data-service-panel="hero"]).active,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel:not([data-service-panel="hero"]).active,
   #constructionPage .service-section-panel:not([data-service-panel="hero"]).active {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr)) !important;
     gap: clamp(22px, 2.4vw, 34px) !important;
@@ -9500,14 +9500,14 @@
   }
 
   #handwritingPage .construction-intro-grid,
-  :is(#economicPage, #phonovideoPage) .construction-intro-grid,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-intro-grid,
   #linguisticPage .construction-intro-grid,
   #constructionPage .construction-intro-grid {
     grid-template-columns: minmax(0, 1fr) !important;
   }
 
   #handwritingPage .construction-task-list,
-  :is(#economicPage, #phonovideoPage) .construction-task-list,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list,
   #linguisticPage .construction-task-list,
   #constructionPage .construction-task-list {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)) !important;
@@ -9515,7 +9515,7 @@
   }
 
   #handwritingPage .construction-task-list li,
-  :is(#economicPage, #phonovideoPage) .construction-task-list li,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list li,
   #linguisticPage .construction-task-list li,
   #constructionPage .construction-task-list li,
   #autoTechPage .auto-task-item,
@@ -9567,7 +9567,7 @@
   @media (max-width: 1320px) {
     #autoTechPage .service-section-panel:not([data-service-panel="hero"]).active,
     #handwritingPage .service-section-panel:not([data-service-panel="hero"]).active,
-    :is(#economicPage, #phonovideoPage) .service-section-panel:not([data-service-panel="hero"]).active,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel:not([data-service-panel="hero"]).active,
     #constructionPage .service-section-panel:not([data-service-panel="hero"]).active {
       grid-template-columns: 1fr !important;
     }
@@ -9576,21 +9576,21 @@
 
   /* ── Full-width section fill: no left-only cards, no empty right half ── */
   #handwritingPage .service-section-panel[data-service-panel="types"].active > article,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="types"].active > article,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="types"].active > article,
   #constructionPage .service-section-panel[data-service-panel="types"].active > article,
   #handwritingPage .service-section-panel[data-service-panel="process"].active > article,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="process"].active > article,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="process"].active > article,
   #constructionPage .service-section-panel[data-service-panel="workflow"].active > article,
   #handwritingPage .service-section-panel[data-service-panel="materials"].active > article,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="materials"].active > article,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="materials"].active > article,
   #handwritingPage .service-section-panel[data-service-panel="benefits"].active > article,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="benefits"].active > article {
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="benefits"].active > article {
     grid-column: 1 / -1 !important;
     width: 100% !important;
   }
 
   #handwritingPage .construction-service-list,
-  :is(#economicPage, #phonovideoPage) .construction-service-list,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-service-list,
   #constructionPage .construction-service-list {
     display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 640px), 1fr)) !important;
@@ -9599,7 +9599,7 @@
   }
 
   #handwritingPage .construction-service-detail,
-  :is(#economicPage, #phonovideoPage) .construction-service-detail,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-service-detail,
   #constructionPage .construction-service-detail {
     min-width: 0 !important;
     min-height: 100%;
@@ -9607,13 +9607,13 @@
   }
 
   #handwritingPage .construction-columns,
-  :is(#economicPage, #phonovideoPage) .construction-columns,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-columns,
   #constructionPage .construction-columns {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)) !important;
   }
 
   #handwritingPage .construction-process,
-  :is(#economicPage, #phonovideoPage) .construction-process,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-process,
   #constructionPage .construction-process {
     display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 430px), 1fr)) !important;
@@ -9621,7 +9621,7 @@
   }
 
   #handwritingPage .construction-process-item,
-  :is(#economicPage, #phonovideoPage) .construction-process-item,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-process-item,
   #constructionPage .construction-process-item {
     min-width: 0;
     min-height: 0;
@@ -9630,7 +9630,7 @@
   }
 
   #handwritingPage .construction-plain-list,
-  :is(#economicPage, #phonovideoPage) .construction-plain-list,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-plain-list,
   #constructionPage .construction-plain-list {
     display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)) !important;
@@ -9638,32 +9638,32 @@
   }
 
   #handwritingPage .construction-benefit-grid,
-  :is(#economicPage, #phonovideoPage) .construction-benefit-grid,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid,
   #constructionPage .construction-benefit-grid {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)) !important;
   }
 
   #handwritingPage .construction-content-card:has(.construction-service-list),
-  :is(#economicPage, #phonovideoPage) .construction-content-card:has(.construction-service-list),
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-content-card:has(.construction-service-list),
   #constructionPage .construction-content-card:has(.construction-service-list),
   #handwritingPage .construction-content-card:has(.construction-process),
-  :is(#economicPage, #phonovideoPage) .construction-content-card:has(.construction-process),
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-content-card:has(.construction-process),
   #constructionPage .construction-content-card:has(.construction-process),
   #handwritingPage .construction-content-card:has(.construction-benefit-grid),
-  :is(#economicPage, #phonovideoPage) .construction-content-card:has(.construction-benefit-grid),
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-content-card:has(.construction-benefit-grid),
   #constructionPage .construction-content-card:has(.construction-benefit-grid) {
     padding: clamp(28px, 3vw, 44px);
   }
 
   @media (max-width: 760px) {
     #handwritingPage .construction-service-list,
-    :is(#economicPage, #phonovideoPage) .construction-service-list,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-service-list,
     #constructionPage .construction-service-list,
     #handwritingPage .construction-process,
-    :is(#economicPage, #phonovideoPage) .construction-process,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-process,
     #constructionPage .construction-process,
     #handwritingPage .construction-plain-list,
-    :is(#economicPage, #phonovideoPage) .construction-plain-list,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-plain-list,
     #constructionPage .construction-plain-list {
       grid-template-columns: 1fr !important;
     }
@@ -9673,7 +9673,7 @@
   /* ── Final service density rules: fill the canvas, keep readable cards ── */
   #autoTechPage .service-section-panel:not([data-service-panel="hero"]).active,
   #handwritingPage .service-section-panel:not([data-service-panel="hero"]).active,
-  :is(#economicPage, #phonovideoPage) .service-section-panel:not([data-service-panel="hero"]).active,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel:not([data-service-panel="hero"]).active,
   #constructionPage .service-section-panel:not([data-service-panel="hero"]).active {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: clamp(24px, 2.4vw, 38px) !important;
@@ -9682,14 +9682,14 @@
 
   #autoTechPage .service-section-panel:not([data-service-panel="hero"]).active > article:only-of-type,
   #handwritingPage .service-section-panel:not([data-service-panel="hero"]).active > article:only-of-type,
-  :is(#economicPage, #phonovideoPage) .service-section-panel:not([data-service-panel="hero"]).active > article:only-of-type,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel:not([data-service-panel="hero"]).active > article:only-of-type,
   #constructionPage .service-section-panel:not([data-service-panel="hero"]).active > article:only-of-type,
   #autoTechPage .auto-content-card:has(.auto-process-timeline),
   #handwritingPage .construction-content-card:has(.construction-service-list),
-  :is(#economicPage, #phonovideoPage) .construction-content-card:has(.construction-service-list),
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-content-card:has(.construction-service-list),
   #constructionPage .construction-content-card:has(.construction-service-list),
   #handwritingPage .construction-content-card:has(.construction-process),
-  :is(#economicPage, #phonovideoPage) .construction-content-card:has(.construction-process),
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-content-card:has(.construction-process),
   #constructionPage .construction-content-card:has(.construction-process) {
     grid-column: 1 / -1 !important;
     width: 100% !important;
@@ -9697,7 +9697,7 @@
 
   #autoTechPage .auto-process-timeline,
   #handwritingPage .construction-process,
-  :is(#economicPage, #phonovideoPage) .construction-process,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-process,
   #constructionPage .construction-process,
   #linguisticPage .linguistic-process-list {
     display: grid !important;
@@ -9707,7 +9707,7 @@
 
   #autoTechPage .auto-process-item,
   #handwritingPage .construction-process-item,
-  :is(#economicPage, #phonovideoPage) .construction-process-item,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-process-item,
   #constructionPage .construction-process-item,
   #linguisticPage .linguistic-process-step {
     min-width: 0 !important;
@@ -9721,11 +9721,11 @@
   #autoTechPage .auto-situation-grid,
   #autoTechPage .auto-approach-list,
   #handwritingPage .construction-task-list,
-  :is(#economicPage, #phonovideoPage) .construction-task-list,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list,
   #constructionPage .construction-task-list,
   #linguisticPage .construction-task-list,
   #handwritingPage .construction-benefit-grid,
-  :is(#economicPage, #phonovideoPage) .construction-benefit-grid,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid,
   #constructionPage .construction-benefit-grid,
   #linguisticPage .construction-benefit-grid {
     display: grid !important;
@@ -9737,11 +9737,11 @@
   #autoTechPage .auto-situation-item,
   #autoTechPage .auto-approach-item,
   #handwritingPage .construction-task-list li,
-  :is(#economicPage, #phonovideoPage) .construction-task-list li,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list li,
   #constructionPage .construction-task-list li,
   #linguisticPage .construction-task-list li,
   #handwritingPage .construction-benefit-grid li,
-  :is(#economicPage, #phonovideoPage) .construction-benefit-grid li,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid li,
   #constructionPage .construction-benefit-grid li,
   #linguisticPage .construction-benefit-grid li {
     max-width: none !important;
@@ -9752,14 +9752,14 @@
   }
 
   #handwritingPage .construction-service-list,
-  :is(#economicPage, #phonovideoPage) .construction-service-list,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-service-list,
   #constructionPage .construction-service-list {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     align-items: start !important;
   }
 
   #handwritingPage .construction-service-detail,
-  :is(#economicPage, #phonovideoPage) .construction-service-detail,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-service-detail,
   #constructionPage .construction-service-detail {
     display: flex;
     flex-direction: column;
@@ -9767,7 +9767,7 @@
   }
 
   #handwritingPage .construction-columns,
-  :is(#economicPage, #phonovideoPage) .construction-columns,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-columns,
   #constructionPage .construction-columns {
     margin-top: clamp(18px, 1.6vw, 26px);
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -9814,7 +9814,7 @@
 
   #linguisticPage .construction-seo-block,
   #handwritingPage .construction-seo-block,
-  :is(#economicPage, #phonovideoPage) .construction-seo-block,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-seo-block,
   #constructionPage .construction-seo-block {
     grid-column: 1 / -1 !important;
     width: 100% !important;
@@ -9822,7 +9822,7 @@
 
   #linguisticPage .construction-seo-block p,
   #handwritingPage .construction-seo-block p,
-  :is(#economicPage, #phonovideoPage) .construction-seo-block p,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-seo-block p,
   #constructionPage .construction-seo-block p {
     max-width: none !important;
     columns: 2 420px;
@@ -9833,18 +9833,18 @@
   @media (max-width: 1500px) {
     #autoTechPage .auto-process-timeline,
     #handwritingPage .construction-process,
-    :is(#economicPage, #phonovideoPage) .construction-process,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-process,
     #constructionPage .construction-process,
     #linguisticPage .linguistic-process-list,
     #autoTechPage .auto-task-grid,
     #autoTechPage .auto-situation-grid,
     #autoTechPage .auto-approach-list,
     #handwritingPage .construction-task-list,
-    :is(#economicPage, #phonovideoPage) .construction-task-list,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list,
     #constructionPage .construction-task-list,
     #linguisticPage .construction-task-list,
     #handwritingPage .construction-benefit-grid,
-    :is(#economicPage, #phonovideoPage) .construction-benefit-grid,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid,
     #constructionPage .construction-benefit-grid,
     #linguisticPage .construction-benefit-grid,
     #linguisticPage .linguistic-service-grid {
@@ -9855,14 +9855,14 @@
   @media (max-width: 1080px) {
     #autoTechPage .service-section-panel:not([data-service-panel="hero"]).active,
     #handwritingPage .service-section-panel:not([data-service-panel="hero"]).active,
-    :is(#economicPage, #phonovideoPage) .service-section-panel:not([data-service-panel="hero"]).active,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel:not([data-service-panel="hero"]).active,
     #constructionPage .service-section-panel:not([data-service-panel="hero"]).active,
     #linguisticPage .linguistic-tab-panel.active,
     #handwritingPage .construction-service-list,
-    :is(#economicPage, #phonovideoPage) .construction-service-list,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-service-list,
     #constructionPage .construction-service-list,
     #handwritingPage .construction-columns,
-    :is(#economicPage, #phonovideoPage) .construction-columns,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-columns,
     #constructionPage .construction-columns {
       grid-template-columns: 1fr !important;
     }
@@ -9871,18 +9871,18 @@
   @media (max-width: 760px) {
     #autoTechPage .auto-process-timeline,
     #handwritingPage .construction-process,
-    :is(#economicPage, #phonovideoPage) .construction-process,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-process,
     #constructionPage .construction-process,
     #linguisticPage .linguistic-process-list,
     #autoTechPage .auto-task-grid,
     #autoTechPage .auto-situation-grid,
     #autoTechPage .auto-approach-list,
     #handwritingPage .construction-task-list,
-    :is(#economicPage, #phonovideoPage) .construction-task-list,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list,
     #constructionPage .construction-task-list,
     #linguisticPage .construction-task-list,
     #handwritingPage .construction-benefit-grid,
-    :is(#economicPage, #phonovideoPage) .construction-benefit-grid,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid,
     #constructionPage .construction-benefit-grid,
     #linguisticPage .construction-benefit-grid,
     #linguisticPage .linguistic-service-grid {
@@ -9891,7 +9891,7 @@
 
     #linguisticPage .construction-seo-block p,
     #handwritingPage .construction-seo-block p,
-    :is(#economicPage, #phonovideoPage) .construction-seo-block p,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-seo-block p,
     #constructionPage .construction-seo-block p {
       columns: auto;
     }
@@ -10021,12 +10021,12 @@
     overflow-wrap: normal !important;
   }
 
-  :is(#economicPage, #phonovideoPage) .construction-service-list .construction-service-detail:last-child,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-service-list .construction-service-detail:last-child,
   #constructionPage .construction-service-list .construction-service-detail:last-child {
     grid-column: 1 / -1 !important;
   }
 
-  :is(#economicPage, #phonovideoPage) .construction-service-list .construction-service-detail:last-child .construction-columns,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-service-list .construction-service-detail:last-child .construction-columns,
   #constructionPage .construction-service-list .construction-service-detail:last-child .construction-columns {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
@@ -10057,7 +10057,7 @@
       grid-template-columns: 1fr !important;
     }
 
-    :is(#economicPage, #phonovideoPage) .construction-service-list .construction-service-detail:last-child .construction-columns,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-service-list .construction-service-detail:last-child .construction-columns,
     #constructionPage .construction-service-list .construction-service-detail:last-child .construction-columns {
       grid-template-columns: 1fr !important;
     }
@@ -10309,7 +10309,7 @@
     }
 
     #handwritingPage .construction-service-list,
-    :is(#economicPage, #phonovideoPage) .construction-service-list,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-service-list,
     #constructionPage .construction-service-list {
       align-items: start !important;
     }
@@ -11034,11 +11034,11 @@
   #autoTechPage .auto-situation-grid,
   #autoTechPage .auto-approach-list,
   #handwritingPage .construction-task-list,
-  :is(#economicPage, #phonovideoPage) .construction-task-list,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list,
   #constructionPage .construction-task-list,
   #linguisticPage .construction-task-list,
   #handwritingPage .construction-benefit-grid,
-  :is(#economicPage, #phonovideoPage) .construction-benefit-grid,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid,
   #constructionPage .construction-benefit-grid,
   #linguisticPage .construction-benefit-grid {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 285px), 1fr)) !important;
@@ -11051,11 +11051,11 @@
   #autoTechPage .auto-situation-item,
   #autoTechPage .auto-approach-item,
   #handwritingPage .construction-task-list li,
-  :is(#economicPage, #phonovideoPage) .construction-task-list li,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list li,
   #constructionPage .construction-task-list li,
   #linguisticPage .construction-task-list li,
   #handwritingPage .construction-benefit-grid li,
-  :is(#economicPage, #phonovideoPage) .construction-benefit-grid li,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid li,
   #constructionPage .construction-benefit-grid li,
   #linguisticPage .construction-benefit-grid li {
     box-sizing: border-box !important;
@@ -11084,11 +11084,11 @@
   #autoTechPage .auto-situation-item::before,
   #autoTechPage .auto-approach-item::before,
   #handwritingPage .construction-task-list li::before,
-  :is(#economicPage, #phonovideoPage) .construction-task-list li::before,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list li::before,
   #constructionPage .construction-task-list li::before,
   #linguisticPage .construction-task-list li::before,
   #handwritingPage .construction-benefit-grid li::before,
-  :is(#economicPage, #phonovideoPage) .construction-benefit-grid li::before,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid li::before,
   #constructionPage .construction-benefit-grid li::before,
   #linguisticPage .construction-benefit-grid li::before {
     left: clamp(20px, 1.8vw, 28px) !important;
@@ -11106,11 +11106,11 @@
     #autoTechPage .auto-situation-grid,
     #autoTechPage .auto-approach-list,
     #handwritingPage .construction-task-list,
-    :is(#economicPage, #phonovideoPage) .construction-task-list,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list,
     #constructionPage .construction-task-list,
     #linguisticPage .construction-task-list,
     #handwritingPage .construction-benefit-grid,
-    :is(#economicPage, #phonovideoPage) .construction-benefit-grid,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid,
     #constructionPage .construction-benefit-grid,
     #linguisticPage .construction-benefit-grid {
       grid-template-columns: 1fr !important;
@@ -11121,11 +11121,11 @@
     #autoTechPage .auto-situation-item,
     #autoTechPage .auto-approach-item,
     #handwritingPage .construction-task-list li,
-    :is(#economicPage, #phonovideoPage) .construction-task-list li,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list li,
     #constructionPage .construction-task-list li,
     #linguisticPage .construction-task-list li,
     #handwritingPage .construction-benefit-grid li,
-    :is(#economicPage, #phonovideoPage) .construction-benefit-grid li,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid li,
     #constructionPage .construction-benefit-grid li,
     #linguisticPage .construction-benefit-grid li {
       min-height: 0 !important;
@@ -11138,11 +11138,11 @@
   #autoTechPage .auto-situation-grid,
   #autoTechPage .auto-approach-list,
   #handwritingPage .construction-task-list,
-  :is(#economicPage, #phonovideoPage) .construction-task-list,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list,
   #constructionPage .construction-task-list,
   #linguisticPage .construction-task-list,
   #handwritingPage .construction-benefit-grid,
-  :is(#economicPage, #phonovideoPage) .construction-benefit-grid,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid,
   #constructionPage .construction-benefit-grid,
   #linguisticPage .construction-benefit-grid {
     display: grid !important;
@@ -11163,11 +11163,11 @@
   #autoTechPage .auto-situation-item,
   #autoTechPage .auto-approach-item,
   #handwritingPage .construction-task-list li,
-  :is(#economicPage, #phonovideoPage) .construction-task-list li,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list li,
   #constructionPage .construction-task-list li,
   #linguisticPage .construction-task-list li,
   #handwritingPage .construction-benefit-grid li,
-  :is(#economicPage, #phonovideoPage) .construction-benefit-grid li,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid li,
   #constructionPage .construction-benefit-grid li,
   #linguisticPage .construction-benefit-grid li {
     position: relative !important;
@@ -11200,11 +11200,11 @@
   #autoTechPage .auto-situation-item::before,
   #autoTechPage .auto-approach-item::before,
   #handwritingPage .construction-task-list li::before,
-  :is(#economicPage, #phonovideoPage) .construction-task-list li::before,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list li::before,
   #constructionPage .construction-task-list li::before,
   #linguisticPage .construction-task-list li::before,
   #handwritingPage .construction-benefit-grid li::before,
-  :is(#economicPage, #phonovideoPage) .construction-benefit-grid li::before,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid li::before,
   #constructionPage .construction-benefit-grid li::before,
   #linguisticPage .construction-benefit-grid li::before {
     content: '' !important;
@@ -11225,11 +11225,11 @@
   #autoTechPage .auto-situation-item::after,
   #autoTechPage .auto-approach-item::after,
   #handwritingPage .construction-task-list li::after,
-  :is(#economicPage, #phonovideoPage) .construction-task-list li::after,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list li::after,
   #constructionPage .construction-task-list li::after,
   #linguisticPage .construction-task-list li::after,
   #handwritingPage .construction-benefit-grid li::after,
-  :is(#economicPage, #phonovideoPage) .construction-benefit-grid li::after,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid li::after,
   #constructionPage .construction-benefit-grid li::after,
   #linguisticPage .construction-benefit-grid li::after {
     display: none !important;
@@ -11240,11 +11240,11 @@
     #autoTechPage .auto-situation-grid,
     #autoTechPage .auto-approach-list,
     #handwritingPage .construction-task-list,
-    :is(#economicPage, #phonovideoPage) .construction-task-list,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list,
     #constructionPage .construction-task-list,
     #linguisticPage .construction-task-list,
     #handwritingPage .construction-benefit-grid,
-    :is(#economicPage, #phonovideoPage) .construction-benefit-grid,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid,
     #constructionPage .construction-benefit-grid,
     #linguisticPage .construction-benefit-grid {
       grid-template-columns: 1fr !important;
@@ -11257,11 +11257,11 @@
   #autoTechPage .auto-situation-grid,
   #autoTechPage .auto-approach-list,
   #handwritingPage .construction-task-list,
-  :is(#economicPage, #phonovideoPage) .construction-task-list,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list,
   #constructionPage .construction-task-list,
   #linguisticPage .construction-task-list,
   #handwritingPage .construction-benefit-grid,
-  :is(#economicPage, #phonovideoPage) .construction-benefit-grid,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid,
   #constructionPage .construction-benefit-grid,
   #linguisticPage .construction-benefit-grid {
     grid-template-columns: repeat(2, minmax(min(100%, 320px), 1fr)) !important;
@@ -11274,11 +11274,11 @@
   #autoTechPage .auto-situation-item,
   #autoTechPage .auto-approach-item,
   #handwritingPage .construction-task-list li,
-  :is(#economicPage, #phonovideoPage) .construction-task-list li,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list li,
   #constructionPage .construction-task-list li,
   #linguisticPage .construction-task-list li,
   #handwritingPage .construction-benefit-grid li,
-  :is(#economicPage, #phonovideoPage) .construction-benefit-grid li,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid li,
   #constructionPage .construction-benefit-grid li,
   #linguisticPage .construction-benefit-grid li {
     display: flex !important;
@@ -11297,11 +11297,11 @@
   #autoTechPage .auto-situation-item::before,
   #autoTechPage .auto-approach-item::before,
   #handwritingPage .construction-task-list li::before,
-  :is(#economicPage, #phonovideoPage) .construction-task-list li::before,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list li::before,
   #constructionPage .construction-task-list li::before,
   #linguisticPage .construction-task-list li::before,
   #handwritingPage .construction-benefit-grid li::before,
-  :is(#economicPage, #phonovideoPage) .construction-benefit-grid li::before,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid li::before,
   #constructionPage .construction-benefit-grid li::before,
   #linguisticPage .construction-benefit-grid li::before {
     left: clamp(22px, 2vw, 30px) !important;
@@ -11315,11 +11315,11 @@
     #autoTechPage .auto-situation-grid,
     #autoTechPage .auto-approach-list,
     #handwritingPage .construction-task-list,
-    :is(#economicPage, #phonovideoPage) .construction-task-list,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list,
     #constructionPage .construction-task-list,
     #linguisticPage .construction-task-list,
     #handwritingPage .construction-benefit-grid,
-    :is(#economicPage, #phonovideoPage) .construction-benefit-grid,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid,
     #constructionPage .construction-benefit-grid,
     #linguisticPage .construction-benefit-grid {
       grid-template-columns: repeat(2, minmax(min(100%, 360px), 1fr)) !important;
@@ -11331,11 +11331,11 @@
     #autoTechPage .auto-situation-grid,
     #autoTechPage .auto-approach-list,
     #handwritingPage .construction-task-list,
-    :is(#economicPage, #phonovideoPage) .construction-task-list,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list,
     #constructionPage .construction-task-list,
     #linguisticPage .construction-task-list,
     #handwritingPage .construction-benefit-grid,
-    :is(#economicPage, #phonovideoPage) .construction-benefit-grid,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid,
     #constructionPage .construction-benefit-grid,
     #linguisticPage .construction-benefit-grid {
       grid-template-columns: 1fr !important;
@@ -11346,11 +11346,11 @@
     #autoTechPage .auto-situation-item,
     #autoTechPage .auto-approach-item,
     #handwritingPage .construction-task-list li,
-    :is(#economicPage, #phonovideoPage) .construction-task-list li,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-task-list li,
     #constructionPage .construction-task-list li,
     #linguisticPage .construction-task-list li,
     #handwritingPage .construction-benefit-grid li,
-    :is(#economicPage, #phonovideoPage) .construction-benefit-grid li,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-benefit-grid li,
     #constructionPage .construction-benefit-grid li,
     #linguisticPage .construction-benefit-grid li {
       min-height: 0 !important;
@@ -11406,7 +11406,7 @@
   /* ── Hard containment: service-card lists must stay inside their blue cards ── */
   #autoTechPage .service-section-panel:not([data-service-panel="hero"]).active,
   #handwritingPage .service-section-panel:not([data-service-panel="hero"]).active,
-  :is(#economicPage, #phonovideoPage) .service-section-panel:not([data-service-panel="hero"]).active,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel:not([data-service-panel="hero"]).active,
   #constructionPage .service-section-panel:not([data-service-panel="hero"]).active {
     box-sizing: border-box !important;
     width: min(100% - 36px, 1480px) !important;
@@ -11418,7 +11418,7 @@
 
   #autoTechPage .service-section-panel:not([data-service-panel="hero"]).active > article,
   #handwritingPage .service-section-panel:not([data-service-panel="hero"]).active > article,
-  :is(#economicPage, #phonovideoPage) .service-section-panel:not([data-service-panel="hero"]).active > article,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel:not([data-service-panel="hero"]).active > article,
   #constructionPage .service-section-panel:not([data-service-panel="hero"]).active > article {
     box-sizing: border-box !important;
     width: 100% !important;
@@ -11433,8 +11433,8 @@
   #autoTechPage .auto-content-card .auto-approach-list,
   #handwritingPage .construction-content-card .construction-task-list,
   #handwritingPage .construction-content-card .construction-benefit-grid,
-  :is(#economicPage, #phonovideoPage) .construction-content-card .construction-task-list,
-  :is(#economicPage, #phonovideoPage) .construction-content-card .construction-benefit-grid,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-content-card .construction-task-list,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-content-card .construction-benefit-grid,
   #constructionPage .construction-content-card .construction-task-list,
   #constructionPage .construction-content-card .construction-benefit-grid,
   #linguisticPage .construction-content-card .construction-task-list,
@@ -11452,8 +11452,8 @@
   #autoTechPage .auto-content-card .auto-approach-item,
   #handwritingPage .construction-content-card .construction-task-list li,
   #handwritingPage .construction-content-card .construction-benefit-grid li,
-  :is(#economicPage, #phonovideoPage) .construction-content-card .construction-task-list li,
-  :is(#economicPage, #phonovideoPage) .construction-content-card .construction-benefit-grid li,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-content-card .construction-task-list li,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .construction-content-card .construction-benefit-grid li,
   #constructionPage .construction-content-card .construction-task-list li,
   #constructionPage .construction-content-card .construction-benefit-grid li,
   #linguisticPage .construction-content-card .construction-task-list li,
@@ -11469,7 +11469,7 @@
   @media (max-width: 1500px) {
     #autoTechPage .service-section-panel:not([data-service-panel="hero"]).active,
     #handwritingPage .service-section-panel:not([data-service-panel="hero"]).active,
-    :is(#economicPage, #phonovideoPage) .service-section-panel:not([data-service-panel="hero"]).active,
+    :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel:not([data-service-panel="hero"]).active,
     #constructionPage .service-section-panel:not([data-service-panel="hero"]).active {
       grid-template-columns: 1fr !important;
     }
@@ -11477,7 +11477,7 @@
 
   /* ── Materials cards: match the dark blue service-section background ── */
   #handwritingPage .service-section-panel[data-service-panel="materials"] > .construction-content-card,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="materials"] > .construction-content-card,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="materials"] > .construction-content-card,
   #constructionPage .service-section-panel[data-service-panel="materials"] > .construction-content-card,
   #linguisticPage .linguistic-tab-panel[data-linguistic-panel="materials"] > .construction-content-card {
     border-color: rgba(168,216,208,.3) !important;
@@ -11490,35 +11490,35 @@
   }
 
   #handwritingPage .service-section-panel[data-service-panel="materials"] > .construction-content-card::before,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="materials"] > .construction-content-card::before,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="materials"] > .construction-content-card::before,
   #constructionPage .service-section-panel[data-service-panel="materials"] > .construction-content-card::before,
   #linguisticPage .linguistic-tab-panel[data-linguistic-panel="materials"] > .construction-content-card::before {
     background: linear-gradient(var(--mint), rgba(107,191,176,.18)) !important;
   }
 
   #handwritingPage .service-section-panel[data-service-panel="materials"] > .construction-content-card h2,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="materials"] > .construction-content-card h2,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="materials"] > .construction-content-card h2,
   #constructionPage .service-section-panel[data-service-panel="materials"] > .construction-content-card h2,
   #linguisticPage .linguistic-tab-panel[data-linguistic-panel="materials"] > .construction-content-card h2 {
     color: #fff !important;
   }
 
   #handwritingPage .service-section-panel[data-service-panel="materials"] > .construction-content-card .construction-section-kicker,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="materials"] > .construction-content-card .construction-section-kicker,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="materials"] > .construction-content-card .construction-section-kicker,
   #constructionPage .service-section-panel[data-service-panel="materials"] > .construction-content-card .construction-section-kicker,
   #linguisticPage .linguistic-tab-panel[data-linguistic-panel="materials"] > .construction-content-card .construction-section-kicker {
     color: var(--mint-light) !important;
   }
 
   #handwritingPage .service-section-panel[data-service-panel="materials"] > .construction-content-card p,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="materials"] > .construction-content-card p,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="materials"] > .construction-content-card p,
   #constructionPage .service-section-panel[data-service-panel="materials"] > .construction-content-card p,
   #linguisticPage .linguistic-tab-panel[data-linguistic-panel="materials"] > .construction-content-card p {
     color: rgba(255,255,255,.78) !important;
   }
 
   #handwritingPage .service-section-panel[data-service-panel="materials"] .construction-intro-note,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="materials"] .construction-intro-note,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="materials"] .construction-intro-note,
   #constructionPage .service-section-panel[data-service-panel="materials"] .construction-intro-note,
   #linguisticPage .linguistic-tab-panel[data-linguistic-panel="materials"] .construction-intro-note {
     border-color: rgba(255,255,255,.18) !important;
@@ -11527,7 +11527,7 @@
   }
 
   #handwritingPage .service-section-panel[data-service-panel="materials"] .construction-intro-note strong,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="materials"] .construction-intro-note strong,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="materials"] .construction-intro-note strong,
   #constructionPage .service-section-panel[data-service-panel="materials"] .construction-intro-note strong,
   #linguisticPage .linguistic-tab-panel[data-linguistic-panel="materials"] .construction-intro-note strong {
     color: #fff !important;
@@ -11639,7 +11639,7 @@
 
   /* ── Dark fill for whole benefits sections, not only inner list items ── */
   #handwritingPage .service-section-panel[data-service-panel="benefits"] > .construction-content-card:not(.construction-seo-block),
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="benefits"] > .construction-content-card:not(.construction-seo-block),
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="benefits"] > .construction-content-card:not(.construction-seo-block),
   #constructionPage .service-section-panel[data-service-panel="workflow"] > .construction-content-card:not(.construction-seo-block),
   #linguisticPage .linguistic-tab-panel[data-linguistic-panel="benefits"] > .construction-content-card:not(.construction-seo-block) {
     border-color: rgba(168,216,208,.3) !important;
@@ -11652,21 +11652,21 @@
   }
 
   #handwritingPage .service-section-panel[data-service-panel="benefits"] > .construction-content-card:not(.construction-seo-block)::before,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="benefits"] > .construction-content-card:not(.construction-seo-block)::before,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="benefits"] > .construction-content-card:not(.construction-seo-block)::before,
   #constructionPage .service-section-panel[data-service-panel="workflow"] > .construction-content-card:not(.construction-seo-block)::before,
   #linguisticPage .linguistic-tab-panel[data-linguistic-panel="benefits"] > .construction-content-card:not(.construction-seo-block)::before {
     background: linear-gradient(var(--mint), rgba(107,191,176,.18)) !important;
   }
 
   #handwritingPage .service-section-panel[data-service-panel="benefits"] > .construction-content-card:not(.construction-seo-block) h2,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="benefits"] > .construction-content-card:not(.construction-seo-block) h2,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="benefits"] > .construction-content-card:not(.construction-seo-block) h2,
   #constructionPage .service-section-panel[data-service-panel="workflow"] > .construction-content-card:not(.construction-seo-block) h2,
   #linguisticPage .linguistic-tab-panel[data-linguistic-panel="benefits"] > .construction-content-card:not(.construction-seo-block) h2 {
     color: #fff !important;
   }
 
   #handwritingPage .service-section-panel[data-service-panel="benefits"] > .construction-content-card:not(.construction-seo-block) .construction-section-kicker,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="benefits"] > .construction-content-card:not(.construction-seo-block) .construction-section-kicker,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="benefits"] > .construction-content-card:not(.construction-seo-block) .construction-section-kicker,
   #constructionPage .service-section-panel[data-service-panel="workflow"] > .construction-content-card:not(.construction-seo-block) .construction-section-kicker,
   #linguisticPage .linguistic-tab-panel[data-linguistic-panel="benefits"] > .construction-content-card:not(.construction-seo-block) .construction-section-kicker {
     color: var(--mint-light) !important;
@@ -12565,24 +12565,24 @@
   /* Paired content cards: stack vertically across service pages so panels do not look uneven in height. */
   #autoTechPage .service-section-panel[data-service-panel="scope"].active,
   #handwritingPage .service-section-panel[data-service-panel="scope"].active,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="scope"].active,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="scope"].active,
   #constructionPage .service-section-panel[data-service-panel="scope"].active,
   #commodityPage .service-section-panel[data-service-panel="scope"].active,
   #computerPage .service-section-panel[data-service-panel="scope"].active,
   #handwritingPage .service-section-panel[data-service-panel="benefits"].active,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="benefits"].active,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="benefits"].active,
   #commodityPage .service-section-panel[data-service-panel="benefits"].active {
     grid-template-columns: 1fr !important;
   }
 
   #autoTechPage .service-section-panel[data-service-panel="scope"].active > article,
   #handwritingPage .service-section-panel[data-service-panel="scope"].active > article,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="scope"].active > article,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="scope"].active > article,
   #constructionPage .service-section-panel[data-service-panel="scope"].active > article,
   #commodityPage .service-section-panel[data-service-panel="scope"].active > article,
   #computerPage .service-section-panel[data-service-panel="scope"].active > article,
   #handwritingPage .service-section-panel[data-service-panel="benefits"].active > article,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="benefits"].active > article,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="benefits"].active > article,
   #commodityPage .service-section-panel[data-service-panel="benefits"].active > article {
     grid-column: 1 / -1 !important;
     width: 100% !important;
@@ -12656,7 +12656,7 @@
   .single-service-page:not(.other-service-page) .auto-content-card.dark .service-rich-item,
   #commodityPage .service-section-panel[data-service-panel="benefits"] .service-rich-item,
   #handwritingPage .service-section-panel[data-service-panel="benefits"] .service-rich-item,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="benefits"] .service-rich-item,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="benefits"] .service-rich-item,
   #constructionPage .service-section-panel[data-service-panel="workflow"] .service-rich-item,
   #computerPage .service-section-panel[data-service-panel="benefits"] .service-rich-item,
   #linguisticPage .linguistic-tab-panel[data-linguistic-panel="benefits"] .service-rich-item {
@@ -12673,7 +12673,7 @@
   .single-service-page:not(.other-service-page) .auto-content-card.dark .service-rich-item::after,
   #commodityPage .service-section-panel[data-service-panel="benefits"] .service-rich-item::after,
   #handwritingPage .service-section-panel[data-service-panel="benefits"] .service-rich-item::after,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="benefits"] .service-rich-item::after,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="benefits"] .service-rich-item::after,
   #constructionPage .service-section-panel[data-service-panel="workflow"] .service-rich-item::after,
   #computerPage .service-section-panel[data-service-panel="benefits"] .service-rich-item::after,
   #linguisticPage .linguistic-tab-panel[data-linguistic-panel="benefits"] .service-rich-item::after {
@@ -12684,7 +12684,7 @@
   .single-service-page:not(.other-service-page) .auto-content-card.dark .service-rich-item > strong,
   #commodityPage .service-section-panel[data-service-panel="benefits"] .service-rich-item > strong,
   #handwritingPage .service-section-panel[data-service-panel="benefits"] .service-rich-item > strong,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="benefits"] .service-rich-item > strong,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="benefits"] .service-rich-item > strong,
   #constructionPage .service-section-panel[data-service-panel="workflow"] .service-rich-item > strong,
   #computerPage .service-section-panel[data-service-panel="benefits"] .service-rich-item > strong,
   #linguisticPage .linguistic-tab-panel[data-linguistic-panel="benefits"] .service-rich-item > strong {
@@ -12695,7 +12695,7 @@
   .single-service-page:not(.other-service-page) .auto-content-card.dark .service-rich-item > span,
   #commodityPage .service-section-panel[data-service-panel="benefits"] .service-rich-item > span,
   #handwritingPage .service-section-panel[data-service-panel="benefits"] .service-rich-item > span,
-  :is(#economicPage, #phonovideoPage) .service-section-panel[data-service-panel="benefits"] .service-rich-item > span,
+  :is(#economicPage, #phonovideoPage, .new-expertise-page) .service-section-panel[data-service-panel="benefits"] .service-rich-item > span,
   #constructionPage .service-section-panel[data-service-panel="workflow"] .service-rich-item > span,
   #computerPage .service-section-panel[data-service-panel="benefits"] .service-rich-item > span,
   #linguisticPage .linguistic-tab-panel[data-linguistic-panel="benefits"] .service-rich-item > span {
@@ -13449,6 +13449,7 @@
   #autoTechPage,
   #handwritingPage,
   #economicPage,
+  .new-expertise-page,
   #phonovideoPage,
   #constructionPage,
   #linguisticPage,
@@ -13466,6 +13467,7 @@
   #autoTechPage,
   #handwritingPage,
   #economicPage,
+  .new-expertise-page,
   #phonovideoPage,
   #constructionPage,
   #linguisticPage,
@@ -13479,6 +13481,7 @@
   #autoTechPage,
   #handwritingPage,
   #economicPage,
+  .new-expertise-page,
   #phonovideoPage,
   #constructionPage,
   #linguisticPage,
@@ -13501,6 +13504,7 @@
   #autoTechPage,
   #handwritingPage,
   #economicPage,
+  .new-expertise-page,
   #phonovideoPage,
   #constructionPage,
   #linguisticPage,
@@ -13516,6 +13520,7 @@
     #autoTechPage,
     #handwritingPage,
     #economicPage,
+    .new-expertise-page,
     #phonovideoPage,
     #constructionPage,
     #linguisticPage,
@@ -13529,6 +13534,7 @@
     #autoTechPage,
     #handwritingPage,
     #economicPage,
+    .new-expertise-page,
     #phonovideoPage,
     #constructionPage,
     #linguisticPage,
@@ -13544,6 +13550,7 @@
   #autoTechPage,
   #handwritingPage,
   #economicPage,
+  .new-expertise-page,
   #phonovideoPage,
   #constructionPage,
   #linguisticPage,
@@ -13568,6 +13575,7 @@
   #autoTechPage,
   #handwritingPage,
   #economicPage,
+  .new-expertise-page,
   #phonovideoPage,
   #constructionPage,
   #linguisticPage,
@@ -13591,6 +13599,7 @@
   #autoTechPage,
   #handwritingPage,
   #economicPage,
+  .new-expertise-page,
   #phonovideoPage,
   #constructionPage,
   #linguisticPage,
@@ -13616,6 +13625,7 @@
     #autoTechPage,
     #handwritingPage,
     #economicPage,
+    .new-expertise-page,
     #phonovideoPage,
     #constructionPage,
     #linguisticPage,
@@ -13635,6 +13645,7 @@
     #autoTechPage,
     #handwritingPage,
     #economicPage,
+    .new-expertise-page,
     #phonovideoPage,
     #constructionPage,
     #linguisticPage,
@@ -14366,6 +14377,249 @@ body.service-page-open:has(#computerPage.economic-layout-page.active) {
   }
 }
 
+/* Unified site logo supplied by the client. */
+#navbar .nav-logo,
+.single-service-page .service-page-brand,
+.footer-logo {
+  background-image: url('../images/site-logo-transparent.svg');
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#navbar .nav-logo {
+  flex: 0 0 210px;
+  width: 210px;
+  height: 62px;
+  overflow: hidden;
+  color: transparent;
+  font-size: 0;
+}
+
+#navbar .nav-logo-badge,
+.single-service-page .service-page-brand > span {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.single-service-page .service-page-brand {
+  flex: 0 0 210px !important;
+  width: 210px !important;
+  height: 60px !important;
+  max-width: 210px !important;
+  overflow: hidden !important;
+  font-size: 0 !important;
+}
+
+.footer-logo {
+  width: 230px;
+  height: 132px;
+  margin: -20px 0 8px;
+  overflow: hidden;
+  color: transparent;
+  font-size: 0;
+}
+
+@media (max-width: 900px) {
+  #navbar .nav-logo {
+    flex: 0 0 152px;
+    width: 152px;
+    max-width: calc(100% - 54px);
+    height: 56px;
+    background-position: left center;
+  }
+
+  .single-service-page .service-page-brand {
+    flex: 1 1 152px !important;
+    width: 152px !important;
+    height: 50px !important;
+    max-width: 170px !important;
+    background-position: left center;
+  }
+
+  .footer-logo {
+    width: 205px;
+    height: 118px;
+    margin-top: -14px;
+  }
+}
+
+/* ── Ordered expertise catalogue: three columns, four directions each ── */
+@media (min-width: 901px) {
+  .services-popover {
+    width: min(1120px, calc(100vw - 48px));
+  }
+}
+
+.services-popover-column {
+  display: grid;
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  min-width: 0;
+}
+
+.services-popover-column .services-popover-link {
+  height: 100%;
+  min-height: 84px;
+}
+
+.service-mini-letter,
+.svc-letter-icon,
+.drawer-letter-icon {
+  color: var(--blue-deep);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  letter-spacing: -.02em;
+}
+
+.service-mini-letter-wide,
+.svc-letter-icon-wide {
+  font-size: 13px;
+}
+
+.service-mini-title-long {
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.drawer-letter-icon {
+  display: grid !important;
+  place-items: center;
+  font-size: 12px;
+}
+
+.services-grid.ordered-expertise-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, auto));
+  grid-auto-flow: column;
+  align-items: stretch;
+}
+
+.services-grid.ordered-expertise-grid > .service-card:not(.mobile-review-card) {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  height: 100%;
+  min-width: 0;
+  background: var(--white) !important;
+  border-color: var(--blue-pale) !important;
+  color: var(--text-dark) !important;
+}
+
+.services-grid.ordered-expertise-grid > .service-card:not(.mobile-review-card)::before {
+  background: var(--blue-soft) !important;
+  opacity: .5 !important;
+}
+
+.services-grid.ordered-expertise-grid > .service-card:not(.mobile-review-card) .svc-icon {
+  background: var(--blue-soft) !important;
+  color: var(--blue-deep) !important;
+}
+
+.services-grid.ordered-expertise-grid > .service-card:not(.mobile-review-card) .svc-name {
+  color: var(--text-dark) !important;
+}
+
+.services-grid.ordered-expertise-grid > .service-card:not(.mobile-review-card) .svc-desc {
+  max-width: none !important;
+  color: var(--text-mid) !important;
+}
+
+.services-grid.ordered-expertise-grid > .service-card:not(.mobile-review-card) .svc-link {
+  color: var(--mint) !important;
+}
+
+.services-grid.ordered-expertise-grid .svc-name-long {
+  font-size: 15px;
+  line-height: 1.32;
+}
+
+/* Reserved service pages intentionally contain only a title and navigation. */
+.placeholder-service-page.active {
+  animation-delay: .08s;
+}
+
+.placeholder-service-page::after {
+  display: none;
+}
+
+.placeholder-service-shell {
+  position: relative;
+  z-index: 1;
+  min-height: calc(100vh - 132px);
+  margin-top: 24px;
+  padding: clamp(32px, 7vw, 92px);
+  display: grid;
+  align-content: center;
+  border: 1px solid rgba(208,220,232,.92);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(107,191,176,.18), transparent 34%),
+    rgba(255,255,255,.78);
+  box-shadow: 0 20px 54px rgba(61,90,128,.10);
+}
+
+.placeholder-service-kicker {
+  margin-bottom: 16px;
+  color: var(--mint);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.placeholder-service-shell h1 {
+  max-width: 1050px;
+  margin: 0;
+  color: var(--blue-deep);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(42px, 6.4vw, 92px);
+  line-height: 1.02;
+  letter-spacing: -.035em;
+}
+
+.placeholder-service-shell h1 em {
+  color: var(--mint);
+  font-style: normal;
+}
+
+@media (max-width: 900px) {
+  .services-popover-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-popover-column {
+    grid-template-rows: none;
+  }
+
+  .services-grid.ordered-expertise-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-flow: row;
+  }
+
+  .placeholder-service-shell {
+    min-height: calc(100vh - 126px);
+    margin-top: 16px;
+    padding: 30px 22px;
+    border-radius: 22px;
+  }
+
+  .placeholder-service-shell h1 {
+    font-size: clamp(36px, 11vw, 58px);
+    line-height: 1.06;
+    overflow-wrap: break-word;
+  }
+}
+
 /* Main process section: keep the top spacing inside the blue background. */
 #process.process-section {
   padding-top: 28px !important;
@@ -14388,6 +14642,7 @@ body.service-page-open:has(#computerPage.economic-layout-page.active) {
   #autoTechPage,
   #handwritingPage,
   #economicPage,
+  .new-expertise-page,
   #phonovideoPage,
   #constructionPage,
   #linguisticPage,
@@ -14851,6 +15106,7 @@ body.service-page-open:has(#computerPage.economic-layout-page.active) {
   #autoTechPage,
   #handwritingPage,
   #economicPage,
+  .new-expertise-page,
   #phonovideoPage,
   #constructionPage,
   #linguisticPage,
@@ -14875,6 +15131,7 @@ body.service-page-open:has(#computerPage.economic-layout-page.active) {
   #autoTechPage,
   #handwritingPage,
   #economicPage,
+  .new-expertise-page,
   #phonovideoPage,
   #constructionPage,
   #linguisticPage,
@@ -14899,6 +15156,7 @@ body.service-page-open:has(#computerPage.economic-layout-page.active) {
     #autoTechPage,
     #handwritingPage,
     #economicPage,
+    .new-expertise-page,
     #phonovideoPage,
     #constructionPage,
     #linguisticPage,
@@ -14918,6 +15176,7 @@ body.service-page-open:has(#computerPage.economic-layout-page.active) {
     #autoTechPage,
     #handwritingPage,
     #economicPage,
+    .new-expertise-page,
     #phonovideoPage,
     #constructionPage,
     #linguisticPage,
@@ -17071,4 +17330,63 @@ body.expertise-order-open {
     min-height: 0 !important;
     padding: 18px 20px 18px 48px !important;
   }
+}
+
+/* Keep the supplied logo dimensions above the legacy mobile brand rules. */
+#navbar .nav-logo {
+  flex: 0 0 210px !important;
+  width: 210px !important;
+  height: 62px !important;
+  font-size: 0 !important;
+}
+
+@media (max-width: 900px) {
+  #navbar .nav-logo {
+    flex: 0 0 152px !important;
+    width: 152px !important;
+    height: 56px !important;
+    max-width: calc(100% - 54px) !important;
+  }
+
+  .single-service-page .service-page-brand {
+    flex: 1 1 152px !important;
+    width: 152px !important;
+    height: 50px !important;
+    max-width: 170px !important;
+    font-size: 0 !important;
+  }
+}
+
+/* New expertise pages use the economic-page system without an opening animation. */
+.new-expertise-page.active {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+.new-expertise-page .new-expertise-hero-long h1 {
+  font-size: clamp(36px, 4vw, 60px);
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: manual;
+}
+
+@media (max-width: 900px) {
+  .new-expertise-page .new-expertise-hero-long h1 {
+    font-size: clamp(28px, 8.2vw, 36px) !important;
+    overflow-wrap: anywhere !important;
+  }
+}
+
+/* Supplied service icons already include their background and padding. */
+.service-mini-image-icon.service-icon-supplied,
+.service-card-image-icon.service-icon-supplied {
+  object-fit: contain;
+  transform: none;
+  border-radius: inherit;
+}
+
+/* Keep captions legible over the light new photographs. */
+.new-expertise-page .auto-collage-tag {
+  background: rgba(44, 62, 85, .58);
 }

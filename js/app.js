@@ -397,11 +397,14 @@
   const handwritingPage = document.getElementById('handwritingPage');
   const economicPage = document.getElementById('economicPage');
   const computerPage = document.getElementById('computerPage');
-  const phonovideoPage = document.getElementById('phonovideoPage');
   const linguisticPage = document.getElementById('linguisticPage');
   const otherPage = document.getElementById('otherPage');
   const reviewPage = document.getElementById('reviewPage');
   const commodityPage = document.getElementById('commodityPage');
+  const valuationPage = document.getElementById('valuationPage');
+  const tkedPage = document.getElementById('tkedPage');
+  const phonoscopyPage = document.getElementById('phonoscopyPage');
+  const photoVideoPage = document.getElementById('photoVideoPage');
   const privacyPage = document.getElementById('privacyPage');
   const autoOpenTransition = document.getElementById('autoOpenTransition');
   const handwritingOpenPaperStack = document.getElementById('handwritingOpenPaperStack');
@@ -481,11 +484,14 @@
     handwriting: { page: handwritingPage, hash: '#handwriting-page' },
     economic: { page: economicPage, hash: '#economic-page' },
     computer: { page: computerPage, hash: '#computer-page' },
-    phonovideo: { page: phonovideoPage, hash: '#phonovideo-page' },
     linguistic: { page: linguisticPage, hash: '#linguistic-page' },
     other: { page: otherPage, hash: '#other-page' },
     review: { page: reviewPage, hash: '#review-page' },
     commodity: { page: commodityPage, hash: '#commodity-page' },
+    valuation: { page: valuationPage, hash: '#valuation-page' },
+    tked: { page: tkedPage, hash: '#tked-page' },
+    phonoscopy: { page: phonoscopyPage, hash: '#phonoscopy-page' },
+    'photo-video': { page: photoVideoPage, hash: '#photo-video-page' },
     privacy: { page: privacyPage, hash: '#privacy-page' }
   };
 
@@ -560,7 +566,7 @@
   function closeServicePage() {
     document.body.classList.remove('service-page-open');
     hideAllServicePages();
-    if (location.hash === '#auto-tech-page' || location.hash === '#construction-page' || location.hash === '#handwriting-page' || location.hash === '#economic-page' || location.hash === '#computer-page' || location.hash === '#phonovideo-page' || location.hash === '#linguistic-page' || location.hash === '#other-page' || location.hash === '#review-page' || location.hash === '#commodity-page' || location.hash === '#privacy-page') {
+    if (Object.values(servicePages).some(({ hash }) => location.hash === hash)) {
       history.pushState({}, '', location.pathname + location.search);
     }
     window.scrollTo({ top: 0, behavior: 'auto' });
@@ -577,8 +583,6 @@
   function closeEconomicPage() { closeServicePage(); }
   function openComputerPage() { openServicePage('computer', true); }
   function closeComputerPage() { closeServicePage(); }
-  function openPhonovideoPage() { openServicePage('phonovideo', true); }
-  function closePhonovideoPage() { closeServicePage(); }
   function openLinguisticPage() { openServicePage('linguistic', true); }
   function closeLinguisticPage() { closeServicePage(); }
   function openOtherPage() { openServicePage('other', true); }
@@ -625,13 +629,6 @@
     });
   });
 
-  document.querySelectorAll('[data-open-phonovideo-page="true"]').forEach(link => {
-    link.addEventListener('click', event => {
-      event.preventDefault();
-      openPhonovideoPage();
-    });
-  });
-
   document.querySelectorAll('[data-open-linguistic-page="true"]').forEach(link => {
     link.addEventListener('click', event => {
       event.preventDefault();
@@ -667,6 +664,13 @@
     });
   });
 
+  document.querySelectorAll('[data-open-service-page]').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      openServicePage(link.dataset.openServicePage, true);
+    });
+  });
+
   document.querySelectorAll('[data-close-service-page="true"]').forEach(button => {
     button.addEventListener('click', closeOtherPage);
   });
@@ -694,8 +698,6 @@
       showServicePageAfterTransition('economic', false);
     } else if (location.hash === '#computer-page') {
       showServicePageAfterTransition('computer', false);
-    } else if (location.hash === '#phonovideo-page') {
-      showServicePageAfterTransition('phonovideo', false);
     } else if (location.hash === '#linguistic-page') {
       showServicePageAfterTransition('linguistic', false);
     } else if (location.hash === '#other-page') {
@@ -704,6 +706,14 @@
       showServicePageAfterTransition('review', false);
     } else if (location.hash === '#commodity-page') {
       showServicePageAfterTransition('commodity', false);
+    } else if (location.hash === '#valuation-page') {
+      showServicePageAfterTransition('valuation', false);
+    } else if (location.hash === '#tked-page') {
+      showServicePageAfterTransition('tked', false);
+    } else if (location.hash === '#phonoscopy-page') {
+      showServicePageAfterTransition('phonoscopy', false);
+    } else if (location.hash === '#photo-video-page') {
+      showServicePageAfterTransition('photo-video', false);
     } else if (location.hash === '#privacy-page') {
       showServicePageAfterTransition('privacy', false);
     } else if (document.body.classList.contains('service-page-open')) {
@@ -721,8 +731,6 @@
     showServicePageAfterTransition('economic', false);
   } else if (location.hash === '#computer-page') {
     showServicePageAfterTransition('computer', false);
-  } else if (location.hash === '#phonovideo-page') {
-    showServicePageAfterTransition('phonovideo', false);
   } else if (location.hash === '#linguistic-page') {
     showServicePageAfterTransition('linguistic', false);
   } else if (location.hash === '#other-page') {
@@ -731,6 +739,14 @@
     showServicePageAfterTransition('review', false);
   } else if (location.hash === '#commodity-page') {
     showServicePageAfterTransition('commodity', false);
+  } else if (location.hash === '#valuation-page') {
+    showServicePageAfterTransition('valuation', false);
+  } else if (location.hash === '#tked-page') {
+    showServicePageAfterTransition('tked', false);
+  } else if (location.hash === '#phonoscopy-page') {
+    showServicePageAfterTransition('phonoscopy', false);
+  } else if (location.hash === '#photo-video-page') {
+    showServicePageAfterTransition('photo-video', false);
   } else if (location.hash === '#privacy-page') {
     showServicePageAfterTransition('privacy', false);
   }
@@ -1376,6 +1392,22 @@
       },
       commodity: {
         pageId: 'commodityPage',
+        order: ['hero', 'scope', 'types', 'process', 'materials', 'benefits']
+      },
+      valuation: {
+        pageId: 'valuationPage',
+        order: ['hero', 'scope', 'types', 'process', 'materials', 'benefits']
+      },
+      tked: {
+        pageId: 'tkedPage',
+        order: ['hero', 'scope', 'types', 'process', 'materials', 'benefits']
+      },
+      phonoscopy: {
+        pageId: 'phonoscopyPage',
+        order: ['hero', 'scope', 'types', 'process', 'materials', 'benefits']
+      },
+      'photo-video': {
+        pageId: 'photoVideoPage',
         order: ['hero', 'scope', 'types', 'process', 'materials', 'benefits']
       },
       construction: {

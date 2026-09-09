@@ -1,0 +1,102 @@
+{
+  "generator": "Built-in image_gen",
+  "created": "2026-09-07",
+  "images": [
+    {
+      "name": "valuation-real-estate",
+      "page": "valuationPage",
+      "caption": "Недвижимость",
+      "prompt": "Use case: photorealistic-natural. Asset type: individual photo tile for a Russian professional expertise website. Create ONE realistic editorial photograph, square 1024x1024, not a collage. Style: refined natural commercial photography, believable materials, soft diffuse daylight, clean light workspace, cool white and slate-blue palette with restrained pale mint accents, subtle shadows. Main objects centrally composed with enough margin for square or portrait cropping and a small website caption over the bottom. No title, labels, watermark, logo, branding, readable words or artificial decorative graphics. Any paperwork or screen text is small, indistinct and incidental. No faces required. Scene: Real estate appraisal in a bright modern apartment: an appraiser's cropped hand with a laser distance meter resting beside an apartment floor plan, two house keys and a pen on a pale table; softly blurred neutral apartment interior behind. Focus on keys, plan and measuring device."
+    },
+    {
+      "name": "valuation-equipment",
+      "page": "valuationPage",
+      "caption": "Транспорт и оборудование",
+      "prompt": "Use case: photorealistic-natural. Asset type: individual photo tile for a Russian professional expertise website. Create ONE realistic editorial photograph, square 1024x1024, not a collage. Style: refined natural commercial photography, believable materials, soft diffuse daylight, clean light workspace, cool white and slate-blue palette with restrained pale mint accents, subtle shadows. Main objects centrally composed with enough margin for square or portrait cropping and a small website caption over the bottom. No title, labels, watermark, logo, branding, readable words or artificial decorative graphics. Any paperwork or screen text is small, indistinct and incidental. No faces required. Scene: Industrial equipment valuation: cropped professional hands using a digital caliper to measure a clean steel machine component on a tidy inspection workbench, a tablet with indistinct inventory records nearby and blurred industrial machinery behind; realistic daylight workshop, no sparks."
+    },
+    {
+      "name": "valuation-business",
+      "page": "valuationPage",
+      "caption": "Бизнес и доли",
+      "prompt": "Use case: photorealistic-natural. Asset type: individual photo tile for a Russian professional expertise website. Create ONE realistic editorial photograph, square 1024x1024, not a collage. Style: refined natural commercial photography, believable materials, soft diffuse daylight, clean light workspace, cool white and slate-blue palette with restrained pale mint accents, subtle shadows. Main objects centrally composed with enough margin for square or portrait cropping and a small website caption over the bottom. No title, labels, watermark, logo, branding, readable words or artificial decorative graphics. Any paperwork or screen text is small, indistinct and incidental. No faces required. Scene: Business valuation: close three-quarter view of a white desk with a calculator, financial statements with modest blue charts, dark-rim reading glasses and the edge of an open laptop showing a restrained financial chart; an expert's hand checks a printed figure with a pen."
+    },
+    {
+      "name": "valuation-property-rights",
+      "page": "valuationPage",
+      "caption": "Имущественные права",
+      "prompt": "Use case: photorealistic-natural. Asset type: individual photo tile for a Russian professional expertise website. Create ONE realistic editorial photograph, square 1024x1024, not a collage. Style: refined natural commercial photography, believable materials, soft diffuse daylight, clean light workspace, cool white and slate-blue palette with restrained pale mint accents, subtle shadows. Main objects centrally composed with enough margin for square or portrait cropping and a small website caption over the bottom. No title, labels, watermark, logo, branding, readable words or artificial decorative graphics. Any paperwork or screen text is small, indistinct and incidental. No faces required. Scene: Valuation of property rights: close editorial still life of a neatly open contract folder, an elegant pen, a calculator and a small set of property keys on a cool white expert desk. A cropped hand turns a document page. No cash, no gavel, no scales; paper text indistinct."
+    },
+    {
+      "name": "tked-document-materials",
+      "page": "tkedPage",
+      "caption": "Бумага и материалы письма",
+      "prompt": "Use case: photorealistic-natural. Asset type: individual photo tile for a Russian professional expertise website. Create ONE realistic editorial photograph, square 1024x1024, not a collage. Style: refined natural commercial photography, believable materials, soft diffuse daylight, clean light workspace, cool white and slate-blue palette with restrained pale mint accents, subtle shadows. Main objects centrally composed with enough margin for square or portrait cropping and a small website caption over the bottom. No title, labels, watermark, logo, branding, readable words or artificial decorative graphics. Any paperwork or screen text is small, indistinct and incidental. No faces required. Scene: Forensic technical examination of documents: microscope focused on the edge of a paper document on a white laboratory table, subtle paper fibers visible, tweezers and a magnifying glass beside it; one pale nitrile gloved hand holds the page still. Scientific and believable."
+    },
+    {
+      "name": "tked-stamps-signatures",
+      "page": "tkedPage",
+      "caption": "Подписи и оттиски печатей",
+      "prompt": "Use case: photorealistic-natural. Asset type: individual photo tile for a Russian professional expertise website. Create ONE realistic editorial photograph, square 1024x1024, not a collage. Style: refined natural commercial photography, believable materials, soft diffuse daylight, clean light workspace, cool white and slate-blue palette with restrained pale mint accents, subtle shadows. Main objects centrally composed with enough margin for square or portrait cropping and a small website caption over the bottom. No title, labels, watermark, logo, branding, readable words or artificial decorative graphics. Any paperwork or screen text is small, indistinct and incidental. No faces required. Scene: Forensic examination of signatures and stamp impressions: macro angled desk photograph of a circular blue ink stamp and handwritten signature on an anonymous paper document under a glass magnifier held by a pale nitrile gloved hand. Genuine optical magnification, blue ink strokes, no legible text."
+    },
+    {
+      "name": "tked-printing-methods",
+      "page": "tkedPage",
+      "caption": "Способ изготовления документа",
+      "prompt": "Use case: photorealistic-natural. Asset type: individual photo tile for a Russian professional expertise website. Create ONE realistic editorial photograph, square 1024x1024, not a collage. Style: refined natural commercial photography, believable materials, soft diffuse daylight, clean light workspace, cool white and slate-blue palette with restrained pale mint accents, subtle shadows. Main objects centrally composed with enough margin for square or portrait cropping and a small website caption over the bottom. No title, labels, watermark, logo, branding, readable words or artificial decorative graphics. Any paperwork or screen text is small, indistinct and incidental. No faces required. Scene: Document printing method examination: macro laboratory photograph of a compact digital microscope aimed at printed ink lines on a white document; a monitor softly blurred behind displays enlarged black printer dots on pale background. Tidy cool white desk, gloved fingertip at paper corner."
+    },
+    {
+      "name": "tked-document-alterations",
+      "page": "tkedPage",
+      "caption": "Изменения в документах",
+      "prompt": "Use case: photorealistic-natural. Asset type: individual photo tile for a Russian professional expertise website. Create ONE realistic editorial photograph, square 1024x1024, not a collage. Style: refined natural commercial photography, believable materials, soft diffuse daylight, clean light workspace, cool white and slate-blue palette with restrained pale mint accents, subtle shadows. Main objects centrally composed with enough margin for square or portrait cropping and a small website caption over the bottom. No title, labels, watermark, logo, branding, readable words or artificial decorative graphics. Any paperwork or screen text is small, indistinct and incidental. No faces required. Scene: Examination of alterations in a paper document: forensic expert's pale gloved hand holds a small UV inspection lamp over a paper sheet, a subtle violet patch revealing a locally altered ink area; a loupe and clean metal ruler nearby. Overall bright cool laboratory light, only restrained UV glow, no dark crime scene."
+    },
+    {
+      "name": "phonoscopy-speaker-identification",
+      "page": "phonoscopyPage",
+      "caption": "Идентификация по голосу",
+      "prompt": "Use case: photorealistic-natural. Asset type: individual photo tile for a Russian professional expertise website. Create ONE realistic editorial photograph, square 1024x1024, not a collage. Style: refined natural commercial photography, believable materials, soft diffuse daylight, clean light workspace, cool white and slate-blue palette with restrained pale mint accents, subtle shadows. Main objects centrally composed with enough margin for square or portrait cropping and a small website caption over the bottom. No title, labels, watermark, logo, branding, readable words or artificial decorative graphics. Any paperwork or screen text is small, indistinct and incidental. No faces required. Scene: Forensic voice comparison: a tidy white audio expert desk with a large monitor showing two aligned blue speech waveforms on a pale interface, quality over-ear headphones in the foreground and a cropped hand on the mouse. Realistic audio workstation, no readable interface labels."
+    },
+    {
+      "name": "phonoscopy-audio-recordings",
+      "page": "phonoscopyPage",
+      "caption": "Исследование аудиозаписей",
+      "prompt": "Use case: photorealistic-natural. Asset type: individual photo tile for a Russian professional expertise website. Create ONE realistic editorial photograph, square 1024x1024, not a collage. Style: refined natural commercial photography, believable materials, soft diffuse daylight, clean light workspace, cool white and slate-blue palette with restrained pale mint accents, subtle shadows. Main objects centrally composed with enough margin for square or portrait cropping and a small website caption over the bottom. No title, labels, watermark, logo, branding, readable words or artificial decorative graphics. Any paperwork or screen text is small, indistinct and incidental. No faces required. Scene: Close editorial still life of a professional portable digital audio recorder, a compact microphone and a single SD memory card on a light expert workbench, open laptop blurred behind displaying a blue audio waveform. Cool daylight, realistic electronics, no branding."
+    },
+    {
+      "name": "phonoscopy-edit-detection",
+      "page": "phonoscopyPage",
+      "caption": "Проверка монтажа записи",
+      "prompt": "Use case: photorealistic-natural. Asset type: individual photo tile for a Russian professional expertise website. Create ONE realistic editorial photograph, square 1024x1024, not a collage. Style: refined natural commercial photography, believable materials, soft diffuse daylight, clean light workspace, cool white and slate-blue palette with restrained pale mint accents, subtle shadows. Main objects centrally composed with enough margin for square or portrait cropping and a small website caption over the bottom. No title, labels, watermark, logo, branding, readable words or artificial decorative graphics. Any paperwork or screen text is small, indistinct and incidental. No faces required. Scene: Audio authenticity examination: angled close view of a monitor displaying a believable audio spectrogram in restrained blue teal and a waveform above, an expert's cropped hand using a trackpad nearby, compact audio interface on clean white desk. Screens are physical, no floating graphics, bright studio."
+    },
+    {
+      "name": "phonoscopy-speech-content",
+      "page": "phonoscopyPage",
+      "caption": "Содержание речи",
+      "prompt": "Use case: photorealistic-natural. Asset type: individual photo tile for a Russian professional expertise website. Create ONE realistic editorial photograph, square 1024x1024, not a collage. Style: refined natural commercial photography, believable materials, soft diffuse daylight, clean light workspace, cool white and slate-blue palette with restrained pale mint accents, subtle shadows. Main objects centrally composed with enough margin for square or portrait cropping and a small website caption over the bottom. No title, labels, watermark, logo, branding, readable words or artificial decorative graphics. Any paperwork or screen text is small, indistinct and incidental. No faces required. Scene: Speech content transcription at a bright expert desk: quality headphones resting over a notebook with indistinct small notes, cropped hands typing on a slim keyboard and a laptop showing a modest audio waveform beside a transcript document. Natural realistic textures, light blue-gray office."
+    },
+    {
+      "name": "photo-video-photographs",
+      "page": "photoVideoPage",
+      "caption": "Исследование фотографий",
+      "prompt": "Use case: photorealistic-natural. Asset type: individual photo tile for a Russian professional expertise website. Create ONE realistic editorial photograph, square 1024x1024, not a collage. Style: refined natural commercial photography, believable materials, soft diffuse daylight, clean light workspace, cool white and slate-blue palette with restrained pale mint accents, subtle shadows. Main objects centrally composed with enough margin for square or portrait cropping and a small website caption over the bottom. No title, labels, watermark, logo, branding, readable words or artificial decorative graphics. Any paperwork or screen text is small, indistinct and incidental. No faces required. Scene: Forensic analysis of photographs: professional camera with lens on a white desk, several photographic prints showing an ordinary empty courtyard and building details, a magnifying glass held over one print by a pale gloved hand. Cool daylight, photographic prints are objects within one real scene."
+    },
+    {
+      "name": "photo-video-recordings",
+      "page": "photoVideoPage",
+      "caption": "Исследование видеозаписей",
+      "prompt": "Use case: photorealistic-natural. Asset type: individual photo tile for a Russian professional expertise website. Create ONE realistic editorial photograph, square 1024x1024, not a collage. Style: refined natural commercial photography, believable materials, soft diffuse daylight, clean light workspace, cool white and slate-blue palette with restrained pale mint accents, subtle shadows. Main objects centrally composed with enough margin for square or portrait cropping and a small website caption over the bottom. No title, labels, watermark, logo, branding, readable words or artificial decorative graphics. Any paperwork or screen text is small, indistinct and incidental. No faces required. Scene: Video recording examination: clean professional desk with a physical monitor showing one daylight security-camera frame of an empty parking area above a restrained video timeline; small external storage drive nearby and an expert's cropped hand on a mouse. Natural light, no people identified, no logos."
+    },
+    {
+      "name": "photo-video-edit-detection",
+      "page": "photoVideoPage",
+      "caption": "Признаки монтажа",
+      "prompt": "Use case: photorealistic-natural. Asset type: individual photo tile for a Russian professional expertise website. Create ONE realistic editorial photograph, square 1024x1024, not a collage. Style: refined natural commercial photography, believable materials, soft diffuse daylight, clean light workspace, cool white and slate-blue palette with restrained pale mint accents, subtle shadows. Main objects centrally composed with enough margin for square or portrait cropping and a small website caption over the bottom. No title, labels, watermark, logo, branding, readable words or artificial decorative graphics. Any paperwork or screen text is small, indistinct and incidental. No faces required. Scene: Image manipulation examination: angled close photograph of a real pen-display tablet on a white desk showing a magnified architectural photo detail with a subtle rectangular selection around a changed window edge; a cropped expert hand points with a stylus, camera lens blurred behind. Professional, realistic, no floating graphics or readable labels."
+    },
+    {
+      "name": "photo-video-frame-comparison",
+      "page": "photoVideoPage",
+      "caption": "Сопоставление объектов и кадров",
+      "prompt": "Use case: photorealistic-natural. Asset type: individual photo tile for a Russian professional expertise website. Create ONE realistic editorial photograph, square 1024x1024, not a collage. Style: refined natural commercial photography, believable materials, soft diffuse daylight, clean light workspace, cool white and slate-blue palette with restrained pale mint accents, subtle shadows. Main objects centrally composed with enough margin for square or portrait cropping and a small website caption over the bottom. No title, labels, watermark, logo, branding, readable words or artificial decorative graphics. Any paperwork or screen text is small, indistinct and incidental. No faces required. Scene: Forensic comparison of objects across video frames: two printed photographs of the same unbranded blue compact car seen from different viewpoints on a light expert desk, cropped pale-gloved hands align the prints with a small measuring ruler; tablet softly blurred behind. No readable license plates, no collage layout of the output; one coherent real desk photograph."
+    }
+  ]
+}
