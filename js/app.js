@@ -492,6 +492,12 @@
     tked: { page: tkedPage, hash: '#tked-page' },
     phonoscopy: { page: phonoscopyPage, hash: '#phonoscopy-page' },
     'photo-video': { page: photoVideoPage, hash: '#photo-video-page' },
+    'ballistics': { page: document.getElementById('ballisticsPage'), hash: '#ballistics-page' },
+    'portrait': { page: document.getElementById('portraitPage'), hash: '#portrait-page' },
+    'cold-weapon': { page: document.getElementById('coldWeaponPage'), hash: '#cold-weapon-page' },
+    'document-age': { page: document.getElementById('documentAgePage'), hash: '#document-age-page' },
+    'authorship': { page: document.getElementById('authorshipPage'), hash: '#authorship-page' },
+    'fire-technical': { page: document.getElementById('fireTechnicalPage'), hash: '#fire-technical-page' },
     privacy: { page: privacyPage, hash: '#privacy-page' }
   };
 
@@ -687,70 +693,21 @@
     });
   });
 
+  function serviceKeyForCurrentHash() {
+    return Object.keys(servicePages).find(key => servicePages[key].hash === location.hash);
+  }
+
   window.addEventListener('popstate', () => {
-    if (location.hash === '#auto-tech-page') {
-      showServicePageAfterTransition('auto-tech', false);
-    } else if (location.hash === '#construction-page') {
-      showServicePageAfterTransition('construction', false);
-    } else if (location.hash === '#handwriting-page') {
-      showServicePageAfterTransition('handwriting', false);
-    } else if (location.hash === '#economic-page') {
-      showServicePageAfterTransition('economic', false);
-    } else if (location.hash === '#computer-page') {
-      showServicePageAfterTransition('computer', false);
-    } else if (location.hash === '#linguistic-page') {
-      showServicePageAfterTransition('linguistic', false);
-    } else if (location.hash === '#other-page') {
-      showServicePageAfterTransition('other', false);
-    } else if (location.hash === '#review-page') {
-      showServicePageAfterTransition('review', false);
-    } else if (location.hash === '#commodity-page') {
-      showServicePageAfterTransition('commodity', false);
-    } else if (location.hash === '#valuation-page') {
-      showServicePageAfterTransition('valuation', false);
-    } else if (location.hash === '#tked-page') {
-      showServicePageAfterTransition('tked', false);
-    } else if (location.hash === '#phonoscopy-page') {
-      showServicePageAfterTransition('phonoscopy', false);
-    } else if (location.hash === '#photo-video-page') {
-      showServicePageAfterTransition('photo-video', false);
-    } else if (location.hash === '#privacy-page') {
-      showServicePageAfterTransition('privacy', false);
+    const serviceKey = serviceKeyForCurrentHash();
+    if (serviceKey) {
+      showServicePageAfterTransition(serviceKey, false);
     } else if (document.body.classList.contains('service-page-open')) {
       closeServicePage();
     }
   });
 
-  if (location.hash === '#auto-tech-page') {
-    showServicePageAfterTransition('auto-tech', false);
-  } else if (location.hash === '#construction-page') {
-    showServicePageAfterTransition('construction', false);
-  } else if (location.hash === '#handwriting-page') {
-    showServicePageAfterTransition('handwriting', false);
-  } else if (location.hash === '#economic-page') {
-    showServicePageAfterTransition('economic', false);
-  } else if (location.hash === '#computer-page') {
-    showServicePageAfterTransition('computer', false);
-  } else if (location.hash === '#linguistic-page') {
-    showServicePageAfterTransition('linguistic', false);
-  } else if (location.hash === '#other-page') {
-    showServicePageAfterTransition('other', false);
-  } else if (location.hash === '#review-page') {
-    showServicePageAfterTransition('review', false);
-  } else if (location.hash === '#commodity-page') {
-    showServicePageAfterTransition('commodity', false);
-  } else if (location.hash === '#valuation-page') {
-    showServicePageAfterTransition('valuation', false);
-  } else if (location.hash === '#tked-page') {
-    showServicePageAfterTransition('tked', false);
-  } else if (location.hash === '#phonoscopy-page') {
-    showServicePageAfterTransition('phonoscopy', false);
-  } else if (location.hash === '#photo-video-page') {
-    showServicePageAfterTransition('photo-video', false);
-  } else if (location.hash === '#privacy-page') {
-    showServicePageAfterTransition('privacy', false);
-  }
-
+  const initialServiceKey = serviceKeyForCurrentHash();
+  if (initialServiceKey) showServicePageAfterTransition(initialServiceKey, false);
 
   // Custom cursor
   const cursor = document.getElementById('cursor');
@@ -1408,6 +1365,30 @@
       },
       'photo-video': {
         pageId: 'photoVideoPage',
+        order: ['hero', 'scope', 'types', 'process', 'materials', 'benefits']
+      },
+      'ballistics': {
+        pageId: 'ballisticsPage',
+        order: ['hero', 'scope', 'types', 'process', 'materials', 'benefits']
+      },
+      'portrait': {
+        pageId: 'portraitPage',
+        order: ['hero', 'scope', 'types', 'process', 'materials', 'benefits']
+      },
+      'cold-weapon': {
+        pageId: 'coldWeaponPage',
+        order: ['hero', 'scope', 'types', 'process', 'materials', 'benefits']
+      },
+      'document-age': {
+        pageId: 'documentAgePage',
+        order: ['hero', 'scope', 'types', 'process', 'materials', 'benefits']
+      },
+      'authorship': {
+        pageId: 'authorshipPage',
+        order: ['hero', 'scope', 'types', 'process', 'materials', 'benefits']
+      },
+      'fire-technical': {
+        pageId: 'fireTechnicalPage',
         order: ['hero', 'scope', 'types', 'process', 'materials', 'benefits']
       },
       construction: {
@@ -2516,6 +2497,8 @@
     var fileList = layer.querySelector('[data-expertise-order-file-list]');
     var status = layer.querySelector('[data-expertise-order-status]');
     var submitButton = layer.querySelector('[data-expertise-order-submit]');
+    var serviceInput = layer.querySelector('[data-expertise-order-service]');
+    var serviceField = layer.querySelector('[data-expertise-order-subject]');
     var dropzone = layer.querySelector('.expertise-order-dropzone');
     var returnFocus = null;
 
@@ -2561,6 +2544,9 @@
       closeServicesMenu();
       closeChatWidget();
       resetFormState();
+      var serviceName = trigger?.dataset.expertiseName || '';
+      if (serviceInput) serviceInput.value = serviceName;
+      if (serviceField) serviceField.hidden = !serviceName;
       returnFocus = trigger || document.activeElement;
       layer.classList.add('active');
       layer.setAttribute('aria-hidden', 'false');
@@ -2620,9 +2606,7 @@
     }
 
     function completeOrderRequest() {
-      setStatus('Согласие подтверждено. Заявка на экспертизу готова к отправке.', true);
-      form?.reset();
-      renderFiles();
+      setStatus('Отправка заявок пока недоступна. Данные не отправлены; заполненная форма сохранена до закрытия окна.', false);
     }
 
     document.querySelectorAll('[data-open-expertise-order="true"]').forEach(function(trigger) {
@@ -2669,13 +2653,21 @@
       });
     });
 
-    submitButton?.addEventListener('click', function() {
+    function requestOrderConsent(event) {
+      event.preventDefault();
       if (!validateForm()) return;
-      requestPrivacyConsent({
-        form: form,
-        trigger: submitButton,
-        onConfirm: completeOrderRequest
-      });
+      requestPrivacyConsent({ form: form, trigger: submitButton, onConfirm: completeOrderRequest });
+    }
+    submitButton?.addEventListener('click', requestOrderConsent);
+    form?.addEventListener('submit', requestOrderConsent);
+
+    dialog?.addEventListener('keydown', function(event) {
+      if (event.key !== 'Tab' || privacyConsentLayer?.classList.contains('active')) return;
+      var controls = Array.from(dialog.querySelectorAll('button, a[href], input, textarea, select, [tabindex]'))
+        .filter(function(el) { return !el.disabled && el.tabIndex >= 0 && el.getClientRects().length; });
+      var first = controls[0], last = controls[controls.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
     });
 
     document.addEventListener('keydown', function(event) {

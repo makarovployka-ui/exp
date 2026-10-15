@@ -14381,7 +14381,7 @@ body.service-page-open:has(#computerPage.economic-layout-page.active) {
 #navbar .nav-logo,
 .single-service-page .service-page-brand,
 .footer-logo {
-  background-image: url('../images/site-logo-transparent.svg');
+  background-image: url('../images/site-logo-blue-red-rf.png');
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
@@ -14453,7 +14453,7 @@ body.service-page-open:has(#computerPage.economic-layout-page.active) {
   }
 }
 
-/* ── Ordered expertise catalogue: three columns, four directions each ── */
+/* ── Ordered expertise catalogue: three columns, six directions each ── */
 @media (min-width: 901px) {
   .services-popover {
     width: min(1120px, calc(100vw - 48px));
@@ -14462,7 +14462,7 @@ body.service-page-open:has(#computerPage.economic-layout-page.active) {
 
 .services-popover-column {
   display: grid;
-  grid-template-rows: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(6, minmax(0, 1fr));
   gap: 10px;
   min-width: 0;
 }
@@ -14499,7 +14499,7 @@ body.service-page-open:has(#computerPage.economic-layout-page.active) {
 
 .services-grid.ordered-expertise-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: repeat(4, minmax(0, auto));
+  grid-template-rows: repeat(6, minmax(0, auto));
   grid-auto-flow: column;
   align-items: stretch;
 }
@@ -14544,7 +14544,9 @@ body.service-page-open:has(#computerPage.economic-layout-page.active) {
 
 /* Reserved service pages intentionally contain only a title and navigation. */
 .placeholder-service-page.active {
-  animation-delay: .08s;
+  animation: none;
+  opacity: 1;
+  transform: none;
 }
 
 .placeholder-service-page::after {
@@ -17389,4 +17391,206 @@ body.expertise-order-open {
 /* Keep captions legible over the light new photographs. */
 .new-expertise-page .auto-collage-tag {
   background: rgba(44, 62, 85, .58);
+}
+
+/* Heading within the review introduction keeps the existing note typography. */
+#reviewPage .review-note-title {
+  margin: 0 0 12px;
+  color: var(--blue-deep);
+  font-family: inherit;
+  font-size: 1.2em !important;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* Reserved directions use the catalogue styling until their content is added. */
+.services-grid.ordered-expertise-grid > .service-card-reserved {
+  display: flex;
+  flex-direction: column;
+}
+.services-grid.ordered-expertise-grid > .service-card-reserved .svc-link {
+  margin-top: auto;
+  padding-top: 20px;
+}
+.placeholder-service-shell h1 {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+@media (min-width: 901px) {
+  .services-popover {
+    max-height: calc(100dvh - 112px);
+    overflow-y: auto;
+  }
+}
+@media (max-width: 900px) {
+  .placeholder-service-shell h1 {
+    font-size: clamp(28px, 8vw, 40px) !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+  }
+}
+
+/* Six forensic directions share the economic layouts and open immediately. */
+.forensic-expertise-page [data-service-panel="hero"].active,
+.forensic-expertise-page [data-service-panel="hero"] .auto-page-hero-copy,
+.forensic-expertise-page [data-service-panel="hero"] .auto-collage-wrap {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+.forensic-service-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
+.forensic-service-actions .btn-primary { max-width: 100%; white-space: normal; text-align: left; }
+.forensic-faq-item { border-bottom: 1px solid var(--blue-pale); padding: 18px 0; }
+.forensic-faq-item:last-child { border-bottom: 0; }
+.forensic-faq-item summary { cursor: pointer; color: var(--blue-deep); font-weight: 700; line-height: 1.45; }
+.forensic-faq-item summary::marker { color: var(--mint); }
+.forensic-faq-item p { margin: 14px 0 0; }
+.forensic-faq-item summary:focus-visible { outline: 2px solid var(--mint); outline-offset: 6px; border-radius: 4px; }
+.expertise-order-subject[hidden] { display: none !important; }
+.expertise-order-subject input { background: var(--blue-soft); }
+body.expertise-order-open .forensic-expertise-page.active { overflow: hidden !important; }
+@media (max-width: 900px) {
+  .forensic-service-actions .btn-primary { width: 100%; justify-content: space-between; }
+}
+.forensic-expertise-page [data-service-panel="benefits"] .forensic-faq-item summary {
+  color: #fff;
+}
+
+/* Document-supplied expertise introductions: allow the full text to breathe. */
+.single-service-page:not(.other-service-page) .expertise-document-hero {
+  height: auto !important;
+  max-height: none !important;
+  align-items: start !important;
+  row-gap: 24px !important;
+  padding-bottom: 32px !important;
+}
+.expertise-document-hero > .auto-page-hero-copy {
+  min-width: 0;
+}
+.expertise-document-hero .auto-page-intro {
+  overflow-wrap: break-word;
+}
+.single-service-page:not(.other-service-page) .expertise-document-hero > .expertise-hero-context {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin-top: 0;
+  padding: clamp(22px, 2.5vw, 34px);
+  box-sizing: border-box;
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: left;
+}
+.expertise-hero-context h2 {
+  margin: 0 0 16px;
+  font-family: 'Playfair Display', serif;
+  color: var(--text-dark);
+  font-size: clamp(23px, 2.2vw, 30px);
+  line-height: 1.3;
+}
+.expertise-hero-context-text {
+  max-width: 1120px;
+}
+.expertise-hero-context-text p {
+  margin: 0;
+  overflow-wrap: break-word;
+}
+.expertise-hero-context-text p + p {
+  margin-top: 14px;
+}
+@media (max-width: 760px) {
+  .single-service-page:not(.other-service-page) .expertise-document-hero {
+    padding-bottom: 16px !important;
+    row-gap: 16px !important;
+  }
+  .single-service-page:not(.other-service-page) .expertise-document-hero > .expertise-hero-context {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+  }
+  .expertise-hero-context h2 { font-size: 22px; }
+  }
+.single-service-page:not(.other-service-page) .expertise-document-hero .expertise-hero-context h2 {
+  max-width: none !important;
+  margin: 0 0 16px !important;
+  font-size: clamp(23px, 2.2vw, 30px) !important;
+  line-height: 1.3 !important;
+}
+@media (max-width: 760px) {
+  .single-service-page:not(.other-service-page) .expertise-document-hero .expertise-hero-context h2 {
+    font-size: 22px !important;
+  }
+}
+
+/* Keep the context card inside the inset frame, including older page overrides. */
+.single-service-page:is(#handwritingPage, #autoTechPage, #linguisticPage, .new-expertise-page) .auto-page-hero.expertise-document-hero {
+  padding-bottom: 46px !important;
+}
+.hero-motto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 .3em;
+  width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 24px;
+  padding: 12px 18px;
+  border-left: 3px solid var(--mint);
+  border-radius: 0 12px 12px 0;
+  background: linear-gradient(90deg, rgba(107,191,176,.13), rgba(107,191,176,.025));
+  color: var(--blue-deep);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 1.65vw, 24px);
+  font-weight: 500;
+  line-height: 1.45;
+}
+@media (max-width: 900px) {
+  .single-service-page:is(#handwritingPage, #autoTechPage, #linguisticPage, .new-expertise-page) .auto-page-hero.expertise-document-hero {
+    padding-bottom: 26px !important;
+  }
+  .hero-motto { padding: 10px 13px; margin-bottom: 22px; font-size: 18px; }
+}
+
+/* A non-blocking notice, separate from consent for submitting an application. */
+.cookie-notice[hidden], .cookie-settings[hidden] { display: none !important; }
+.cookie-notice {
+  position: fixed;
+  z-index: 4400;
+  left: max(20px, env(safe-area-inset-left));
+  bottom: max(20px, env(safe-area-inset-bottom));
+  width: min(460px, calc(100vw - 40px));
+  max-height: calc(100dvh - 100px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  box-sizing: border-box;
+  padding: 24px;
+  border: 1px solid var(--blue-pale);
+  border-radius: 22px;
+  background: #f8fbfc;
+  box-shadow: 0 14px 50px rgba(44,62,85,.19);
+  color: var(--text-dark);
+}
+.cookie-notice-heading { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.cookie-notice-dot { width: 9px; height: 9px; flex: 0 0 9px; border-radius: 50%; background: var(--mint); }
+.cookie-notice h2 { margin: 0; font-family: 'Playfair Display', serif; font-size: 23px; line-height: 1.25; }
+.cookie-notice p { margin: 0 0 10px; font-size: 14px; line-height: 1.6; }
+.cookie-notice .cookie-notice-secondary { font-size: 13px; color: var(--text-mid); }
+.cookie-notice a { display: inline-block; color: var(--blue-deep); text-decoration: underline; text-underline-offset: 3px; font-size: 13px; line-height: 1.5; }
+.cookie-notice-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.cookie-choice { flex: 1 1 auto; border: 1px solid var(--blue-deep); border-radius: 11px; background: #fff; color: var(--blue-deep); padding: 12px 16px; min-height: 44px; font: 600 13px/1.4 'Raleway', sans-serif; cursor: pointer; }
+.cookie-choice-primary { background: var(--blue-deep); color: #fff; }
+.cookie-choice:hover { box-shadow: 0 3px 12px rgba(61,90,128,.15); }
+.cookie-settings { position: fixed; z-index: 4400; bottom: max(12px, env(safe-area-inset-bottom)); left: 16px; min-height: 40px; padding: 8px 14px; border: 1px solid var(--blue-pale); border-radius: 999px; background: #f8fbfc; color: var(--blue-deep); font: 600 12px/1.4 'Raleway', sans-serif; cursor: pointer; box-shadow: 0 4px 16px rgba(44,62,85,.1); }
+.cookie-footer-link { border: 0; background: none; color: inherit; font: inherit; padding: 0; text-decoration: underline; cursor: pointer; }
+.cookie-notice :focus-visible, .cookie-settings:focus-visible, .cookie-footer-link:focus-visible, #privacyCookies .cookie-choice:focus-visible { outline: 3px solid var(--mint); outline-offset: 3px; }
+.cookie-status { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+#privacyCookies { scroll-margin-top: 100px; }
+#privacyCookies h3 { margin: 22px 0 10px; color: var(--blue-deep); font-size: 18px; }
+#privacyCookies code { overflow-wrap: anywhere; }
+body.expertise-order-open .cookie-notice, body.expertise-order-open .cookie-settings,
+body.privacy-consent-open .cookie-notice, body.privacy-consent-open .cookie-settings,
+body.chat-widget-open .cookie-notice, body.chat-widget-open .cookie-settings { visibility: hidden; }
+@media (max-width: 600px) {
+  .cookie-notice { left: 12px; bottom: max(12px, env(safe-area-inset-bottom)); width: calc(100vw - 24px); padding: 18px; border-radius: 18px; }
+  .cookie-notice h2 { font-size: 21px; }
 }

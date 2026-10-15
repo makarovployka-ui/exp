@@ -1,0 +1,3 @@
+Built-in imagegen edit of images/site-logo.png. Preserve the Russia map silhouette, proportions and typography. Fill the map in website blue #3D5A80; make ВСЕ and экспертизы.РФ white. Remove flag waves, red and swooshes. Keep true transparent alpha outside the silhouette. Result: images/site-logo-blue-white.png.
+
+Cleanup via built-in imagegen: Paint over the dark blurry smudge shown in the user closeup with matching blue fill; preserve the map, white text and transparent background. Result: images/site-logo-blue-white-clean.png.

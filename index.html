@@ -8,9 +8,23 @@
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&amp;family=Raleway:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="./css/styles.css?v=20260907d" rel="stylesheet"/>
+<link href="./css/styles.css?v=20260923b" rel="stylesheet"/>
 </head>
 <body>
+<!-- Browser-storage consent: independent from application-form consent. -->
+<section class="cookie-notice" id="cookieNotice" aria-labelledby="cookieNoticeTitle" hidden>
+  <div class="cookie-notice-heading"><span aria-hidden="true" class="cookie-notice-dot"></span><h2 id="cookieNoticeTitle">Cookie и конфиденциальность</h2></div>
+  <p>Аналитические и рекламные cookie не подключены. С вашего согласия мы сохраним настройку в этом браузере на 180 дней, чтобы не показывать эту плашку повторно.</p>
+  <p class="cookie-notice-secondary">Без сохранения сайт продолжит работать. Изменить выбор можно кнопкой «Cookie».</p>
+  <a href="#privacy-page" data-open-privacy-page="true" data-cookie-policy>Подробнее в политике обработки данных</a>
+  <div class="cookie-notice-actions">
+    <button type="button" class="cookie-choice cookie-choice-primary" data-cookie-accept>Согласен</button>
+    <button type="button" class="cookie-choice" data-cookie-decline>Без сохранения</button>
+  </div>
+</section>
+<button class="cookie-settings" id="cookieSettings" type="button" aria-controls="cookieNotice" aria-expanded="false" hidden>Cookie</button>
+<div class="cookie-status" id="cookieStatus" role="status" aria-live="polite"></div>
+
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 <!-- ── PERSONAL DATA CONSENT DIALOG ── -->
@@ -43,6 +57,7 @@
 <h2 id="expertiseOrderTitle">Заказать экспертизу</h2>
 <p id="expertiseOrderDescription">Расскажите о задаче и оставьте контакты. Мы изучим запрос, подберём подходящее направление экспертизы и свяжемся с вами.</p>
 <form class="review-upload-form expertise-order-form" data-expertise-order-form="">
+<label class="review-field review-field-full expertise-order-subject" data-expertise-order-subject hidden><span>Вид экспертизы</span><input data-expertise-order-service name="expertise_order_service" type="text" readonly/></label>
 <div class="review-form-grid">
 <label class="review-field">
 <span>Имя</span>
@@ -89,7 +104,6 @@
 <li><a href="#contact">Контакты</a></li>
 </ul>
 <div class="nav-cta">
-<a class="btn-phone" href="tel:+78001234567">+7 (800) 123-45-67</a>
 <button class="btn-order" onclick="openDrawer()">Заказать</button>
 <button class="hamburger" id="hamburger" onclick="toggleDrawer()">
 <span></span><span></span><span></span>
@@ -132,18 +146,24 @@
 <a class="services-popover-link" data-open-service-page="valuation" href="#valuation-page"><span class="service-mini-icon"><img alt="" aria-hidden="true" class="service-mini-image-icon service-icon-supplied" src="./images/New/ocenochnaya_ekspertiza.png"/></span><span class="service-mini-copy"><span class="service-mini-title">Оценочная</span><span class="service-mini-sub">Стоимость имущества и активов</span></span></a>
 <a class="services-popover-link" data-open-commodity-page="true" href="#commodity-page"><span class="service-mini-icon"><img alt="" aria-hidden="true" class="service-mini-image-icon" src="./images/tags-site/New/ChatGPT Image 1 июл. 2026 г., 22_11_20 (1).png"/></span><span class="service-mini-copy"><span class="service-mini-title">Товароведческая</span><span class="service-mini-sub">Товары, качество, дефекты, стоимость</span></span></a>
 <a class="services-popover-link" data-open-construction-page="true" href="#construction-page"><span class="service-mini-icon"><span aria-hidden="true" class="tag-icon tag-icon-construction"></span></span><span class="service-mini-copy"><span class="service-mini-title">Строительно-техническая</span><span class="service-mini-sub">Объекты, ремонт, дефекты</span></span></a>
+<a class="services-popover-link" data-open-auto-page="true" href="#auto-tech-page"><span class="service-mini-icon"><span aria-hidden="true" class="tag-icon tag-icon-auto"></span></span><span class="service-mini-copy"><span class="service-mini-title">Автотехническая</span><span class="service-mini-sub">ДТП, ущерб, состояние автомобиля</span></span></a>
+<a class="services-popover-link" data-open-service-page="ballistics" href="#ballistics-page"><span class="service-mini-icon"><img alt="" aria-hidden="true" class="service-mini-image-icon service-icon-supplied" src="./images/New/2/ChatGPT Image 9 сент. 2026 г., 19_46_00.png"/></span><span class="service-mini-copy"><span class="service-mini-title">Баллистическая</span><span class="service-mini-sub">Исследование оружия, пуль, гильз и следов выстрела.</span></span></a>
 </div>
 <div class="services-popover-column">
 <a class="services-popover-link" data-open-handwriting-page="true" href="#handwriting-page"><span class="service-mini-icon"><span aria-hidden="true" class="tag-icon tag-icon-handwriting"></span></span><span class="service-mini-copy"><span class="service-mini-title">Почерковедческая</span><span class="service-mini-sub">Подписи, рукописный текст, документы</span></span></a>
 <a class="services-popover-link" data-open-service-page="tked" href="#tked-page"><span class="service-mini-icon"><img alt="" aria-hidden="true" class="service-mini-image-icon service-icon-supplied" src="./images/New/Иконка анализа документов и отпечатка пальца (1).png"/></span><span class="service-mini-copy"><span class="service-mini-title service-mini-title-long">Технико-криминалистическая экспертиза документов (ТКЭД)</span><span class="service-mini-sub">Реквизиты, способы изготовления и изменения</span></span></a>
-<a class="services-popover-link" data-open-auto-page="true" href="#auto-tech-page"><span class="service-mini-icon"><span aria-hidden="true" class="tag-icon tag-icon-auto"></span></span><span class="service-mini-copy"><span class="service-mini-title">Автотехническая</span><span class="service-mini-sub">ДТП, ущерб, состояние автомобиля</span></span></a>
-<a class="services-popover-link" data-open-other-page="true" href="#other-page"><span class="service-mini-icon"><span aria-hidden="true" class="tag-icon tag-icon-other"></span></span><span class="service-mini-copy"><span class="service-mini-title">Другие экспертизы</span><span class="service-mini-sub">Любая экспертная задача вне списка</span></span></a>
+<a class="services-popover-link" data-open-linguistic-page="true" href="#linguistic-page"><span class="service-mini-icon"><span aria-hidden="true" class="tag-icon tag-icon-linguistic"></span></span><span class="service-mini-copy"><span class="service-mini-title">Лингвистическая</span><span class="service-mini-sub">Тексты, угрозы, авторство, плагиат</span></span></a>
+<a class="services-popover-link" data-open-service-page="portrait" href="#portrait-page"><span class="service-mini-icon"><img alt="" aria-hidden="true" class="service-mini-image-icon service-icon-supplied" src="./images/New/2/ChatGPT Image 9 сент. 2026 г., 20_16_29.png"/></span><span class="service-mini-copy"><span class="service-mini-title">Портретная</span><span class="service-mini-sub">Сопоставление внешности человека по фотографиям и видеокадрам.</span></span></a>
+<a class="services-popover-link" data-open-service-page="phonoscopy" href="#phonoscopy-page"><span class="service-mini-icon"><img alt="" aria-hidden="true" class="service-mini-image-icon service-icon-supplied" src="./images/New/fonoskopicheskaya_ekspertiza.png"/></span><span class="service-mini-copy"><span class="service-mini-title">Фоноскопическая</span><span class="service-mini-sub">Голос, речь и аудиозаписи</span></span></a>
+<a class="services-popover-link" data-open-service-page="cold-weapon" href="#cold-weapon-page"><span class="service-mini-icon"><span aria-hidden="true" class="tag-icon tag-icon-other"></span></span><span class="service-mini-copy"><span class="service-mini-title service-mini-title-long">криминалистическая экспертиза холодного оружия</span><span class="service-mini-sub">Исследование конструкции предметов и их принадлежности к холодному оружию.</span></span></a>
 </div>
 <div class="services-popover-column">
 <a class="services-popover-link" data-open-computer-page="true" href="#computer-page"><span class="service-mini-icon"><img alt="" aria-hidden="true" class="service-mini-image-icon" src="./images/tags-site/New/ChatGPT Image 1 июл. 2026 г., 22_11_20 (2).png"/></span><span class="service-mini-copy"><span class="service-mini-title">Компьютерно-техническая</span><span class="service-mini-sub">Цифровые носители, данные, техника</span></span></a>
-<a class="services-popover-link" data-open-linguistic-page="true" href="#linguistic-page"><span class="service-mini-icon"><span aria-hidden="true" class="tag-icon tag-icon-linguistic"></span></span><span class="service-mini-copy"><span class="service-mini-title">Лингвистическая</span><span class="service-mini-sub">Тексты, угрозы, авторство, плагиат</span></span></a>
-<a class="services-popover-link" data-open-service-page="phonoscopy" href="#phonoscopy-page"><span class="service-mini-icon"><img alt="" aria-hidden="true" class="service-mini-image-icon service-icon-supplied" src="./images/New/fonoskopicheskaya_ekspertiza.png"/></span><span class="service-mini-copy"><span class="service-mini-title">Фоноскопическая</span><span class="service-mini-sub">Голос, речь и аудиозаписи</span></span></a>
+<a class="services-popover-link" data-open-service-page="document-age" href="#document-age-page"><span class="service-mini-icon"><img alt="" aria-hidden="true" class="service-mini-image-icon service-icon-supplied" src="./images/New/2/ChatGPT Image 9 сент. 2026 г., 20_17_00.png"/></span><span class="service-mini-copy"><span class="service-mini-title">давности создания документа</span><span class="service-mini-sub">Исследование времени выполнения и последовательности нанесения реквизитов документа.</span></span></a>
+<a class="services-popover-link" data-open-service-page="authorship" href="#authorship-page"><span class="service-mini-icon"><span aria-hidden="true" class="tag-icon tag-icon-other"></span></span><span class="service-mini-copy"><span class="service-mini-title">Автороведческая</span><span class="service-mini-sub">Исследование письменной речи и установление авторства текста по сравнительным материалам.</span></span></a>
 <a class="services-popover-link" data-open-service-page="photo-video" href="#photo-video-page"><span class="service-mini-icon"><img alt="" aria-hidden="true" class="service-mini-image-icon service-icon-supplied" src="./images/New/Blaues Foto-Suchsymbol (1).png"/></span><span class="service-mini-copy"><span class="service-mini-title">Фото- и видеотехническая</span><span class="service-mini-sub">Изображения, видеозаписи и монтаж</span></span></a>
+<a class="services-popover-link" data-open-service-page="fire-technical" href="#fire-technical-page"><span class="service-mini-icon"><img alt="" aria-hidden="true" class="service-mini-image-icon service-icon-supplied" src="./images/New/2/ChatGPT Image 9 сент. 2026 г., 20_18_02.png"/></span><span class="service-mini-copy"><span class="service-mini-title">Пожаро-техническая</span><span class="service-mini-sub">Исследование очага, технических причин возникновения и распространения пожара.</span></span></a>
+<a class="services-popover-link" data-open-other-page="true" href="#other-page"><span class="service-mini-icon"><span aria-hidden="true" class="tag-icon tag-icon-other"></span></span><span class="service-mini-copy"><span class="service-mini-title">Другие экспертизы</span><span class="service-mini-sub">Любая экспертная задача вне списка</span></span></a>
 </div>
 </div>
 </div>
@@ -155,26 +175,32 @@
 <button class="drawer-close" onclick="closeDrawer()">✕</button>
 <div class="drawer-title">Наши услуги</div>
 <div class="drawer-sub">Выберите нужный вид экспертизы</div>
-<div class="drawer-section-label">Экономика, имущество и строительство</div>
+<div class="drawer-section-label">Имущество, строительство и транспорт</div>
 <ul class="drawer-nav">
-<li><a data-open-economic-page="true" href="#economic-page"><span aria-hidden="true" class="icon drawer-letter-icon">Э</span>Экономическая</a></li>
+<li><a data-open-economic-page="true" href="#economic-page"><span class="icon"><span aria-hidden="true" class="tag-icon tag-icon-economic"></span></span>Экономическая</a></li>
 <li><a data-open-service-page="valuation" href="#valuation-page"><span class="icon"><img alt="" aria-hidden="true" class="service-mini-image-icon service-icon-supplied" src="./images/New/ocenochnaya_ekspertiza.png"/></span>Оценочная</a></li>
 <li><a data-open-commodity-page="true" href="#commodity-page"><span class="icon"><img alt="" aria-hidden="true" class="service-mini-image-icon" src="./images/tags-site/New/ChatGPT Image 1 июл. 2026 г., 22_11_20 (1).png"/></span>Товароведческая</a></li>
-<li><a data-open-construction-page="true" href="#construction-page"><span aria-hidden="true" class="icon drawer-letter-icon">С</span>Строительно-техническая</a></li>
+<li><a data-open-construction-page="true" href="#construction-page"><span class="icon"><span aria-hidden="true" class="tag-icon tag-icon-construction"></span></span>Строительно-техническая</a></li>
+<li><a data-open-auto-page="true" href="#auto-tech-page"><span class="icon"><span aria-hidden="true" class="tag-icon tag-icon-auto"></span></span>Автотехническая</a></li>
+<li><a data-open-service-page="ballistics" href="#ballistics-page"><span class="icon"><img alt="" aria-hidden="true" class="service-mini-image-icon service-icon-supplied" src="./images/New/2/ChatGPT Image 9 сент. 2026 г., 19_46_00.png"/></span>Баллистическая</a></li>
 </ul>
-<div class="drawer-section-label">Документы, транспорт и другие задачи</div>
+<div class="drawer-section-label">Почерк, речь и криминалистика</div>
 <ul class="drawer-nav">
-<li><a data-open-handwriting-page="true" href="#handwriting-page"><span aria-hidden="true" class="icon drawer-letter-icon">П</span>Почерковедческая</a></li>
+<li><a data-open-handwriting-page="true" href="#handwriting-page"><span class="icon"><span aria-hidden="true" class="tag-icon tag-icon-handwriting"></span></span>Почерковедческая</a></li>
 <li><a data-open-service-page="tked" href="#tked-page"><span class="icon"><img alt="" aria-hidden="true" class="service-mini-image-icon service-icon-supplied" src="./images/New/Иконка анализа документов и отпечатка пальца (1).png"/></span>Технико-криминалистическая экспертиза документов (ТКЭД)</a></li>
-<li><a data-open-auto-page="true" href="#auto-tech-page"><span aria-hidden="true" class="icon drawer-letter-icon">А</span>Автотехническая</a></li>
-<li><a data-open-other-page="true" href="#other-page"><span class="icon"><span aria-hidden="true" class="tag-icon tag-icon-other"></span></span>Другие экспертизы</a></li>
+<li><a data-open-linguistic-page="true" href="#linguistic-page"><span class="icon"><span aria-hidden="true" class="tag-icon tag-icon-linguistic"></span></span>Лингвистическая</a></li>
+<li><a data-open-service-page="portrait" href="#portrait-page"><span class="icon"><img alt="" aria-hidden="true" class="service-mini-image-icon service-icon-supplied" src="./images/New/2/ChatGPT Image 9 сент. 2026 г., 20_16_29.png"/></span>Портретная</a></li>
+<li><a data-open-service-page="phonoscopy" href="#phonoscopy-page"><span class="icon"><img alt="" aria-hidden="true" class="service-mini-image-icon service-icon-supplied" src="./images/New/fonoskopicheskaya_ekspertiza.png"/></span>Фоноскопическая</a></li>
+<li><a data-open-service-page="cold-weapon" href="#cold-weapon-page"><span class="icon"><span aria-hidden="true" class="tag-icon tag-icon-other"></span></span>криминалистическая экспертиза холодного оружия</a></li>
 </ul>
-<div class="drawer-section-label">Цифровые материалы, речь и записи</div>
+<div class="drawer-section-label">Цифровые материалы и другие исследования</div>
 <ul class="drawer-nav">
 <li><a data-open-computer-page="true" href="#computer-page"><span class="icon"><img alt="" aria-hidden="true" class="service-mini-image-icon" src="./images/tags-site/New/ChatGPT Image 1 июл. 2026 г., 22_11_20 (2).png"/></span>Компьютерно-техническая</a></li>
-<li><a data-open-linguistic-page="true" href="#linguistic-page"><span aria-hidden="true" class="icon drawer-letter-icon">Л</span>Лингвистическая</a></li>
-<li><a data-open-service-page="phonoscopy" href="#phonoscopy-page"><span class="icon"><img alt="" aria-hidden="true" class="service-mini-image-icon service-icon-supplied" src="./images/New/fonoskopicheskaya_ekspertiza.png"/></span>Фоноскопическая</a></li>
+<li><a data-open-service-page="document-age" href="#document-age-page"><span class="icon"><img alt="" aria-hidden="true" class="service-mini-image-icon service-icon-supplied" src="./images/New/2/ChatGPT Image 9 сент. 2026 г., 20_17_00.png"/></span>давности создания документа</a></li>
+<li><a data-open-service-page="authorship" href="#authorship-page"><span class="icon"><span aria-hidden="true" class="tag-icon tag-icon-other"></span></span>Автороведческая</a></li>
 <li><a data-open-service-page="photo-video" href="#photo-video-page"><span class="icon"><img alt="" aria-hidden="true" class="service-mini-image-icon service-icon-supplied" src="./images/New/Blaues Foto-Suchsymbol (1).png"/></span>Фото- и видеотехническая</a></li>
+<li><a data-open-service-page="fire-technical" href="#fire-technical-page"><span class="icon"><img alt="" aria-hidden="true" class="service-mini-image-icon service-icon-supplied" src="./images/New/2/ChatGPT Image 9 сент. 2026 г., 20_18_02.png"/></span>Пожаро-техническая</a></li>
+<li><a data-open-other-page="true" href="#other-page"><span class="icon"><span aria-hidden="true" class="tag-icon tag-icon-other"></span></span>Другие экспертизы</a></li>
 </ul>
 <button class="drawer-review-entry" data-open-review-page="true" type="button">
 <span aria-hidden="true" class="drawer-review-entry__badge">48</span>
@@ -191,8 +217,8 @@
 </ul>
 <button class="drawer-order-btn" data-open-expertise-order="true" type="button">Заказать экспертизу <span aria-hidden="true">→</span></button>
 <div class="drawer-contact">
-<p>Позвоните нам прямо сейчас</p>
-<a href="tel:+78001234567">+7 (800) 123-45-67</a>
+<p>Напишите нам</p>
+<a href="mailto:spektrexpertiza@yandex.ru">spektrexpertiza@yandex.ru</a>
 </div>
 </aside>
 <div class="page-track" id="pageTrack">
@@ -211,6 +237,7 @@
 <em>доверяют суды,</em><br/>
       бизнес и граждане
     </h1>
+<p class="hero-motto"><span>Быстро,</span> <span>качественно,</span> <span>обоснованно!</span></p>
 <p class="hero-desc">
       Профессиональные заключения по всем видам экспертиз.<br/>
       Более 15 лет работы · Лицензированные эксперты · По всей России
@@ -427,6 +454,18 @@
 <a class="svc-link" data-open-construction-page="true" href="#construction-page">Подробнее →</a>
 </div>
 <div class="service-card">
+<div class="svc-icon"><span aria-hidden="true" class="tag-icon tag-icon-auto"></span></div>
+<div class="svc-name">Автотехническая</div>
+<p class="svc-desc">Исследование обстоятельств ДТП, ущерба и технического состояния автомобиля.</p>
+<a class="svc-link" data-open-auto-page="true" href="#auto-tech-page">Подробнее →</a>
+</div>
+<div class="service-card">
+<div class="svc-icon"><img alt="" aria-hidden="true" class="service-card-image-icon service-icon-supplied" src="./images/New/2/ChatGPT Image 9 сент. 2026 г., 19_46_00.png"/></div>
+<div class="svc-name">Баллистическая</div>
+<p class="svc-desc">Исследование оружия, пуль, гильз и следов выстрела.</p>
+<a class="svc-link" data-open-service-page="ballistics" href="#ballistics-page">Подробнее →</a>
+</div>
+<div class="service-card">
 <div class="svc-icon"><span aria-hidden="true" class="tag-icon tag-icon-handwriting"></span></div>
 <div class="svc-name">Почерковедческая</div>
 <p class="svc-desc">Установление подлинности подписей и идентификация исполнителя рукописного текста.</p>
@@ -439,28 +478,16 @@
 <a class="svc-link" data-open-service-page="tked" href="#tked-page">Подробнее →</a>
 </div>
 <div class="service-card">
-<div class="svc-icon"><span aria-hidden="true" class="tag-icon tag-icon-auto"></span></div>
-<div class="svc-name">Автотехническая</div>
-<p class="svc-desc">Исследование обстоятельств ДТП, ущерба и технического состояния автомобиля.</p>
-<a class="svc-link" data-open-auto-page="true" href="#auto-tech-page">Подробнее →</a>
-</div>
-<div class="service-card">
-<div class="svc-icon"><span aria-hidden="true" class="tag-icon tag-icon-other"></span></div>
-<div class="svc-name">Другие экспертизы</div>
-<p class="svc-desc">Подбор подходящего экспертного направления под проблему, документы и цель обращения.</p>
-<a class="svc-link" data-open-other-page="true" href="#other-page">Подробнее →</a>
-</div>
-<div class="service-card service-card-ready">
-<div class="svc-icon"><img alt="" aria-hidden="true" class="service-card-image-icon" src="./images/tags-site/New/ChatGPT Image 1 июл. 2026 г., 22_11_20 (2).png"/></div>
-<div class="svc-name">Компьютерно-техническая</div>
-<p class="svc-desc">Исследование цифровых носителей, программ, файлов, переписки и устройств.</p>
-<a class="svc-link" data-open-computer-page="true" href="#computer-page">Подробнее →</a>
-</div>
-<div class="service-card">
 <div class="svc-icon"><span aria-hidden="true" class="tag-icon tag-icon-linguistic"></span></div>
 <div class="svc-name">Лингвистическая</div>
 <p class="svc-desc">Анализ текстов на предмет угроз, оскорблений, плагиата и авторства.</p>
 <a class="svc-link" data-open-linguistic-page="true" href="#linguistic-page">Подробнее →</a>
+</div>
+<div class="service-card">
+<div class="svc-icon"><img alt="" aria-hidden="true" class="service-card-image-icon service-icon-supplied" src="./images/New/2/ChatGPT Image 9 сент. 2026 г., 20_16_29.png"/></div>
+<div class="svc-name">Портретная</div>
+<p class="svc-desc">Сопоставление внешности человека по фотографиям и видеокадрам.</p>
+<a class="svc-link" data-open-service-page="portrait" href="#portrait-page">Подробнее →</a>
 </div>
 <div class="service-card service-card-ready">
 <div class="svc-icon"><img alt="" aria-hidden="true" class="service-card-image-icon service-icon-supplied" src="./images/New/fonoskopicheskaya_ekspertiza.png"/></div>
@@ -469,10 +496,46 @@
 <a class="svc-link" data-open-service-page="phonoscopy" href="#phonoscopy-page">Подробнее →</a>
 </div>
 <div class="service-card">
+<div class="svc-icon"><span aria-hidden="true" class="tag-icon tag-icon-other"></span></div>
+<div class="svc-name svc-name-long">криминалистическая экспертиза холодного оружия</div>
+<p class="svc-desc">Исследование конструкции предметов и их принадлежности к холодному оружию.</p>
+<a class="svc-link" data-open-service-page="cold-weapon" href="#cold-weapon-page">Подробнее →</a>
+</div>
+<div class="service-card service-card-ready">
+<div class="svc-icon"><img alt="" aria-hidden="true" class="service-card-image-icon" src="./images/tags-site/New/ChatGPT Image 1 июл. 2026 г., 22_11_20 (2).png"/></div>
+<div class="svc-name">Компьютерно-техническая</div>
+<p class="svc-desc">Исследование цифровых носителей, программ, файлов, переписки и устройств.</p>
+<a class="svc-link" data-open-computer-page="true" href="#computer-page">Подробнее →</a>
+</div>
+<div class="service-card">
+<div class="svc-icon"><img alt="" aria-hidden="true" class="service-card-image-icon service-icon-supplied" src="./images/New/2/ChatGPT Image 9 сент. 2026 г., 20_17_00.png"/></div>
+<div class="svc-name">давности создания документа</div>
+<p class="svc-desc">Исследование времени выполнения и последовательности нанесения реквизитов документа.</p>
+<a class="svc-link" data-open-service-page="document-age" href="#document-age-page">Подробнее →</a>
+</div>
+<div class="service-card">
+<div class="svc-icon"><span aria-hidden="true" class="tag-icon tag-icon-other"></span></div>
+<div class="svc-name">Автороведческая</div>
+<p class="svc-desc">Исследование письменной речи и установление авторства текста по сравнительным материалам.</p>
+<a class="svc-link" data-open-service-page="authorship" href="#authorship-page">Подробнее →</a>
+</div>
+<div class="service-card">
 <div class="svc-icon"><img alt="" aria-hidden="true" class="service-card-image-icon service-icon-supplied" src="./images/New/Blaues Foto-Suchsymbol (1).png"/></div>
 <div class="svc-name">Фото- и видеотехническая</div>
 <p class="svc-desc">Исследование изображений, видеозаписей, условий съёмки и признаков монтажа.</p>
 <a class="svc-link" data-open-service-page="photo-video" href="#photo-video-page">Подробнее →</a>
+</div>
+<div class="service-card">
+<div class="svc-icon"><img alt="" aria-hidden="true" class="service-card-image-icon service-icon-supplied" src="./images/New/2/ChatGPT Image 9 сент. 2026 г., 20_18_02.png"/></div>
+<div class="svc-name">Пожаро-техническая</div>
+<p class="svc-desc">Исследование очага, технических причин возникновения и распространения пожара.</p>
+<a class="svc-link" data-open-service-page="fire-technical" href="#fire-technical-page">Подробнее →</a>
+</div>
+<div class="service-card">
+<div class="svc-icon"><span aria-hidden="true" class="tag-icon tag-icon-other"></span></div>
+<div class="svc-name">Другие экспертизы</div>
+<p class="svc-desc">Подбор подходящего экспертного направления под проблему, документы и цель обращения.</p>
+<a class="svc-link" data-open-other-page="true" href="#other-page">Подробнее →</a>
 </div>
 <div class="service-card mobile-review-card">
 <div class="svc-icon mobile-review-card__icon" aria-hidden="true">48</div>
@@ -531,7 +594,7 @@
 <div class="process-step">
 <div class="step-num">1</div>
 <div class="step-title">Заявка</div>
-<p class="step-desc">Оставьте заявку онлайн или позвоните нам. Бесплатная консультация.</p>
+<p class="step-desc">Оставьте заявку онлайн или напишите нам. Бесплатная консультация.</p>
 </div>
 <div class="process-step">
 <div class="step-num">2</div>
@@ -592,14 +655,13 @@
 </div>
 <div class="footer-col">
 <h4>Контакты</h4>
-<a href="tel:+78001234567">+7 (800) 123-45-67</a>
-<a href="mailto:info@vse-expertizi.ru">info@vse-expertizi.ru</a>
-<a href="#">Москва, ул. Тверская, 1</a>
+<a href="mailto:spektrexpertiza@yandex.ru">spektrexpertiza@yandex.ru</a>
+<a href="https://yandex.ru/maps/?text=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C+%D1%83%D0%BB.+%D0%91%D1%83%D0%BC%D0%B0%D0%B6%D0%BD%D1%8B%D0%B9+%D0%BF%D1%80%D0%BE%D0%B5%D0%B7%D0%B4+19%D1%813" target="_blank" rel="noopener noreferrer">Москва, ул. Бумажный проезд 19с3</a>
 </div>
 </div>
 <div class="footer-bottom">
 <span>© 2024 Все Экспертизы-РФ. Все права защищены.</span>
-<span class="footer-legal-links"><a data-open-privacy-page="true" href="#privacy-page">Политика обработки персональных данных</a><span aria-hidden="true">·</span><span>Оферта</span></span>
+<span class="footer-legal-links"><a data-open-privacy-page="true" href="#privacy-page">Политика обработки персональных данных</a><span aria-hidden="true">·</span><button type="button" class="cookie-footer-link" data-cookie-settings>Настройки cookie</button><span aria-hidden="true">·</span><span>Оферта</span></span>
 </div>
 </footer>
 </div><!-- /page: why+process+contact+footer -->
@@ -1623,20 +1685,21 @@
 <div class="auto-page-kicker">Рецензия экспертного заключения</div>
 <h1>Рецензия на заключение <em>за 48 часов</em></h1>
 <p class="auto-page-intro">
-        Проверяем уже подготовленное экспертное заключение, выявляем методические, фактические и процессуальные слабые места и оформляем профессиональную рецензию, которую можно использовать в переговорах, претензии или суде.
+        Проверяем экспертное заключение, выявляем методические, фактические и процессуальные слабые места и оформляем профессиональную рецензию, которую можно использовать в суде, переговорах, медиациях.
       </p>
 <div class="auto-page-note">
-        Клиент загружает само заключение и сопутствующие документы, после чего эксперт проводит анализ и готовит рецензию с подписью специалиста. Основной акцент услуги — быстрый срок: до <strong>48 часов</strong> с момента получения материалов.
+        <h2 class="review-note-title">Как это работает?</h2>
+        Загрузите само заключение и сопутствующие документы, после чего эксперт проведёт анализ и подготовит рецензию с подписью специалиста. Основной акцент услуги — быстрый срок: до <strong>48 часов</strong> с момента получения материалов.
       </div>
 <div class="other-hero-actions">
 <button class="other-action-btn primary" data-review-scroll-upload="true" type="button">Загрузить документы</button>
-<a class="other-action-btn" href="tel:+78001234567">Уточнить детали</a>
+<a class="other-action-btn" href="mailto:spektrexpertiza@yandex.ru">Уточнить детали</a>
 </div>
 </div>
 <aside aria-label="Условия оказания услуги" class="review-summary-card">
 <div class="review-summary-head">
 <span>Ключевые условия</span>
-<strong>Быстро и формально корректно</strong>
+<strong>Быстро и корректно</strong>
 </div>
 <div class="review-summary-metrics">
 <article>
@@ -1746,8 +1809,8 @@
 <div><strong>2</strong><span>Мы проверяем комплектность материалов и при необходимости уточняем, хватает ли документов для полноценной рецензии, чтобы не тратить время на повторные запросы в ходе анализа.</span></div>
 <div><strong>3</strong><span>Эксперт последовательно изучает структуру заключения, методику исследования, исходные данные, обоснование выводов и соответствие результата представленным материалам.</span></div>
 <div><strong>4</strong><span>Отдельно выделяются логические разрывы, спорные допущения, методические нарушения, неполнота исследования и иные замечания, которые действительно имеют значение для позиции по делу.</span></div>
-<div><strong>5</strong><span>По итогам подготавливается рецензия с четкой структурой, понятными формулировками и подписью эксперта, чтобы документ можно было использовать в суде, переговорах или внутренней проверке.</span></div>
-<div><strong>6</strong><span>Готовый результат передается заказчику в течение 48 часов, после чего он может опираться на рецензию при подготовке возражений, вопросов к эксперту или дальнейшей процессуальной стратегии.</span></div>
+<div><strong>5</strong><span>Подготовленную рецензию направляем вам на согласование. Вы знакомитесь с документом и при необходимости сообщаете замечания и пожелания к корректировке.</span></div>
+<div><strong>6</strong><span>Если по итогам согласования требуются корректировки, вносим их и отправляем вам готовую рецензию с подписью эксперта. Если корректировки не требуются, отправляем готовую рецензию сразу после согласования.</span></div>
 </div>
 </article>
 </section>
@@ -1770,7 +1833,7 @@
       </p>
 <div class="other-hero-actions">
 <button class="other-action-btn primary" data-service-contact="true" type="button">Обсудить задачу</button>
-<a class="other-action-btn" href="tel:+78001234567">Позвонить</a>
+<a class="other-action-btn" href="mailto:spektrexpertiza@yandex.ru">Написать нам</a>
 </div>
 </div>
 <aside aria-label="Как подбирается экспертное направление" class="other-case-map">
@@ -1851,16 +1914,12 @@
 </button>
 <button class="service-page-back" onclick="closeAutoTechPage()" type="button">← На главную</button>
 </header>
-<div class="service-section-flow" data-service-sections="auto-tech"><section aria-hidden="false" class="service-section-panel active" data-service-panel="hero"><section class="auto-page-hero">
+<div class="service-section-flow" data-service-sections="auto-tech"><section aria-hidden="false" class="service-section-panel active" data-service-panel="hero"><section class="expertise-document-hero auto-page-hero">
 <div class="auto-page-hero-copy">
 <div class="auto-page-kicker">Автотехническая экспертиза</div>
 <h1>Автотехническая <em>экспертиза</em></h1>
-<p class="auto-page-intro">
-        Исследуем обстоятельства ДТП, техническое состояние автомобиля, повреждения, причины неисправностей и стоимость восстановительного ремонта.
-      </p>
-<div class="auto-page-note">
-        Помогаем установить, как произошло происшествие, могли ли участники его предотвратить, соответствуют ли повреждения заявленным обстоятельствам и каков реальный размер ущерба.
-      </div>
+<p class="auto-page-intro">Исследуем обстоятельства ДТП, техническое состояние автомобиля, следы транспортных средств, техническое состояние дорожного покрытия и условий на месте происшествия.</p>
+
 </div>
 <aside aria-label="Коллаж примеров автотехнической экспертизы" class="auto-collage-wrap">
 <div class="auto-collage-head">С чем мы работаем</div>
@@ -1887,6 +1946,11 @@
 </figure>
 </div>
 </aside>
+<div class="auto-page-note expertise-hero-context">
+<h2>Когда применяется экспертиза</h2>
+<div class="expertise-hero-context-text"><p>Исследование позволит установить объективную картину произошедшего события, определить тормозной путь, возможность предотвращения столкновения со стороны водителей , вычислить скорость движения транспортного средства в ключевые временные периоды, выявить место столкновения, соответствие повреждений на автомобилях заявленным обстоятельствах и проанализировать другие важные обстоятельства ДТП.</p></div>
+
+</div>
 </section><div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="scope" type="button"><span>К задачам и возможностям</span><span class="linguistic-scroll-icon">↓</span></button></div></section><section aria-hidden="true" class="service-section-panel" data-service-panel="scope"><div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="hero" type="button"><span>К началу услуги</span><span class="linguistic-scroll-icon">↓</span></button></div><article class="auto-content-card">
 <div class="auto-content-kicker">Краткое описание услуги</div>
 <h2>Что такое автотехническая экспертиза</h2>
@@ -1956,16 +2020,12 @@
 </button>
 <button class="service-page-back" onclick="closeHandwritingPage()" type="button">← На главную</button>
 </header>
-<div class="service-section-flow" data-service-sections="handwriting"><section aria-hidden="false" class="service-section-panel active" data-service-panel="hero"><section class="auto-page-hero handwriting-page-hero">
+<div class="service-section-flow" data-service-sections="handwriting"><section aria-hidden="false" class="service-section-panel active" data-service-panel="hero"><section class="expertise-document-hero auto-page-hero handwriting-page-hero">
 <div class="auto-page-hero-copy">
 <div class="auto-page-kicker">Почерковедческая экспертиза</div>
 <h1>Почерковедческие <em>экспертизы</em></h1>
-<p class="auto-page-intro">
-        Исследуем подписи, рукописные тексты и отдельные записи, чтобы установить, кем они выполнены, имеются ли признаки подделки и можно ли использовать документ как надежное доказательство.
-      </p>
-<div class="auto-page-note">
-        Экспертиза применяется в спорах, где ключевое значение имеет документ: договор, расписка, акт, завещание, доверенность, заявление, кадровый, банковский или корпоративный документ.
-      </div>
+<p class="auto-page-intro">Исследуем спорные тексты, краткие записи и подписи в целях установления исполнителя, а также диагностирования его свойств, равно как и внешних условий выполнения.</p>
+
 </div>
 <aside aria-label="Коллаж примеров почерковедческой экспертизы" class="auto-collage-wrap">
 <div class="auto-collage-head">С чем мы работаем</div>
@@ -1996,6 +2056,11 @@
 </figure>
 </div>
 </aside>
+<div class="auto-page-note expertise-hero-context">
+<h2>Когда применяется экспертиза</h2>
+<div class="expertise-hero-context-text"><p>Данная экспертиза применяется в ситуациях, когда у одной из сторон имеются сомнения в подлинности основных документов по делу: договоров разных видов, векселей, расписок, актов, завещаний, дарственных, доверенностей, заявлений, выписок, различной банковской и корпоративной документации.</p></div>
+
+</div>
 </section><div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="scope" type="button"><span>К описанию и задачам</span><span class="linguistic-scroll-icon">↓</span></button></div></section><section aria-hidden="true" class="service-section-panel" data-service-panel="scope"><div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="hero" type="button"><span>К началу услуги</span><span class="linguistic-scroll-icon">↓</span></button></div><article class="construction-content-card">
 <div class="construction-section-kicker">Описание услуги</div>
 <h2>Почерковедческая экспертиза</h2>
@@ -2544,16 +2609,12 @@
 </button>
 <button class="service-page-back" onclick="closeLinguisticPage()" type="button">← На главную</button>
 </header>
-<section class="auto-page-hero linguistic-page-hero">
+<section class="expertise-document-hero auto-page-hero linguistic-page-hero">
 <div class="auto-page-hero-copy">
 <div class="auto-page-kicker">Лингвистическая экспертиза</div>
 <h1>Лингвистические <em>экспертизы</em></h1>
-<p class="auto-page-intro">
-        Профессионально исследуем тексты, устные высказывания, публикации, переписку, комментарии, рекламные сообщения и аудиозаписи с точки зрения смысла, формы выражения и возможного воздействия на адресата.
-      </p>
-<div class="auto-page-note">
-        Помогаем установить, что именно сказано, в каком контексте, как это может быть понято и содержит ли материал юридически значимые признаки: негативную информацию, утверждение о факте, оценочное суждение, оскорбление, угрозу, призыв, дискредитацию, признаки манипуляции или недобросовестной коммуникации.
-      </div>
+<p class="auto-page-intro">Исследуем тексты, публикации на различных сайтах, в социальных сетях и на просторах сети Интернет, аудио- и видеоматериалы, сообщения (переписку) в различных мессенджерах на предмет установления их значения (смысла), наличия в них информации определенного содержания, корректности (точности) передачи смыслового содержания из одного текста в другой.</p>
+
 </div>
 <aside aria-label="Коллаж направлений лингвистической экспертизы" class="auto-collage-wrap">
 <div class="auto-collage-head">Основные направления</div>
@@ -2584,6 +2645,12 @@
 </figure>
 </div>
 </aside>
+<div class="auto-page-note expertise-hero-context">
+<h2>Когда применяется экспертиза</h2>
+<div class="expertise-hero-context-text"><p>Отмеченная экспертиза поможет, когда необходимо установить имеется ли в материалах (в том числе, содержащихся на страницах в социальных сетях) негативные сведения, умоляющие честь и достоинство и деловую репутацию. Тогда как, если они содержатся, то в какой форме они выражены: предположения, оценки, утверждения о фактах или в виде мнения.</p>
+<p>В продолжение тематики данное направление использования специальных знаний видится актуальным при необходимости оценки публикации на наличие признаков оскорбления, то есть унижения чести и достоинства другого лица, выраженного в неприличной или иной противоречащей нормам морали и нравственности форме.</p></div>
+
+</div>
 </section>
 <section class="construction-content linguistic-tabbed-content" data-linguistic-tabs="">
 <nav aria-label="Разделы лингвистических экспертиз" class="linguistic-switcher">
@@ -3760,6 +3827,374 @@
 <h2>Строительная экспертиза</h2>
 <p>Строительная экспертиза позволяет проверить качество строительных и ремонтных работ, выявить дефекты, определить причины повреждений и рассчитать стоимость их устранения. Мы проводим экспертизы квартир, домов, коммерческих помещений, строительных объектов, смет, актов выполненных работ и ущерба после залива или пожара. По результатам клиент получает экспертное заключение, которое можно использовать для претензии, переговоров, страхового спора или судебного разбирательства.</p>
 </article></section></div></section>
+<!-- ── FORENSIC EXPERTISE PAGES ── -->
+<section aria-hidden="true" class="single-service-page new-expertise-page forensic-expertise-page" id="ballisticsPage">
+<header class="service-page-topbar">
+<button class="service-page-brand" data-close-service-page="true" type="button"><span class="service-page-brand-badge">ЭР</span><span>Все Экспертизы-РФ</span></button>
+<button class="service-page-back" data-close-service-page="true" type="button">← На главную</button>
+</header>
+<div class="service-section-flow" data-service-sections="ballistics">
+<section class="service-section-panel active" data-service-panel="hero" aria-hidden="false">
+<section class="expertise-document-hero auto-page-hero economic-page-hero new-expertise-hero-long"><div class="auto-page-hero-copy"><div class="auto-page-kicker">Баллистическая экспертиза</div><h1>Баллистическая <em>экспертиза</em></h1><p class="auto-page-intro">Исследуем гладкоствольное и нарезное огнестрельное оружие промышленного, кустарного и самодельного изготовления и его составные части (такие, как: ствол, глушитель, затвор, ударно-спусковой механизм, барабан, магазин, дульные насадки и т.п.), выстрелянные снаряды (пули, дробь, картечь, пыжи, прокладки, их составные части и фрагменты), иные устройства и стреляные гильзы, их компоненты части и фрагменты, а также патроны со следами частей и деталей гладкоствольного огнестрельного оружия на гильзах в целях установления фактических данных, имеющих значение для расследования уголовного либо административного дела и судебного разбирательства.</p></div><aside aria-label="Объекты и направления исследования" class="auto-collage-wrap"><div class="auto-collage-head">С чем мы работаем</div><div class="auto-collage-board economic-collage-board"><figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/ballistics-cartridge-cases.webp"/></div><figcaption class="auto-collage-tag">Патроны и гильзы</figcaption></figure>
+<figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/ballistics-comparison-microscope.webp"/></div><figcaption class="auto-collage-tag">Сравнение следов</figcaption></figure>
+<figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/ballistics-projectile-traces.webp"/></div><figcaption class="auto-collage-tag">Пули и повреждения</figcaption></figure>
+<figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/ballistics-evidence-documentation.webp"/></div><figcaption class="auto-collage-tag">Фиксация объектов</figcaption></figure>
+</div></aside>
+<div class="auto-page-note expertise-hero-context">
+<h2>Когда применяется экспертиза</h2>
+<div class="expertise-hero-context-text"><p>Обозначенная экспертиза важна, когда требуется определить, является ли конкретный объект оружием, соответствует ли он заявленным характеристикам, пригоден ли для стрельбы и установить иные характеристики.</p>
+<p>Также, в случаях, когда в результате выстрела дефекты получили автомобиль, здание, оборудование, экспертиза поможет установить, действительно ли повреждения имеют огнестрельный характер.</p>
+<p>В дополнение рассматриваемое направление исследований помогут определить направление и дистанцию выстрела, тип использованного боеприпаса, а в отдельных случаях – определить наличие или отсутствие тождества исследуемого экземпляра огнестрельного оружия по следам его частей и деталей на выстрелянных пулях (снарядах) либо стреляных гильзах.</p></div>
+<div class="forensic-service-actions"><button class="btn-primary" type="button" data-open-expertise-order="true" data-expertise-name="Баллистическая экспертиза"><span>Заказать экспертизу</span><span class="arrow">→</span></button></div>
+</div></section><div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="scope" type="button"><span>К описанию и задачам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="scope" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="hero" type="button"><span>К началу услуги</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Описание услуги</div><h2>Баллистическая экспертиза</h2><div class="construction-intro-grid"><div><p>Баллистическая экспертиза связывает свойства оружия и боеприпасов со следами, которые образуются при выстреле. Эксперт исследует сами объекты, сопоставляет признаки и проверяет, какие выводы допускают материалы дела.</p><p>Исследование необходимо, когда спор касается происхождения пули или гильзы, характеристик оружия либо механизма образования повреждения. Объём работы определяется конкретной задачей, а не одним только названием предмета.</p></div><div class="construction-intro-note"><strong>От объекта и следа — к проверяемому выводу.</strong><p>Пригодность следов, сохранность объектов и полнота исходных данных определяют возможности сравнения. Эксперт указывает, какие вопросы удалось решить и что ограничивает вывод.</p></div></div></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Задачи</div><h2>Какие задачи решает экспертиза</h2><ul class="construction-task-list"><li><strong>Исследовать вид и конструктивные характеристики объекта.</strong></li><li><strong>Оценить техническое состояние оружия в рамках поставленных вопросов.</strong></li><li><strong>Сопоставить следы на пулях и гильзах.</strong></li><li><strong>Проверить возможность происхождения следов от представленного экземпляра оружия.</strong></li><li><strong>Исследовать повреждения и признаки выстрела на преграде.</strong></li><li><strong>Сопоставить результаты с зафиксированной обстановкой события.</strong></li></ul></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="types" type="button"><span>К направлениям исследования</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="types" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="scope" type="button"><span>К описанию и задачам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Направления исследования</div><h2>Что можно исследовать</h2><div class="construction-service-list"><article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">01</span><h3>Оружие и его характеристики</h3></div><p>Исследование представленного экземпляра начинается с описания конструкции, маркировок и состояния.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Внешние и конструктивные признаки.</li><li>Комплектность и состояние деталей.</li><li>Соответствие объекта поставленным вопросам.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Описание исследованного объекта.</li><li>Выводы о характеристиках и состоянии в пределах исследования.</li></ul></div></div></article>
+<article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">02</span><h3>Пули и гильзы</h3></div><p>Сравнительное исследование помогает проверить связь между обнаруженным следом и конкретным оружием.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Сохранность поверхности и следов.</li><li>Сходства и различия сравниваемых объектов.</li><li>Пригодность материала для идентификации.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Обоснованное сопоставление признаков.</li><li>Вывод о совпадении, различии либо невозможности решить вопрос.</li></ul></div></div></article>
+<article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">03</span><h3>Следы выстрела на преградах</h3></div><p>Эксперт изучает повреждения с учётом свойств материала и условий, зафиксированных при осмотре.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Форма и расположение повреждений.</li><li>Сопутствующие следы на преграде.</li><li>Фотографии, схемы и данные осмотра.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Оценка механизма образования следов.</li><li>Ответы об обстоятельствах выстрела, доступных для установления.</li></ul></div></div></article>
+<article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">04</span><h3>Анализ представленного заключения</h3></div><p>Проверяем, насколько выводы другого исследования опираются на описанные признаки и материалы.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Полнота описания объектов.</li><li>Сопоставимость исследованных следов.</li><li>Логика перехода от наблюдений к выводам.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Систематизированные замечания.</li><li>Вопросы для дополнительного исследования или рецензирования.</li></ul></div></div></article>
+</div></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="process" type="button"><span>К порядку работы</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="process" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="types" type="button"><span>К направлениям исследования</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Как проводится экспертиза</div><h2>Порядок работы</h2><div class="construction-process"><div class="construction-process-item"><div><strong>Постановка задачи</strong><span>Уточняем событие, объекты и вопросы, требующие специальных знаний.</span></div></div><div class="construction-process-item"><div><strong>Проверка материалов</strong><span>Оцениваем комплектность документов и возможность исследования объектов.</span></div></div><div class="construction-process-item"><div><strong>Организация передачи</strong><span>Согласовываем установленный порядок предоставления, упаковки и возврата объектов.</span></div></div><div class="construction-process-item"><div><strong>Исследование</strong><span>Проводим осмотр, измерения и необходимые сравнительные исследования.</span></div></div><div class="construction-process-item"><div><strong>Оценка признаков</strong><span>Проверяем устойчивость выявленных совпадений и различий, учитываем ограничения.</span></div></div><div class="construction-process-item"><div><strong>Заключение</strong><span>Описываем ход работы, иллюстрируем значимые признаки и отвечаем на вопросы.</span></div></div></div></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="materials" type="button"><span>К материалам и вопросам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="materials" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="process" type="button"><span>К порядку работы</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Подготовка к исследованию</div><h2>Какие материалы понадобятся</h2><div class="construction-intro-grid"><div><ul class="construction-task-list"><li><strong>Оружие, пули, гильзы или иные объекты, относящиеся к задаче.</strong></li><li><strong>Документ о назначении экспертизы, если она проводится по делу.</strong></li><li><strong>Протоколы осмотра, фотографии и схемы места события.</strong></li><li><strong>Сведения об обнаружении, изъятии и хранении объектов.</strong></li><li><strong>Предыдущие заключения и приложения к ним.</strong></li><li><strong>Перечень вопросов и сведения о доступных сравнительных материалах.</strong></li></ul></div><div class="construction-intro-note"><strong>Сохранность следов имеет значение.</strong><p>Не очищайте и не изменяйте представляемые объекты. Возможность и порядок их передачи предварительно обсуждаются со специалистом; отправлять оружие обычной посылкой не следует.</p></div></div><div class="forensic-service-actions"><button class="btn-primary" type="button" data-open-expertise-order="true" data-expertise-name="Баллистическая экспертиза"><span>Уточнить список материалов</span><span class="arrow">→</span></button></div></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Вопросы эксперту</div><h2>Какие вопросы можно поставить</h2><ul class="construction-benefit-grid"><li><strong>Не оставлены ли следы на представленных гильзах одним экземпляром оружия?</strong></li><li><strong>Не выстрелена ли представленная пуля из исследуемого оружия?</strong></li><li><strong>Какие характеристики и техническое состояние имеет представленный объект?</strong></li><li><strong>Какие обстоятельства образования повреждения можно установить по имеющимся материалам?</strong></li></ul></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="benefits" type="button"><span>К результату и ответам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="benefits" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="materials" type="button"><span>К материалам и вопросам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Результат</div><h2>Что получает заказчик</h2><ul class="construction-benefit-grid"><li><strong>Заключение с перечнем объектов, описанием исследований и ответами на вопросы.</strong></li><li><strong>Фототаблицы и сопоставления значимых признаков.</strong></li><li><strong>Указание установленных обстоятельств и пределов вывода.</strong></li><li><strong>Разъяснение причин, по которым отдельный вопрос не может быть решён.</strong></li></ul></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Частые вопросы</div><h2>Что важно знать до обращения</h2><details class="forensic-faq-item"><summary>Можно ли провести экспертизу только по фотографиям?</summary><p>По фотографиям можно предварительно обсудить задачу. Исследование микроследов и технического состояния обычно требует самих объектов; возможность работы по материалам оценивается отдельно.</p></details><details class="forensic-faq-item"><summary>Определяет ли эксперт виновного?</summary><p>Эксперт исследует объекты и следы в пределах специальных знаний. Правовую оценку действий участников дают уполномоченные органы.</p></details><details class="forensic-faq-item"><summary>Как определяются срок и стоимость?</summary><p>После изучения задачи, числа объектов, необходимого оборудования и сравнительных материалов. Условия согласовываются до начала работы.</p></details></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Обсудим вашу задачу</div><h2>Начните с материалов и вопросов</h2><p>Опишите ситуацию и приложите доступные документы. После предварительного изучения согласуем возможность исследования, состав работ, срок и стоимость.</p><div class="forensic-service-actions"><button class="btn-primary" type="button" data-open-expertise-order="true" data-expertise-name="Баллистическая экспертиза"><span>Оставить заявку</span><span class="arrow">→</span></button></div></article>
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="hero" type="button"><span>К началу услуги</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+</div>
+</section>
+<section aria-hidden="true" class="single-service-page new-expertise-page forensic-expertise-page" id="portraitPage">
+<header class="service-page-topbar">
+<button class="service-page-brand" data-close-service-page="true" type="button"><span class="service-page-brand-badge">ЭР</span><span>Все Экспертизы-РФ</span></button>
+<button class="service-page-back" data-close-service-page="true" type="button">← На главную</button>
+</header>
+<div class="service-section-flow" data-service-sections="portrait">
+<section class="service-section-panel active" data-service-panel="hero" aria-hidden="false">
+<section class="expertise-document-hero auto-page-hero economic-page-hero new-expertise-hero-long"><div class="auto-page-hero-copy"><div class="auto-page-kicker">Портретная экспертиза</div><h1>Портретная <em>экспертиза</em></h1><p class="auto-page-intro">На основании анализа внешности по фото- и видеоматериалам проводим идентификацию личности и установлением его пол, возраста, а также некоторые иные характеристики.</p></div><aside aria-label="Объекты и направления исследования" class="auto-collage-wrap"><div class="auto-collage-head">С чем мы работаем</div><div class="auto-collage-board economic-collage-board"><figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/portrait-photo-comparison.webp"/></div><figcaption class="auto-collage-tag">Фотографии</figcaption></figure>
+<figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/portrait-video-frame.webp"/></div><figcaption class="auto-collage-tag">Кадры видеозаписи</figcaption></figure>
+<figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/portrait-facial-detail.webp"/></div><figcaption class="auto-collage-tag">Признаки внешности</figcaption></figure>
+<figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/portrait-image-laboratory.webp"/></div><figcaption class="auto-collage-tag">Сравнение изображений</figcaption></figure>
+</div></aside>
+<div class="auto-page-note expertise-hero-context">
+<h2>Когда применяется экспертиза</h2>
+<div class="expertise-hero-context-text"><p>Данная экспертиза поможет, когда необходимо провести идентификацию личности по признакам внешнего облика, запечатленных на различных носителях портретной информации (например, фотоснимках, стоп-кадрах в видеороликах и т.д.).</p>
+<p>Кроме того, возможно определение антропологической принадлежности изображенной на портрете личности; сходства разных лиц, обусловленного кровным родством (при невозможности проведения молекулярно-генетической экспертизы).</p></div>
+<div class="forensic-service-actions"><button class="btn-primary" type="button" data-open-expertise-order="true" data-expertise-name="Портретная экспертиза"><span>Заказать экспертизу</span><span class="arrow">→</span></button></div>
+</div></section><div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="scope" type="button"><span>К описанию и задачам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="scope" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="hero" type="button"><span>К началу услуги</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Описание услуги</div><h2>Портретная экспертиза</h2><div class="construction-intro-grid"><div><p>Портретная экспертиза исследует отображение внешности человека. В отличие от обычного визуального впечатления, экспертное сравнение последовательно оценивает комплекс признаков, условия съёмки и возможные причины различий.</p><p>Работа может потребоваться при проверке фотографий в документах, сопоставлении кадров наблюдения и установлении связи между несколькими изображениями. Для сравнения нужны материалы с известным происхождением и подходящими условиями съёмки.</p></div><div class="construction-intro-note"><strong>Проверить сходство по совокупности признаков.</strong><p>Размытость, закрытое лицо, сильная компрессия, неподходящий ракурс или недостаточный масштаб могут ограничить исследование. Эти обстоятельства фиксируются до формулирования итогового ответа.</p></div></div></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Задачи</div><h2>Какие задачи решает экспертиза</h2><ul class="construction-task-list"><li><strong>Оценить пригодность фотографий и видеокадров для сравнения.</strong></li><li><strong>Выделить наиболее информативные изображения.</strong></li><li><strong>Сопоставить устойчивые признаки внешности.</strong></li><li><strong>Учесть различия ракурса, освещения и мимики.</strong></li><li><strong>Проверить объяснимость возрастных и иных изменений.</strong></li><li><strong>Оформить наглядные сравнительные иллюстрации.</strong></li></ul></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="types" type="button"><span>К направлениям исследования</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="types" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="scope" type="button"><span>К описанию и задачам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Направления исследования</div><h2>Что можно исследовать</h2><div class="construction-service-list"><article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">01</span><h3>Сравнение фотографий</h3></div><p>Сопоставляем портреты, представленные на разных снимках, с учётом их качества и условий получения.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Ракурс и масштаб лица.</li><li>Устойчивые признаки внешнего строения.</li><li>Сходства и различия их отображения.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Сравнительная фототаблица.</li><li>Ответ о том, одно или разные лица изображены, если материал позволяет.</li></ul></div></div></article>
+<article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">02</span><h3>Исследование видеокадров</h3></div><p>Из видеозаписи выделяются кадры, в которых признаки внешности представлены наиболее информативно.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Исходная запись и её качество.</li><li>Последовательность кадров.</li><li>Влияние движения, освещения и сжатия.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Обоснованный выбор кадров.</li><li>Оценка возможности сравнения с представленными образцами.</li></ul></div></div></article>
+<article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">03</span><h3>Изображения в документах</h3></div><p>Исследуем фотографию в документе и сопоставимые изображения проверяемого лица.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Качество воспроизведения фотографии.</li><li>Особенности позы и освещения.</li><li>Достаточность сравнительных снимков.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Вывод по отображённой внешности.</li><li>Перечень ограничений, связанных с носителем и качеством копии.</li></ul></div></div></article>
+<article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">04</span><h3>Оценка сравнительных материалов</h3></div><p>Помогаем определить, каких снимков не хватает для содержательного исследования.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Известное происхождение образцов.</li><li>Близость ракурсов и времени съёмки.</li><li>Наличие помех и закрытых участков лица.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Требования к дополнительным изображениям.</li><li>Перечень вопросов, которые возможно поставить эксперту.</li></ul></div></div></article>
+</div></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="process" type="button"><span>К порядку работы</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="process" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="types" type="button"><span>К направлениям исследования</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Как проводится экспертиза</div><h2>Порядок работы</h2><div class="construction-process"><div class="construction-process-item"><div><strong>Обсуждение задачи</strong><span>Определяем, какие изображения нужно сравнить и в связи с каким вопросом.</span></div></div><div class="construction-process-item"><div><strong>Проверка исходников</strong><span>Оцениваем качество файлов, происхождение и полноту материалов.</span></div></div><div class="construction-process-item"><div><strong>Подбор изображений</strong><span>Выделяем информативные кадры и запрашиваем сопоставимые образцы при необходимости.</span></div></div><div class="construction-process-item"><div><strong>Сравнение</strong><span>Последовательно исследуем признаки внешности и условия их отображения.</span></div></div><div class="construction-process-item"><div><strong>Проверка различий</strong><span>Оцениваем влияние ракурса, возраста, мимики и качества изображения.</span></div></div><div class="construction-process-item"><div><strong>Оформление результата</strong><span>Готовим заключение с фототаблицами, выводами и указанием ограничений.</span></div></div></div></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="materials" type="button"><span>К материалам и вопросам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="materials" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="process" type="button"><span>К порядку работы</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Подготовка к исследованию</div><h2>Какие материалы понадобятся</h2><div class="construction-intro-grid"><div><ul class="construction-task-list"><li><strong>Исходные фотографии в максимально доступном качестве.</strong></li><li><strong>Оригинальные видеофайлы и сведения о нужных временных фрагментах.</strong></li><li><strong>Сравнительные снимки лица с подтверждённым происхождением.</strong></li><li><strong>Даты и известные условия съёмки.</strong></li><li><strong>Сведения о значимых изменениях внешности, если они относятся к задаче.</strong></li><li><strong>Вопросы эксперту и материалы дела при наличии.</strong></li></ul></div><div class="construction-intro-note"><strong>Предпочтительны исходные файлы.</strong><p>Повторное сохранение в мессенджере, фильтры и искусственное улучшение могут изменить детали. По возможности передавайте оригиналы, а обработанные версии прикладывайте отдельно с пояснением.</p></div></div><div class="forensic-service-actions"><button class="btn-primary" type="button" data-open-expertise-order="true" data-expertise-name="Портретная экспертиза"><span>Уточнить список материалов</span><span class="arrow">→</span></button></div></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Вопросы эксперту</div><h2>Какие вопросы можно поставить</h2><ul class="construction-benefit-grid"><li><strong>Одно или разные лица изображены на представленных фотографиях?</strong></li><li><strong>Изображено ли на выбранных видеокадрах лицо, представленное на сравнительных снимках?</strong></li><li><strong>Пригодны ли представленные изображения для портретной идентификации?</strong></li><li><strong>Какие дополнительные сравнительные изображения необходимы для решения вопроса?</strong></li></ul></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="benefits" type="button"><span>К результату и ответам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="benefits" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="materials" type="button"><span>К материалам и вопросам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Результат</div><h2>Что получает заказчик</h2><ul class="construction-benefit-grid"><li><strong>Заключение с описанием исследованных изображений.</strong></li><li><strong>Сравнительные таблицы и пояснения к признакам.</strong></li><li><strong>Аргументированный ответ на поставленный вопрос.</strong></li><li><strong>Оценку влияния качества и условий съёмки на результат.</strong></li></ul></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Частые вопросы</div><h2>Что важно знать до обращения</h2><details class="forensic-faq-item"><summary>Можно ли сравнить лицо в маске или на размытом кадре?</summary><p>Возможность зависит от объёма сохранившихся признаков. Если их недостаточно, эксперт укажет невозможность надёжного решения вопроса и объяснит причину.</p></details><details class="forensic-faq-item"><summary>Нужны ли фотографии одного возраста?</summary><p>Близкое время съёмки облегчает сравнение. Значительный промежуток времени требует учитывать возрастные изменения и иногда дополнительных снимков.</p></details><details class="forensic-faq-item"><summary>Экспертиза проверяет монтаж фотографии?</summary><p>Основная задача здесь — сравнение внешности. Признаки монтажа и технической обработки могут потребовать отдельного фототехнического исследования.</p></details></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Обсудим вашу задачу</div><h2>Начните с материалов и вопросов</h2><p>Опишите ситуацию и приложите доступные документы. После предварительного изучения согласуем возможность исследования, состав работ, срок и стоимость.</p><div class="forensic-service-actions"><button class="btn-primary" type="button" data-open-expertise-order="true" data-expertise-name="Портретная экспертиза"><span>Оставить заявку</span><span class="arrow">→</span></button></div></article>
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="hero" type="button"><span>К началу услуги</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+</div>
+</section>
+<section aria-hidden="true" class="single-service-page new-expertise-page forensic-expertise-page" id="coldWeaponPage">
+<header class="service-page-topbar">
+<button class="service-page-brand" data-close-service-page="true" type="button"><span class="service-page-brand-badge">ЭР</span><span>Все Экспертизы-РФ</span></button>
+<button class="service-page-back" data-close-service-page="true" type="button">← На главную</button>
+</header>
+<div class="service-section-flow" data-service-sections="cold-weapon">
+<section class="service-section-panel active" data-service-panel="hero" aria-hidden="false">
+<section class="expertise-document-hero auto-page-hero economic-page-hero new-expertise-hero-long"><div class="auto-page-hero-copy"><div class="auto-page-kicker">Криминалистическая экспертиза холодного оружия</div><h1>Экспертиза <em>холодного оружия</em></h1><p class="auto-page-intro">Определяем принадлежность предмета (кинжала, ножа, кастета и иных объектов) к холодному и метательному оружию, также устанавливаем тип, вид и способ его изготовления.</p></div><aside aria-label="Объекты и направления исследования" class="auto-collage-wrap"><div class="auto-collage-head">С чем мы работаем</div><div class="auto-collage-board economic-collage-board"><figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/cold-weapon-object.webp"/></div><figcaption class="auto-collage-tag">Предмет исследования</figcaption></figure>
+<figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/cold-weapon-measurement.webp"/></div><figcaption class="auto-collage-tag">Размеры и конструкция</figcaption></figure>
+<figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/cold-weapon-materials.webp"/></div><figcaption class="auto-collage-tag">Материалы изделия</figcaption></figure>
+<figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/cold-weapon-documentation.webp"/></div><figcaption class="auto-collage-tag">Осмотр и фиксация</figcaption></figure>
+</div></aside>
+<div class="auto-page-note expertise-hero-context">
+<h2>Когда применяется экспертиза</h2>
+<div class="expertise-hero-context-text"><p>Рассматриваемая экспертиза может потребоваться для граждан, которые на постоянной основе (для обороны) переносят предметы, схожие по отдельным характеристикам с холодным и метательным оружием.</p>
+<p>Также указанное направление может быть полезным в целях исключения проблем со службами безопасности при покупке и транспортировке посредством авиа- и железнодорожного транспорта различных предметов промышленного производства хозяйственно-бытового и специального назначения, имеющих отдельные конструктивные элементы или внешние признаки, свойственные указанному оружию, но не предназначенные для поражения цели (спецсредства, строительные и хозяйственные инструменты, спортивный инвентарь и снаряжение, макеты, муляжи, игрушки и т.д.).</p>
+<p>В рассматриваемом случае будет решаться вопрос о том, относятся ли исследуемые объекты к определенным типам оружия или изделиям хозяйственно-бытового назначения.</p></div>
+<div class="forensic-service-actions"><button class="btn-primary" type="button" data-open-expertise-order="true" data-expertise-name="Криминалистическая экспертиза холодного оружия"><span>Заказать экспертизу</span><span class="arrow">→</span></button></div>
+</div></section><div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="scope" type="button"><span>К описанию и задачам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="scope" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="hero" type="button"><span>К началу услуги</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Описание услуги</div><h2>Криминалистическая экспертиза холодного оружия</h2><div class="construction-intro-grid"><div><p>Криминалистическая экспертиза холодного оружия помогает разграничить оружие и изделия хозяйственно-бытового, спортивного, сувенирного или иного назначения. Эксперт изучает фактические свойства представленного предмета.</p><p>Исследование актуально, когда оспаривается классификация изделия, требуется проверить его характеристики или сопоставить предмет с сопроводительной документацией. Сертификат и описание модели рассматриваются вместе с самим объектом.</p></div><div class="construction-intro-note"><strong>Определить свойства предмета по результатам исследования.</strong><p>Решение принимается по комплексу признаков и применимой методике. Отдельный размер, форма клинка или название модели не заменяют полноценную оценку.</p></div></div></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Задачи</div><h2>Какие задачи решает экспертиза</h2><ul class="construction-task-list"><li><strong>Зафиксировать конструкцию и состояние предмета.</strong></li><li><strong>Определить значимые размеры и особенности устройства.</strong></li><li><strong>Исследовать свойства материалов в необходимом объёме.</strong></li><li><strong>Установить принадлежность к холодному оружию либо иной категории изделий.</strong></li><li><strong>Сопоставить фактический предмет с описанием и документацией.</strong></li><li><strong>Оформить вывод с пояснением исследованных признаков.</strong></li></ul></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="types" type="button"><span>К направлениям исследования</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="types" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="scope" type="button"><span>К описанию и задачам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Направления исследования</div><h2>Что можно исследовать</h2><div class="construction-service-list"><article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">01</span><h3>Классификация предмета</h3></div><p>Выясняем, к какой категории относится представленное изделие по совокупности его свойств.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Конструкция и назначение.</li><li>Характерные признаки изделия.</li><li>Состояние объекта на момент осмотра.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Обоснованный классификационный вывод.</li><li>Описание признаков, на которых он основан.</li></ul></div></div></article>
+<article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">02</span><h3>Исследование клинковых изделий</h3></div><p>Изучаем ножи, кинжалы и сходные по внешнему виду предметы в пределах поставленной задачи.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Форма и размеры элементов.</li><li>Способ соединения частей.</li><li>Особенности рукояти и клинка.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Зафиксированные характеристики.</li><li>Сопоставление с применимыми критериями исследования.</li></ul></div></div></article>
+<article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">03</span><h3>Предметы иной конструкции</h3></div><p>Задача и программа исследования определяются после предварительного осмотра необычного или комбинированного изделия.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Фактическая конструкция.</li><li>Состояние и комплектность.</li><li>Признаки функционального назначения.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Описание особенностей предмета.</li><li>Вывод в пределах пригодности и доступности объекта.</li></ul></div></div></article>
+<article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">04</span><h3>Сопоставление с документами</h3></div><p>Проверяем соответствие представленного изделия сведениям в паспорте, сертификате или предыдущем заключении.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Маркировки и модельные признаки.</li><li>Существенные конструктивные различия.</li><li>Полнота документации.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Перечень установленных соответствий и расхождений.</li><li>Обоснование необходимости дополнительных исследований.</li></ul></div></div></article>
+</div></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="process" type="button"><span>К порядку работы</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="process" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="types" type="button"><span>К направлениям исследования</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Как проводится экспертиза</div><h2>Порядок работы</h2><div class="construction-process"><div class="construction-process-item"><div><strong>Уточнение вопроса</strong><span>Определяем предмет, обстоятельства обращения и требуемый результат.</span></div></div><div class="construction-process-item"><div><strong>Изучение документов</strong><span>Проверяем доступные фотографии, описания и сопроводительные материалы.</span></div></div><div class="construction-process-item"><div><strong>Предоставление объекта</strong><span>Согласовываем порядок передачи и фиксации состояния изделия.</span></div></div><div class="construction-process-item"><div><strong>Осмотр и измерения</strong><span>Исследуем конструкцию, размеры и другие значимые свойства.</span></div></div><div class="construction-process-item"><div><strong>Оценка совокупности признаков</strong><span>Сопоставляем результаты с критериями применимой методики.</span></div></div><div class="construction-process-item"><div><strong>Выдача заключения</strong><span>Оформляем описание, иллюстрации, выводы и сведения об ограничениях.</span></div></div></div></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="materials" type="button"><span>К материалам и вопросам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="materials" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="process" type="button"><span>К порядку работы</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Подготовка к исследованию</div><h2>Какие материалы понадобятся</h2><div class="construction-intro-grid"><div><ul class="construction-task-list"><li><strong>Сам предмет в имеющемся состоянии и комплектности.</strong></li><li><strong>Фотографии предмета и маркировок для предварительного обсуждения.</strong></li><li><strong>Паспорт изделия, сертификат и описание модели при наличии.</strong></li><li><strong>Сведения о происхождении и изменениях конструкции.</strong></li><li><strong>Предыдущие заключения или протоколы осмотра.</strong></li><li><strong>Вопросы эксперту и документ о назначении исследования при наличии.</strong></li></ul></div><div class="construction-intro-note"><strong>Объект исследуется в фактическом состоянии.</strong><p>Не меняйте конструкцию и не пытайтесь самостоятельно проверять прочность или иные свойства предмета. Способ упаковки и допустимый порядок передачи заранее согласуйте со специалистом.</p></div></div><div class="forensic-service-actions"><button class="btn-primary" type="button" data-open-expertise-order="true" data-expertise-name="Криминалистическая экспертиза холодного оружия"><span>Уточнить список материалов</span><span class="arrow">→</span></button></div></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Вопросы эксперту</div><h2>Какие вопросы можно поставить</h2><ul class="construction-benefit-grid"><li><strong>Относится ли представленный предмет к холодному оружию?</strong></li><li><strong>К какому виду или типу относится исследуемый предмет при наличии соответствующих признаков?</strong></li><li><strong>Какие конструктивные характеристики имеет представленное изделие?</strong></li><li><strong>Соответствует ли объект описанию и характеристикам, указанным в представленных документах?</strong></li></ul></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="benefits" type="button"><span>К результату и ответам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="benefits" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="materials" type="button"><span>К материалам и вопросам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Результат</div><h2>Что получает заказчик</h2><ul class="construction-benefit-grid"><li><strong>Описание конструкции и состояния предмета.</strong></li><li><strong>Фотографии и результаты значимых измерений.</strong></li><li><strong>Вывод о категории изделия с обоснованием.</strong></li><li><strong>Ответы на согласованные вопросы и указание ограничений.</strong></li></ul></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Частые вопросы</div><h2>Что важно знать до обращения</h2><details class="forensic-faq-item"><summary>Достаточно ли фотографии ножа?</summary><p>Фотография помогает обсудить задачу, но не показывает все свойства предмета. Итоговая классификация обычно требует исследования самого изделия.</p></details><details class="forensic-faq-item"><summary>Можно ли сделать вывод только по длине клинка?</summary><p>Нет. Размеры рассматриваются вместе с конструкцией, материалами и другими признаками, предусмотренными методикой.</p></details><details class="forensic-faq-item"><summary>Нужен ли сертификат на изделие?</summary><p>Если он есть, приложите его. Эксперт проверит его относимость к представленному объекту; отсутствие документа обсуждается при приёме материалов.</p></details></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Обсудим вашу задачу</div><h2>Начните с материалов и вопросов</h2><p>Опишите ситуацию и приложите доступные документы. После предварительного изучения согласуем возможность исследования, состав работ, срок и стоимость.</p><div class="forensic-service-actions"><button class="btn-primary" type="button" data-open-expertise-order="true" data-expertise-name="Криминалистическая экспертиза холодного оружия"><span>Оставить заявку</span><span class="arrow">→</span></button></div></article>
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="hero" type="button"><span>К началу услуги</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+</div>
+</section>
+<section aria-hidden="true" class="single-service-page new-expertise-page forensic-expertise-page" id="documentAgePage">
+<header class="service-page-topbar">
+<button class="service-page-brand" data-close-service-page="true" type="button"><span class="service-page-brand-badge">ЭР</span><span>Все Экспертизы-РФ</span></button>
+<button class="service-page-back" data-close-service-page="true" type="button">← На главную</button>
+</header>
+<div class="service-section-flow" data-service-sections="document-age">
+<section class="service-section-panel active" data-service-panel="hero" aria-hidden="false">
+<section class="expertise-document-hero auto-page-hero economic-page-hero new-expertise-hero-long"><div class="auto-page-hero-copy"><div class="auto-page-kicker">Экспертиза давности создания документа</div><h1>Давность создания <em>документа</em></h1><p class="auto-page-intro">Устанавливаем абсолютную давность изготовления документа в целом и (или) его реквизитов (подписей, оттисков печатей и штампов, текстов, выполненных на струйном принтере).</p></div><aside aria-label="Объекты и направления исследования" class="auto-collage-wrap"><div class="auto-collage-head">С чем мы работаем</div><div class="auto-collage-board economic-collage-board"><figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/document-age-original.webp"/></div><figcaption class="auto-collage-tag">Оригиналы документов</figcaption></figure>
+<figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/document-age-ink-microscope.webp"/></div><figcaption class="auto-collage-tag">Штрихи и чернила</figcaption></figure>
+<figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/document-age-chromatography.webp"/></div><figcaption class="auto-collage-tag">Материалы письма</figcaption></figure>
+<figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/document-age-stroke-sequence.webp"/></div><figcaption class="auto-collage-tag">Последовательность реквизитов</figcaption></figure>
+</div></aside>
+<div class="auto-page-note expertise-hero-context">
+<h2>Когда применяется экспертиза</h2>
+<div class="expertise-hero-context-text"><p>Указанная экспертиза требуется, когда в рамках спора появляется документ, который ранее не фигурировал в материалах дела и у одной из сторон имеются сомнения в том, что он был изготовлен в заявленный период.</p>
+<p>В частности, когда необходимо определить: соответствует ли фактическая дата выполнения документа в целом либо его реквизитов (а), дате, указанной в его содержании.</p>
+<p>Например, дополнительное соглашение к договору купли продажи, датированное от октября 2024 г., появилось лишь в рамках судебного разбирательства в ноябре 2026 г.</p>
+<p>Ввиду этого у оппонентов сформировалась версия, что оно выполнено недавно и не соответствует дате, указанной в содержании.</p>
+<p>Решить этот вопрос и определить фактическую дату изготовления дополнительного соглашения поможет экспертиза давности.</p></div>
+<div class="forensic-service-actions"><button class="btn-primary" type="button" data-open-expertise-order="true" data-expertise-name="Экспертиза давности создания документа"><span>Заказать экспертизу</span><span class="arrow">→</span></button></div>
+</div></section><div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="scope" type="button"><span>К описанию и задачам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="scope" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="hero" type="button"><span>К началу услуги</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Описание услуги</div><h2>Экспертиза давности создания документа</h2><div class="construction-intro-grid"><div><p>Экспертиза давности создания документа исследует время выполнения отдельных реквизитов и их взаимную последовательность. При этом время нанесения подписи, печати и печатного текста может различаться.</p><p>Такая задача возникает при сомнениях в дате расписки, договора, акта или другого документа. Сначала определяется, какие именно реквизиты вызывают вопрос и какой период нужно проверить.</p></div><div class="construction-intro-note"><strong>Проверить временную согласованность реквизитов.</strong><p>Эксперт выбирает методы под конкретные материалы. Не каждый документ пригоден для датирования; результат может выражаться временным интервалом, относительной последовательностью или указанием невозможности решения.</p></div></div></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Задачи</div><h2>Какие задачи решает экспертиза</h2><ul class="construction-task-list"><li><strong>Оценить пригодность оригинала для исследования давности.</strong></li><li><strong>Проверить возможность определения периода выполнения спорного реквизита.</strong></li><li><strong>Исследовать последовательность нанесения пересекающихся штрихов.</strong></li><li><strong>Сопоставить реквизиты и доступные сравнительные образцы.</strong></li><li><strong>Оценить обстоятельства хранения, влияющие на интерпретацию результатов.</strong></li><li><strong>Разделить установленные факты и вопросы, для которых данных недостаточно.</strong></li></ul></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="types" type="button"><span>К направлениям исследования</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="types" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="scope" type="button"><span>К описанию и задачам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Направления исследования</div><h2>Что можно исследовать</h2><div class="construction-service-list"><article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">01</span><h3>Давность выполнения реквизита</h3></div><p>Проверяем возможность соотнесения подписи, рукописной записи или оттиска с исследуемым периодом.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Материал и состояние штрихов.</li><li>Пригодность выбранного метода.</li><li>Данные об условиях хранения.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Вывод о времени выполнения в допустимых пределах.</li><li>Объяснение точности и ограничений результата.</li></ul></div></div></article>
+<article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">02</span><h3>Последовательность нанесения</h3></div><p>Исследуем, в каком порядке выполнены взаимно пересекающиеся элементы документа.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Участки пересечения штрихов.</li><li>Взаимодействие материалов реквизитов.</li><li>Пригодность пересечений для анализа.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Ответ о последовательности, если признаки достаточны.</li><li>Иллюстрации исследованных участков.</li></ul></div></div></article>
+<article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">03</span><h3>Сопоставление нескольких реквизитов</h3></div><p>Проверяем временную согласованность отдельных записей и элементов в пределах доступных методов.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Реквизиты одного или нескольких документов.</li><li>Материалы письма.</li><li>Доступные датированные образцы.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Сопоставление исследованных элементов.</li><li>Выводы о различиях и пределах их интерпретации.</li></ul></div></div></article>
+<article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">04</span><h3>Комплексное исследование документа</h3></div><p>Если вопрос затрагивает не только давность, состав работы дополняется техническим исследованием документа.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Способы изготовления.</li><li>Признаки изменений и замены элементов.</li><li>Связь технических признаков со спорной датой.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Раздельные ответы по давности и техническим изменениям.</li><li>Перечень необходимых дополнительных исследований.</li></ul></div></div></article>
+</div></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="process" type="button"><span>К порядку работы</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="process" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="types" type="button"><span>К направлениям исследования</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Как проводится экспертиза</div><h2>Порядок работы</h2><div class="construction-process"><div class="construction-process-item"><div><strong>Определение периода</strong><span>Уточняем спорную дату, реквизиты и вопросы по документу.</span></div></div><div class="construction-process-item"><div><strong>Предварительная оценка</strong><span>Изучаем описание и копии, согласовываем предоставление оригинала.</span></div></div><div class="construction-process-item"><div><strong>Осмотр оригинала</strong><span>Проверяем состояние, материалы и пригодность объекта для выбранной задачи.</span></div></div><div class="construction-process-item"><div><strong>Согласование методов</strong><span>Разъясняем программу и необходимость отбора проб, если он требуется; получаем предусмотренное разрешение.</span></div></div><div class="construction-process-item"><div><strong>Исследование</strong><span>Проводим инструментальный и сравнительный анализ с учётом особенностей материала.</span></div></div><div class="construction-process-item"><div><strong>Оформление вывода</strong><span>Указываем результаты, доступный временной диапазон и ограничения исследования.</span></div></div></div></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="materials" type="button"><span>К материалам и вопросам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="materials" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="process" type="button"><span>К порядку работы</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Подготовка к исследованию</div><h2>Какие материалы понадобятся</h2><div class="construction-intro-grid"><div><ul class="construction-task-list"><li><strong>Оригинал документа со спорными реквизитами.</strong></li><li><strong>Перечень подписей, записей или оттисков, которые требуется исследовать.</strong></li><li><strong>Спорная дата или период, имеющий значение для задачи.</strong></li><li><strong>Сведения об условиях хранения и известных воздействиях.</strong></li><li><strong>Связанные документы и датированные образцы при наличии.</strong></li><li><strong>Вопросы эксперту, материалы дела и разрешение на отбор проб, если потребуется.</strong></li></ul></div><div class="construction-intro-note"><strong>Для исследования материалов нужен оригинал.</strong><p>Не ламинируйте, не нагревайте и не обрабатывайте документ. Если метод предполагает частичное изменение объекта при отборе проб, это обсуждается и оформляется до начала такого исследования.</p></div></div><div class="forensic-service-actions"><button class="btn-primary" type="button" data-open-expertise-order="true" data-expertise-name="Экспертиза давности создания документа"><span>Уточнить список материалов</span><span class="arrow">→</span></button></div></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Вопросы эксперту</div><h2>Какие вопросы можно поставить</h2><ul class="construction-benefit-grid"><li><strong>Возможно ли определить период выполнения указанной подписи или записи?</strong></li><li><strong>Соответствует ли время выполнения спорного реквизита заявленному периоду в пределах возможностей метода?</strong></li><li><strong>В какой последовательности нанесены пересекающиеся подпись, текст или оттиск?</strong></li><li><strong>Какие обстоятельства ограничивают определение давности представленного документа?</strong></li></ul></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="benefits" type="button"><span>К результату и ответам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="benefits" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="materials" type="button"><span>К материалам и вопросам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Результат</div><h2>Что получает заказчик</h2><ul class="construction-benefit-grid"><li><strong>Заключение по конкретным исследованным реквизитам.</strong></li><li><strong>Описание применённых методов и исходных данных.</strong></li><li><strong>Вывод о времени или последовательности с указанием допустимой точности.</strong></li><li><strong>Иллюстрации, результаты измерений и объяснение ограничений.</strong></li></ul></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Частые вопросы</div><h2>Что важно знать до обращения</h2><details class="forensic-faq-item"><summary>Можно ли назвать точный день создания?</summary><p>Не во всех случаях. Допустимая точность зависит от материала и метода. До осмотра оригинала обещать точную дату некорректно.</p></details><details class="forensic-faq-item"><summary>Подойдёт скан или фотография?</summary><p>Они полезны для предварительного обсуждения. Исследование состава материалов и давности штрихов требует оригинального документа.</p></details><details class="forensic-faq-item"><summary>Будет ли повреждён документ?</summary><p>Некоторые методы требуют отбора небольших проб. Необходимость, объём и разрешение на такое действие согласуются заранее; применимость неразрушающих методов оценивается отдельно.</p></details></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Обсудим вашу задачу</div><h2>Начните с материалов и вопросов</h2><p>Опишите ситуацию и приложите доступные документы. После предварительного изучения согласуем возможность исследования, состав работ, срок и стоимость.</p><div class="forensic-service-actions"><button class="btn-primary" type="button" data-open-expertise-order="true" data-expertise-name="Экспертиза давности создания документа"><span>Оставить заявку</span><span class="arrow">→</span></button></div></article>
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="hero" type="button"><span>К началу услуги</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+</div>
+</section>
+<section aria-hidden="true" class="single-service-page new-expertise-page forensic-expertise-page" id="authorshipPage">
+<header class="service-page-topbar">
+<button class="service-page-brand" data-close-service-page="true" type="button"><span class="service-page-brand-badge">ЭР</span><span>Все Экспертизы-РФ</span></button>
+<button class="service-page-back" data-close-service-page="true" type="button">← На главную</button>
+</header>
+<div class="service-section-flow" data-service-sections="authorship">
+<section class="service-section-panel active" data-service-panel="hero" aria-hidden="false">
+<section class="expertise-document-hero auto-page-hero economic-page-hero new-expertise-hero-long"><div class="auto-page-hero-copy"><div class="auto-page-kicker">Автороведческая экспертиза</div><h1>Автороведческая <em>экспертиза</em></h1><p class="auto-page-intro">Анализируем рукописные и машинописные тексты, документы, выполненные полиграфическим способом, гипертекстовые документы, смс-сообщения, письма электронной почты, а также контент сайта в Интернете с целью установление их автора. Определяем родной язык автора отмеченных ранее документов, его уровня образования, а также факта намеренного искажения письменной речи.</p></div><aside aria-label="Объекты и направления исследования" class="auto-collage-wrap"><div class="auto-collage-head">С чем мы работаем</div><div class="auto-collage-board economic-collage-board"><figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/authorship-written-texts.webp"/></div><figcaption class="auto-collage-tag">Письма и заявления</figcaption></figure>
+<figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/authorship-digital-correspondence.webp"/></div><figcaption class="auto-collage-tag">Письменная переписка</figcaption></figure>
+<figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/authorship-comparative-analysis.webp"/></div><figcaption class="auto-collage-tag">Сравнительные образцы</figcaption></figure>
+<figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/authorship-expert-report.webp"/></div><figcaption class="auto-collage-tag">Речевые особенности</figcaption></figure>
+</div></aside>
+<div class="auto-page-note expertise-hero-context">
+<h2>Когда применяется экспертиза</h2>
+<div class="expertise-hero-context-text"><p>Отмеченная экспертиза целесообразна в случаях, когда необходимо определить автора текста определенного документа (его фрагмента) или нескольких документов.</p>
+<p>Помимо этого, данное направление использования специальных знаний поможет, когда требуется установить пол, возраст, образование, родной язык, профессия, род занятий, уровень речевой культуры и языковой компетентности автора текста.</p>
+<p>В дополнение посредством данной экспертизы возможно диагностировать психофизиологическое состояние (измененном состоянии сознания вследствие алкогольного или наркотического опьянения, стресса, физической усталости, болезненном состоянии и т.п.) автора либо решить задачи по наличию в тексте признаков составления письменного текста в необычных условиях, признаков маскировки, намеренного искажения речевых навыков, выполнения текста под диктовку, признаков имитации чужого авторского стиля и т.д.</p></div>
+<div class="forensic-service-actions"><button class="btn-primary" type="button" data-open-expertise-order="true" data-expertise-name="Автороведческая экспертиза"><span>Заказать экспертизу</span><span class="arrow">→</span></button></div>
+</div></section><div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="scope" type="button"><span>К описанию и задачам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="scope" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="hero" type="button"><span>К началу услуги</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Описание услуги</div><h2>Автороведческая экспертиза</h2><div class="construction-intro-grid"><div><p>Автороведческая экспертиза изучает устойчивые особенности письменной речи: выбор слов, построение фраз, грамматические и стилистические привычки. Эти признаки рассматриваются в совокупности с жанром, темой и условиями создания текста.</p><p>Исследование может потребоваться для проверки авторства писем, заявлений, публикаций и развёрнутой переписки. Предварительно оценивается, достаточно ли в материалах самостоятельной речи и можно ли сопоставлять тексты между собой.</p></div><div class="construction-intro-note"><strong>Сопоставить речевые особенности автора.</strong><p>Короткие шаблонные сообщения, цитаты, значительное редактирование и несопоставимые образцы уменьшают информативность материала. В таком случае могут потребоваться дополнительные тексты.</p></div></div></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Задачи</div><h2>Какие задачи решает экспертиза</h2><ul class="construction-task-list"><li><strong>Определить пригодность спорного текста для исследования.</strong></li><li><strong>Выделить признаки письменной речи.</strong></li><li><strong>Оценить сопоставимость образцов известного авторства.</strong></li><li><strong>Сравнить спорный текст с речевой практикой проверяемого лица.</strong></li><li><strong>Проверить общность авторства нескольких текстов.</strong></li><li><strong>Описать значимые совпадения, различия и ограничения.</strong></li></ul></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="types" type="button"><span>К направлениям исследования</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="types" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="scope" type="button"><span>К описанию и задачам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Направления исследования</div><h2>Что можно исследовать</h2><div class="construction-service-list"><article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">01</span><h3>Авторство спорного текста</h3></div><p>Сопоставляем исследуемый материал с достоверными образцами письменной речи проверяемого лица.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Лексика и фразеология.</li><li>Грамматические и стилистические особенности.</li><li>Устойчивость признаков в образцах.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Вывод по вопросу об авторстве.</li><li>Обоснование значимых совпадений и различий.</li></ul></div></div></article>
+<article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">02</span><h3>Общий автор нескольких текстов</h3></div><p>Проверяем, могли ли несколько самостоятельных текстов быть созданы одним лицом.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Повторяющиеся речевые особенности.</li><li>Жанровые и тематические различия.</li><li>Достаточность независимого материала.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Сопоставление комплекса признаков.</li><li>Ответ об общности авторства в пределах возможностей исследования.</li></ul></div></div></article>
+<article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">03</span><h3>Переписка и публикации</h3></div><p>Исследуем развёрнутые сообщения и авторские публикации с сохранённым контекстом.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Самостоятельные реплики автора.</li><li>Цитаты, пересылки и шаблонные фрагменты.</li><li>Целостность представленного текста.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Выделение пригодного материала.</li><li>Вывод по согласованному вопросу без подмены анализа проверкой аккаунта.</li></ul></div></div></article>
+<article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">04</span><h3>Подбор сравнительных образцов</h3></div><p>Оцениваем представленные тексты и формулируем требования к дополнительным материалам.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Подтверждённое авторство.</li><li>Близость языка, жанра и времени.</li><li>Объём и самостоятельность речи.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Список подходящих материалов.</li><li>Рекомендации по восполнению недостатка образцов.</li></ul></div></div></article>
+</div></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="process" type="button"><span>К порядку работы</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="process" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="types" type="button"><span>К направлениям исследования</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Как проводится экспертиза</div><h2>Порядок работы</h2><div class="construction-process"><div class="construction-process-item"><div><strong>Формулировка задачи</strong><span>Уточняем спорный текст, проверяемое авторство и обстоятельства создания.</span></div></div><div class="construction-process-item"><div><strong>Проверка материалов</strong><span>Отделяем самостоятельный текст от цитат и оцениваем его пригодность.</span></div></div><div class="construction-process-item"><div><strong>Сбор образцов</strong><span>Подбираем сопоставимые тексты с известным авторством.</span></div></div><div class="construction-process-item"><div><strong>Раздельный анализ</strong><span>Исследуем особенности письменной речи в каждом материале.</span></div></div><div class="construction-process-item"><div><strong>Сравнение</strong><span>Оцениваем совокупность сходств и различий с учётом жанра и контекста.</span></div></div><div class="construction-process-item"><div><strong>Заключение</strong><span>Оформляем результаты сопоставления и ответ на поставленный вопрос.</span></div></div></div></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="materials" type="button"><span>К материалам и вопросам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="materials" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="process" type="button"><span>К порядку работы</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Подготовка к исследованию</div><h2>Какие материалы понадобятся</h2><div class="construction-intro-grid"><div><ul class="construction-task-list"><li><strong>Полный спорный текст без сокращений и пересказа.</strong></li><li><strong>Файлы, документы или выгрузка переписки с контекстом.</strong></li><li><strong>Самостоятельные тексты проверяемого лица с подтверждённым авторством.</strong></li><li><strong>Сведения о времени, языке и условиях создания материалов.</strong></li><li><strong>Информация об известных правках, переводе и соавторстве.</strong></li><li><strong>Список вопросов и материалы дела при наличии.</strong></li></ul></div><div class="construction-intro-note"><strong>Образцы должны принадлежать проверяемому автору.</strong><p>Полезны тексты близкой тематики и жанра, созданные в сопоставимый период. Нужный объём определяется после знакомства с задачей; единичная короткая фраза может оказаться непригодной для вывода.</p></div></div><div class="forensic-service-actions"><button class="btn-primary" type="button" data-open-expertise-order="true" data-expertise-name="Автороведческая экспертиза"><span>Уточнить список материалов</span><span class="arrow">→</span></button></div></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Вопросы эксперту</div><h2>Какие вопросы можно поставить</h2><ul class="construction-benefit-grid"><li><strong>Является ли проверяемое лицо автором представленного текста?</strong></li><li><strong>Одним или разными лицами созданы исследуемые тексты?</strong></li><li><strong>Пригоден ли представленный материал для решения вопроса об авторстве?</strong></li><li><strong>Достаточны ли сравнительные образцы и какие материалы необходимо дополнить?</strong></li></ul></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="benefits" type="button"><span>К результату и ответам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="benefits" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="materials" type="button"><span>К материалам и вопросам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Результат</div><h2>Что получает заказчик</h2><ul class="construction-benefit-grid"><li><strong>Описание особенностей письменной речи в исследованных текстах.</strong></li><li><strong>Сопоставление значимых признаков и примеры из материалов.</strong></li><li><strong>Ответ об авторстве либо объяснение невозможности его установить.</strong></li><li><strong>Указание использованных образцов и границ вывода.</strong></li></ul></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Частые вопросы</div><h2>Что важно знать до обращения</h2><details class="forensic-faq-item"><summary>Чем отличается от почерковедческой экспертизы?</summary><p>Почерковедческая исследует выполнение рукописи или подписи. Автороведческая анализирует речевые особенности автора; текст может быть напечатан другим человеком.</p></details><details class="forensic-faq-item"><summary>Можно ли установить автора короткого сообщения?</summary><p>Объёма и индивидуальных признаков может быть недостаточно. Пригодность оценивается по содержанию всей доступной переписки и качеству образцов.</p></details><details class="forensic-faq-item"><summary>Это проверка плагиата или авторских прав?</summary><p>Основная задача — авторство письменной речи. Совпадения фрагментов, права на произведение и авторство идеи требуют отдельной постановки вопросов и не следуют автоматически из такого исследования.</p></details></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Обсудим вашу задачу</div><h2>Начните с материалов и вопросов</h2><p>Опишите ситуацию и приложите доступные документы. После предварительного изучения согласуем возможность исследования, состав работ, срок и стоимость.</p><div class="forensic-service-actions"><button class="btn-primary" type="button" data-open-expertise-order="true" data-expertise-name="Автороведческая экспертиза"><span>Оставить заявку</span><span class="arrow">→</span></button></div></article>
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="hero" type="button"><span>К началу услуги</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+</div>
+</section>
+<section aria-hidden="true" class="single-service-page new-expertise-page forensic-expertise-page" id="fireTechnicalPage">
+<header class="service-page-topbar">
+<button class="service-page-brand" data-close-service-page="true" type="button"><span class="service-page-brand-badge">ЭР</span><span>Все Экспертизы-РФ</span></button>
+<button class="service-page-back" data-close-service-page="true" type="button">← На главную</button>
+</header>
+<div class="service-section-flow" data-service-sections="fire-technical">
+<section class="service-section-panel active" data-service-panel="hero" aria-hidden="false">
+<section class="expertise-document-hero auto-page-hero economic-page-hero new-expertise-hero-long"><div class="auto-page-hero-copy"><div class="auto-page-kicker">Пожаро-техническая экспертиза</div><h1>Пожаро-техническая <em>экспертиза</em></h1><p class="auto-page-intro">Выявляем различные причины возникновения пожара (технологические, технические, организационных и иные), механизм его развития и последствий, а также в целом воссоздаем картину произошедшего события.</p></div><aside aria-label="Объекты и направления исследования" class="auto-collage-wrap"><div class="auto-collage-head">С чем мы работаем</div><div class="auto-collage-board economic-collage-board"><figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/fire-technical-fire-scene.webp"/></div><figcaption class="auto-collage-tag">Место пожара</figcaption></figure>
+<figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/fire-technical-electrical-evidence.webp"/></div><figcaption class="auto-collage-tag">Электрооборудование</figcaption></figure>
+<figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/fire-technical-samples.webp"/></div><figcaption class="auto-collage-tag">Образцы и следы</figcaption></figure>
+<figure class="auto-collage-item economic-collage-item"><div aria-hidden="true" class="economic-symbol-stage"><img alt="" class="economic-card-photo" loading="lazy" decoding="async" width="1254" height="1254" src="./images/forensic-expertise/fire-technical-scene-plan.webp"/></div><figcaption class="auto-collage-tag">Схемы и материалы осмотра</figcaption></figure>
+</div></aside>
+<div class="auto-page-note expertise-hero-context">
+<h2>Когда применяется экспертиза</h2>
+<div class="expertise-hero-context-text"><p>Отмеченная экспертиза поможет установить место первоначального возникновения горения, траекторию его перемещения, определить техническую причину возгорания.</p>
+<p>В частности, являются ли различные агрегаты (неисправность электрооборудования) и предметы (например, отопительные приборы) источниками, вызвавшими первоначальное горение.</p>
+<p>Помимо этого, могут быть выявлены нарушения требований пожарной безопасности при строительстве, эксплуатации объекта, обслуживании оборудования, равно как и проведена оценка эффективности противопожарных систем (сигнализации, автоматических систем пожаротушения, эвакуационных выходов и т.д.).</p></div>
+<div class="forensic-service-actions"><button class="btn-primary" type="button" data-open-expertise-order="true" data-expertise-name="Пожаро-техническая экспертиза"><span>Заказать экспертизу</span><span class="arrow">→</span></button></div>
+</div></section><div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="scope" type="button"><span>К описанию и задачам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="scope" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="hero" type="button"><span>К началу услуги</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Описание услуги</div><h2>Пожаро-техническая экспертиза</h2><div class="construction-intro-grid"><div><p>Пожаро-техническая экспертиза восстанавливает техническую картину возникновения и развития пожара. Эксперт сопоставляет следы теплового воздействия, состояние оборудования, планировку и документально зафиксированные обстоятельства.</p><p>Исследование требуется при разногласиях о причине пожара, проверке версий возгорания, страховых и имущественных спорах. Вывод строится на сопоставлении фактов, а не только на внешне наиболее повреждённом участке.</p></div><div class="construction-intro-note"><strong>Установить техническую причинную связь.</strong><p>Уборка, ремонт, разбор конструкций и утрата оборудования могут изменить объём доступной информации. Эксперт оценивает альтернативные версии и указывает, какие из них подтверждаются материалами.</p></div></div></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Задачи</div><h2>Какие задачи решает экспертиза</h2><ul class="construction-task-list"><li><strong>Определить возможную зону первоначального возникновения пожара.</strong></li><li><strong>Исследовать направление и особенности распространения горения.</strong></li><li><strong>Проверить технические версии возникновения пожара.</strong></li><li><strong>Изучить повреждения электротехнических изделий и оборудования.</strong></li><li><strong>Сопоставить следы с фотографиями, схемами и документами.</strong></li><li><strong>Оценить влияние исследованных технических факторов на развитие события.</strong></li></ul></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="types" type="button"><span>К направлениям исследования</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="types" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="scope" type="button"><span>К описанию и задачам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Направления исследования</div><h2>Что можно исследовать</h2><div class="construction-service-list"><article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">01</span><h3>Очаг и развитие пожара</h3></div><p>Исследуем распределение повреждений и другие признаки, относящиеся к первоначальной зоне горения.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Следы теплового воздействия.</li><li>Планировка и расположение объектов.</li><li>Данные осмотра и последовательность событий.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Обоснованная оценка очаговой зоны.</li><li>Описание доступных для установления путей распространения.</li></ul></div></div></article>
+<article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">02</span><h3>Техническая причина возгорания</h3></div><p>Проверяем предполагаемые источники зажигания в связи с обстановкой и свойствами материалов.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Возможные источники тепла.</li><li>Горючие материалы в исследуемой зоне.</li><li>Согласованность версии с сохранившимися следами.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Оценка технических версий.</li><li>Вывод о причине при достаточности данных.</li></ul></div></div></article>
+<article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">03</span><h3>Электротехнические объекты</h3></div><p>Исследуем кабели, аппараты защиты и оборудование в связи с вопросом о возникновении пожара.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Состояние повреждённых изделий.</li><li>Признаки аварийных режимов.</li><li>Связь повреждений с развитием пожара.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Результаты исследования оборудования.</li><li>Оценка его роли в событии с учётом ограничений.</li></ul></div></div></article>
+<article class="construction-service-detail"><div class="construction-service-title"><span class="construction-service-num">04</span><h3>Материалы ранее проведённого исследования</h3></div><p>Анализируем представленное заключение, протоколы и фотоматериалы на полноту технического обоснования.</p><div class="construction-columns"><div class="construction-mini-block"><h4>Что исследуется</h4><ul><li>Исходные данные и осмотр.</li><li>Проверка альтернативных версий.</li><li>Соответствие выводов описанным следам.</li></ul></div><div class="construction-mini-block"><h4>Результат</h4><ul><li>Систематизированные технические замечания.</li><li>Вопросы для дополнительной экспертизы или рецензии.</li></ul></div></div></article>
+</div></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="process" type="button"><span>К порядку работы</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="process" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="types" type="button"><span>К направлениям исследования</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Как проводится экспертиза</div><h2>Порядок работы</h2><div class="construction-process"><div class="construction-process-item"><div><strong>Уточнение обстоятельств</strong><span>Обсуждаем объект, время события, доступ к месту и спорные вопросы.</span></div></div><div class="construction-process-item"><div><strong>Сбор материалов</strong><span>Изучаем документы, фото, видео и сведения о повреждённом оборудовании.</span></div></div><div class="construction-process-item"><div><strong>Осмотр</strong><span>При возможности обследуем объект после допуска к безопасному месту работы.</span></div></div><div class="construction-process-item"><div><strong>Исследование образцов</strong><span>Проводим необходимые исследования сохранённых объектов и материалов.</span></div></div><div class="construction-process-item"><div><strong>Проверка версий</strong><span>Сопоставляем результаты, обстановку и возможные технические причины.</span></div></div><div class="construction-process-item"><div><strong>Заключение</strong><span>Оформляем выводы, иллюстрации и ответы с указанием достаточности данных.</span></div></div></div></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="materials" type="button"><span>К материалам и вопросам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="materials" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="process" type="button"><span>К порядку работы</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Подготовка к исследованию</div><h2>Какие материалы понадобятся</h2><div class="construction-intro-grid"><div><ul class="construction-task-list"><li><strong>Акты, протоколы и иные документы по факту пожара.</strong></li><li><strong>Фотографии и видео до, во время и после события при наличии.</strong></li><li><strong>Планы помещений и схемы расположения оборудования.</strong></li><li><strong>Документация на электроснабжение, оборудование и системы защиты.</strong></li><li><strong>Сохранённые повреждённые изделия и образцы с указанием места изъятия.</strong></li><li><strong>Предыдущие заключения, вопросы эксперту и сведения о доступе на объект.</strong></li></ul></div><div class="construction-intro-note"><strong>Зафиксируйте обстановку до восстановительных работ.</strong><p>Если это возможно без риска, сохраните уже имеющиеся фото, видео и документы. Доступ на повреждённый объект и отбор образцов организуются после согласования безопасных условий со специалистами.</p></div></div><div class="forensic-service-actions"><button class="btn-primary" type="button" data-open-expertise-order="true" data-expertise-name="Пожаро-техническая экспертиза"><span>Уточнить список материалов</span><span class="arrow">→</span></button></div></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Вопросы эксперту</div><h2>Какие вопросы можно поставить</h2><ul class="construction-benefit-grid"><li><strong>Где находилась зона первоначального возникновения пожара?</strong></li><li><strong>Какова техническая причина возникновения пожара по представленным материалам?</strong></li><li><strong>Как распространялось горение и какие факторы этому способствовали?</strong></li><li><strong>Связаны ли выявленные повреждения оборудования с причиной пожара или с его воздействием?</strong></li></ul></article>
+<div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="benefits" type="button"><span>К результату и ответам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+<section class="service-section-panel" data-service-panel="benefits" aria-hidden="true">
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="materials" type="button"><span>К материалам и вопросам</span><span class="linguistic-scroll-icon">↓</span></button></div>
+<article class="construction-content-card"><div class="construction-section-kicker">Результат</div><h2>Что получает заказчик</h2><ul class="construction-benefit-grid"><li><strong>Заключение о технических обстоятельствах события.</strong></li><li><strong>Схемы, фотографии и результаты исследования объектов.</strong></li><li><strong>Обоснование проверенных версий и причин их принятия или исключения.</strong></li><li><strong>Указание вопросов, которые требуют дополнительных данных или другой специальности.</strong></li></ul></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Частые вопросы</div><h2>Что важно знать до обращения</h2><details class="forensic-faq-item"><summary>Можно ли исследовать пожар после ремонта?</summary><p>Иногда возможно исследование по сохранённым материалам. Однако утрата следов ограничивает выводы, поэтому пригодность документов и фотографий оценивается отдельно.</p></details><details class="forensic-faq-item"><summary>Входит ли расчёт ущерба?</summary><p>Пожаро-техническое исследование отвечает на вопросы о возникновении и развитии пожара. Стоимость повреждений и восстановления согласуется как отдельная оценочная или комплексная задача.</p></details><details class="forensic-faq-item"><summary>Установит ли эксперт виновника пожара?</summary><p>Эксперт устанавливает технические обстоятельства в пределах специальных знаний. Вопросы вины и ответственности относятся к правовой оценке.</p></details></article>
+<article class="construction-content-card"><div class="construction-section-kicker">Обсудим вашу задачу</div><h2>Начните с материалов и вопросов</h2><p>Опишите ситуацию и приложите доступные документы. После предварительного изучения согласуем возможность исследования, состав работ, срок и стоимость.</p><div class="forensic-service-actions"><button class="btn-primary" type="button" data-open-expertise-order="true" data-expertise-name="Пожаро-техническая экспертиза"><span>Оставить заявку</span><span class="arrow">→</span></button></div></article>
+<div class="service-page-section-nav top"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="prev" data-service-goto="hero" type="button"><span>К началу услуги</span><span class="linguistic-scroll-icon">↓</span></button></div>
+
+</section>
+</div>
+</section>
 <!-- ── SERVICE PAGES: NEW EXPERTISE DIRECTIONS ── -->
 <section aria-hidden="true" class="single-service-page new-expertise-page" id="valuationPage">
 <header class="service-page-topbar">
@@ -3879,8 +4314,8 @@
 </header>
 <div class="service-section-flow" data-service-sections="tked">
 <section aria-hidden="false" class="service-section-panel active" data-service-panel="hero">
-<section class="auto-page-hero economic-page-hero new-expertise-hero-long">
-<div class="auto-page-hero-copy"><div class="auto-page-kicker">Технико-криминалистическая экспертиза документов</div><h1>Экспертиза <em>документов</em></h1><p class="auto-page-intro">Исследуем реквизиты, материалы и способы изготовления документов, чтобы выявить признаки изменения текста, замены листов, монтажа, копирования, технического воспроизведения подписей, печатей и других элементов.</p><div class="auto-page-note">ТКЭД отвечает на вопросы о том, как изготовлен документ и подвергался ли он техническому изменению. Авторство подписи или рукописного текста исследуется отдельно в рамках почерковедческой экспертизы.</div></div>
+<section class="expertise-document-hero auto-page-hero economic-page-hero new-expertise-hero-long">
+<div class="auto-page-hero-copy"><div class="auto-page-kicker">Технико-криминалистическая экспертиза документов</div><h1>Экспертиза <em>документов</em></h1><p class="auto-page-intro">Анализируем документы и их отдельные реквизиты (тексты, записи, подписи, оттиски печатей и штампов) для определения способа их изготовления, установления наличия либо отсутствия в них изменений первоначального содержания (например, подчистки, дописки, допечатки), выявления невидимых записей. Устанавливаем предметы и материалы, которые использовались при изготовлении документов (в частности, вид копировально-множительного устройства) либо внесении в них изменений (травление, смывание и др.).</p></div>
 <aside aria-label="Направления исследования" class="auto-collage-wrap">
 <div class="auto-collage-head">С чем мы работаем</div>
 <div class="auto-collage-board economic-collage-board">
@@ -3910,6 +4345,11 @@
 </figure>
 </div>
 </aside>
+<div class="auto-page-note expertise-hero-context">
+<h2>Когда применяется экспертиза</h2>
+<div class="expertise-hero-context-text"><p>Отмеченная экспертиза необходима, когда требуется определить факт имитации оттисков печатей в документе, провести их идентификационное исследование, определить содержание залитых, замазанных и зачеркнутых текстов, выявить последовательность нанесения пересекающихся штрихов, выполненных различного рода чернилами (например, что было выполнено ранее: рукописная подпись или печатный текст).</p></div>
+
+</div>
 </section>
 <div class="service-page-section-nav"><button class="linguistic-scroll-btn service-section-btn" data-service-dir="next" data-service-goto="scope" type="button"><span>К описанию и задачам</span><span class="linguistic-scroll-icon">↓</span></button></div>
 </section>
@@ -4078,19 +4518,16 @@
 <div class="construction-section-kicker">Документы и конфиденциальность</div>
 <h1>Политика обработки <em>персональных данных</em></h1>
 <p>Документ объясняет, какие сведения получает сайт «Все Экспертизы-РФ», для чего они используются, кому могут передаваться и как пользователь может реализовать свои права.</p>
-<div class="privacy-meta"><span>Редакция от 18 августа 2026 года</span><span>Действует бессрочно до замены новой редакцией</span></div>
+<div class="privacy-meta"><span>Редакция от 23 сентября 2026 года</span><span>Действует бессрочно до замены новой редакцией</span></div>
 </section>
 
 <section class="privacy-operator-card" aria-labelledby="privacyOperatorTitle">
 <div>
-<div class="construction-section-kicker">Оператор</div>
 <h2 id="privacyOperatorTitle">Кто отвечает за обработку данных</h2>
 </div>
 <dl>
-<div><dt>Оператор</dt><dd>Администрация сайта «Все Экспертизы-РФ»</dd></div>
-<div><dt>Адрес</dt><dd>Москва, ул. Тверская, 1</dd></div>
-<div><dt>Электронная почта</dt><dd><a href="mailto:info@vse-expertizi.ru">info@vse-expertizi.ru</a></dd></div>
-<div><dt>Телефон</dt><dd><a href="tel:+78001234567">+7 (800) 123-45-67</a></dd></div>
+<div><dt hidden>Ответственный за обработку данных</dt><dd>Администрация сайта «Все Экспертизы-РФ»</dd></div>
+<div><dt>Электронная почта</dt><dd><a href="mailto:spektrexpertiza@yandex.ru">spektrexpertiza@yandex.ru</a></dd></div>
 </dl>
 </section>
 
@@ -4178,14 +4615,22 @@
 <li>отозвать согласие или потребовать прекратить обработку;</li>
 <li>обжаловать действия Оператора в Роскомнадзоре или суде.</li>
 </ul>
-<p>Обращение можно направить на <a href="mailto:info@vse-expertizi.ru?subject=Персональные%20данные">info@vse-expertizi.ru</a> с темой «Персональные данные». Для защиты информации Оператор вправе запросить сведения, позволяющие подтвердить личность заявителя и его связь с обрабатываемыми данными.</p>
+<p>Обращение можно направить на <a href="mailto:spektrexpertiza@yandex.ru?subject=Персональные%20данные">spektrexpertiza@yandex.ru</a> с темой «Персональные данные». Для защиты информации Оператор вправе запросить сведения, позволяющие подтвердить личность заявителя и его связь с обрабатываемыми данными.</p>
 </article>
 
-<article class="privacy-card privacy-card-wide">
+<article class="privacy-card privacy-card-wide" id="privacyCookies">
 <span class="privacy-card-number">10</span>
-<h2>Технические данные, файлы cookie и внешние ресурсы</h2>
-<p>Хостинг и средства защиты могут автоматически фиксировать технические сведения, необходимые для доставки страниц, диагностики ошибок и предотвращения злоупотреблений. Если на сайте будут применяться необязательные аналитические или рекламные cookie, пользователь должен получить возможность принять или отклонить их до начала соответствующей обработки.</p>
-<p>Страница может загружать шрифты, библиотеки и иные ресурсы через внешних технических поставщиков. Такие поставщики могут получать сетевые идентификаторы в объёме, необходимом для соединения. Оператор оценивает законность такого взаимодействия и по возможности использует локальное размещение ресурсов.</p>
+<h2>Технические данные, файлы cookie и хранение в браузере</h2>
+<p>Файлы cookie и локальное хранилище браузера позволяют сохранять настройки между посещениями. В текущей версии сайта не подключены аналитические и рекламные счётчики; код сайта не устанавливает аналитические или рекламные cookie.</p>
+<h3>Что сохраняется после согласия</h3>
+<p>Нажимая «Согласен» в плашке, вы разрешаете администрации сайта «Все Экспертизы-РФ» сохранить и прочитать в этом браузере настройку о согласии, дату её сохранения, срок действия и версию уведомления. Единственная цель — не показывать плашку повторно в течение 180 дней. Запись хранится в localStorage под именем <code>vse-expertizy.cookie-preference</code>, не содержит имени, телефона, уникального идентификатора посетителя или истории посещений и не отправляется кодом сайта на сервер.</p>
+<p>При нажатии «Без сохранения» запись не создаётся, а ранее сохранённая настройка удаляется. Плашка скрывается до перезагрузки страницы. Доступ к сайту и его функциям сохраняется независимо от выбора. Продолжение просмотра, прокрутка и открытие политики не считаются согласием.</p>
+<h3>Как изменить выбор</h3>
+<p>Откройте «Cookie» в нижнем углу страницы или «Настройки cookie» в подвале и нажмите «Без сохранения», чтобы отозвать согласие и удалить настройку. Её также можно удалить в настройках браузера. Через 180 дней запись перестаёт учитываться и удаляется при следующем открытии сайта; при изменении условий потребуется новый выбор. Если браузер запрещает хранение данных, сайт продолжит работать, но плашка может появиться снова.</p>
+<button type="button" class="cookie-choice" data-cookie-settings>Изменить настройки cookie</button>
+<h3>Внешние ресурсы и технические журналы</h3>
+<p>Сайт загружает шрифты через Google Fonts и библиотеку визуализации через jsDelivr. При соединении их серверы получают технические сведения, в том числе IP-адрес и параметры запроса. Эти соединения не отключаются кнопкой «Без сохранения»: она управляет только описанной выше настройкой браузера. Хостинг также может вести технические журналы для доставки страниц и защиты от злоупотреблений. Условия такой обработки определяются используемыми сервисами и законными основаниями, а не согласием на сохранение настройки.</p>
+<p>Это согласие не распространяется на обработку заявок, рекламу, будущие счётчики или передачу материалов экспертизы. При подключении необязательных сервисов должны быть предварительно обновлены сведения об их назначении, составе данных, получателях и сроках хранения, а требующее согласия отслеживание должно запускаться только после отдельного выбора пользователя.</p>
 </article>
 
 <article class="privacy-card privacy-card-wide">
@@ -4197,13 +4642,14 @@
 
 <section class="privacy-contact-card">
 <div><div class="construction-section-kicker">Связаться с оператором</div><h2>Вопросы о ваших данных</h2><p>Для запроса, уточнения или отзыва согласия напишите на электронную почту. Опишите требование и укажите контакт, использованный при обращении через сайт.</p></div>
-<a class="privacy-contact-link" href="mailto:info@vse-expertizi.ru?subject=Персональные%20данные">info@vse-expertizi.ru <span aria-hidden="true">→</span></a>
+<a class="privacy-contact-link" href="mailto:spektrexpertiza@yandex.ru?subject=Персональные%20данные">spektrexpertiza@yandex.ru <span aria-hidden="true">→</span></a>
 </section>
 </main>
 </section>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
 
 
-<script src="./js/app.js?v=20260907c" type="text/javascript"></script>
+<script src="./js/cookie-consent.js?v=20260923a" defer></script>
+<script src="./js/app.js?v=20260909c" type="text/javascript"></script>
 </body>
 </html>
